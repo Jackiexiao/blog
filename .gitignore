@@ -1,4 +1,4 @@
-_site
+*site
 node_modules
 .sass-cache
 *.gem
@@ -6,3 +6,4 @@ Gemfile.lock
 *.gem
 assets/**/*.html
 assets/**/*.md
+*temp.md
