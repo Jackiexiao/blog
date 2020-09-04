@@ -1,5 +1,4 @@
 # 十分钟Spacevim入门
-
 来源
 * [github项目](https://github.com/Jackiexiao/10-minutes-to-SpaceVim)
 * [English version](https://github.com/Jackiexiao/10-minutes-to-SpaceVim/blob/master/README.md)
@@ -8,6 +7,13 @@
 配置，如果你不喜欢Spacevim，你随时可以安全快速地切换回原来的配置。
 
 只需要10分钟，来尝试一下吧。
+
+## 目录
+- [一、安装](#%E4%B8%80%E3%80%81%E5%AE%89%E8%A3%85)
+- [二、基本概念](#%E4%BA%8C%E3%80%81%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5)
+- [三、开始尝试](#%E4%B8%89%E3%80%81%E5%BC%80%E5%A7%8B%E5%B0%9D%E8%AF%95)
+- [四、探索和自定义](#%E5%9B%9B%E3%80%81%E6%8E%A2%E7%B4%A2%E5%92%8C%E8%87%AA%E5%AE%9A%E4%B9%89)
+- [参考](#%E5%8F%82%E8%80%83)
 
 ## 一、安装
 
