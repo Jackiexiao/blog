@@ -1,0 +1,12 @@
+exclude:
+  - node_modules
+  - script
+baseurl: /blog
+sass:
+  style: :compressed
+
+theme: jekyll-theme-primer
+
+title: jackie的博客
+description: 宇宙为何存在，而非一片虚无
+baidu_analysis: b2b259af2d424ead2873fb3989800374
