@@ -1,9 +1,10 @@
 # Tutorial教程
 
-用简单和直观的方式分享你的foam/obsidian/markdown笔记 !
-Share your foam/obsidian/markdown notes in a simple and intuitive way !
+* Share your **foam/obsidian/markdown** notes in a simple and intuitive way ! Support [[roamlike link]] 
+* You can share your foam/obsidian note using this template
+* 用简单和直观的方式分享你的foam/obsidian/markdown笔记！支持[[链接]]解析，push自动部署页面，使用这个博客模板即可。
 
-Visit Demo here 这里是样例
+## Demo-样例
 
 * [github page](https://jackiexiao.github.io/blog/)
 * [gitee page国内访问更快](https://jackiegeek.gitee.io/blog/)
