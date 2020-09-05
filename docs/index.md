@@ -1,17 +1,20 @@
-# 主页
-欢迎来到Jackie的博客！
+# Home主页
+Welcome to Jackie's blog 欢迎来到Jackie的博客！
 
-*想要创建跟我一样的博客吗？这里有[教程(假装有todo)]()！*
+=== "中文"
 
-## 自我介绍
+    这个博客基于 [mkdocs-material](https://squidfunk.github.io/mkdocs-material/), 使用 [vscode-foam](https://github.com/foambubble/foam) 以及 [obsidian](https://obsidian.md) 编辑markdown文件
+    
+    我还将博客同步部署在Gitee上，见[Gitee page](https://jackiegeek.gitee.io/blog/)
 
-追求真知是人生中最酷的事情！对我来说，它能够帮助我
-* 消除痛苦
-* 追求自由
-* 理解世界
-* 应对未知威胁
+    想创建一个类似的博客/文档网站？很简单而且很好维护，请看[[tutorial|教程]] ! 
 
-我的理念是，解决AI问题，然后用它解决更多的问题！
+=== "English"
+
+    This blog is based on [mkdocs-material](https://squidfunk.github.io/mkdocs-material/), using [vscode-foam](https://github.com/foambubble/foam) & [obsidian](https://obsidian.md) to write markdown files
+
+    Create a blog/document like this one! It's very simple and easy to maintain! Visit [[tutorial]] !
+
 
 <!--
 ## 我的项目
@@ -19,7 +22,8 @@
 * Obsidian帮助手册
 -->
 
-## 联系我
-* 邮箱：707610215@qq.com
+## Contact Me 联系我
+* email邮箱：707610215@qq.com
 * twitter: @realjackiexiao
 
+<!-- [](..attachment/portrait.png) -->
