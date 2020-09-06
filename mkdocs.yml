@@ -1,36 +1,48 @@
-# official tutorial 关于博客的配置教程
+# official tutorial 
 # mkdocs-material: https://squidfunk.github.io/mkdocs-material/
 # mkdocs: https://www.mkdocs.org/user-guide/configuration/
 
 site_name: Jackie的博客
-strict: false
+# strict: false # 不知道有啥用
+repo_url: https://github.com/jackiexiao/blog # 不一定要写，右上角的github展示需要
+site_url: https://jackiexiao.github.io/blog/ # 不一定要写，disqus需要
+repo_name: jackiexiao/blog
 theme:
   name: material
   favicon: attachment/portrait.png
+  language: zh 
+  icon:
+    repo: fontawesome/brands/github 
   features:
-    - navigation.expand # 默认展开目录
-    - tabs # 在页面上方显示几个主要文件夹
-markdown_extensions: 
-  - attr_list # https://squidfunk.github.io/mkdocs-material/reference/images/
-  - pymdownx.tabbed  # https://squidfunk.github.io/mkdocs-material/reference/content-tabs/
-  - nl2br # newline-to-break 换行渲染不会合并为一行
+    - navigation.expand 
+    - tabs 
+    - instant # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#instant-loading
+    - search.highlight # insiders
+markdown_extensions: # 默认到这里去看帮助 https://squidfunk.github.io/mkdocs-material/reference/
+  - attr_list # 增加css-html样式，例如按钮，比如图片定义大小，caption
+  - pymdownx.tabbed  # C++/python 代码例子切换
+  - nl2br # newline-to-break  markdown非严格换行
   - toc:
-      permalink: '#' # heading anchor 文章的标题都生成一个锚点
-  - admonition
+      permalink: '#' # heading anchor 标题的#样式
+      #      slugify: pymdownx.slugs.gfm_encoded
+      #slugify: pymdownx.slugs.uslugify
+  - admonition  # 突出显示一些东西，比如 !!!info|bug|tips之类
   - codehilite:
       guess_lang: false
       linenums: false
-  - footnotes
-  - meta
-  - def_list
-  - pymdownx.arithmatex
+  - footnotes # 支持脚注[^1]
+  - meta # 好像是设置页面基本信息的
+  - def_list # 支持有序、无序、任务列表
+  - pymdownx.arithmatex: # 数学公式latex支持
+      generic: true
   - pymdownx.betterem:
       smart_enable: all
   - pymdownx.caret
-  - pymdownx.critic
+  - pymdownx.critic  # 支持markdown高亮==，删除等高级样式
+  - pymdownx.emoji:  # 支持图标icons和表情渲染，比如:smile:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg
   - pymdownx.details
-  # - pymdownx.emoji:
-      # emoji_generator: !!python/name:pymdownx.emoji.to_png
   - pymdownx.inlinehilite
   - pymdownx.magiclink
   - pymdownx.mark
@@ -42,10 +54,19 @@ plugins:
   - search
   - roamlinks 
     #- autolinks 
-  - exclude:
+  - exclude:  # 有个mkdocs-exclude-plugin，避免部分页面被渲染
       glob:
         - "*.tmp"
         - "*.pdf"
         - "*.gz"
       regex:
         - '.*\.(tmp|bin|tar)$'
+extra:
+  social:
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/realjackiexiao
+    - icon: fontawesome/brands/github
+      link: https://github.com/jackiexiao
+    - icon: fontawesome/brands/zhihu
+      link: https://www.zhihu.com/people/realjackiexiao
+  disqus: jackiexiaoblog # 评论系统，仅国外能访问
