@@ -10,7 +10,7 @@ repo_name: jackiexiao/blog
 theme:
   name: material
   favicon: attachment/portrait.png
-  language: zh 
+  language: zh
   icon:
     repo: fontawesome/brands/github 
   features:
@@ -24,8 +24,7 @@ markdown_extensions: # 默认到这里去看帮助 https://squidfunk.github.io/m
   - nl2br # newline-to-break  markdown非严格换行
   - toc:
       permalink: '#' # heading anchor 标题的#样式
-      #      slugify: pymdownx.slugs.gfm_encoded
-      #slugify: pymdownx.slugs.uslugify
+      slugify: !!python/name:pymdownx.slugs.uslugify # 默认的解析器遇到中文会有问题，需要改成这个
   - admonition  # 突出显示一些东西，比如 !!!info|bug|tips之类
   - codehilite:
       guess_lang: false
