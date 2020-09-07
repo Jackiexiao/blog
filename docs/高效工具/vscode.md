@@ -1,9 +1,5 @@
 # Vscode笔记
 
-## 相关
-* [[vscode-python]]: 在vscode下面写python代码
-* [[vscode-git]]
-* [[vscode-vim]]
 
 ## 快捷键
 * 查看全部快捷键(看这个最好):https://code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf
