@@ -18,7 +18,7 @@ theme:
     - tabs 
     - instant # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#instant-loading
     - search.highlight # insiders
-markdown_extensions: # 默认到这里去看帮助 https://squidfunk.github.io/mkdocs-material/reference/
+markdown_extensions:
   - attr_list # 增加css-html样式，例如按钮，比如图片定义大小，caption
   - pymdownx.tabbed  # C++/python 代码例子切换
   - nl2br # newline-to-break  markdown非严格换行

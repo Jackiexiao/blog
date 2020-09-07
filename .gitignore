@@ -5,6 +5,7 @@ resource/.*
 dataset/IMDB/*
 dataset/MNIST/*
 kaggle_result/*
+site/*
 
 # 文件过大，不使用git保存的，使用坚果云或者百度云自动同步，敏感部分用dropbox
 attachment/*
