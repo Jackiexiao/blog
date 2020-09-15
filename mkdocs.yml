@@ -58,6 +58,8 @@ plugins:
         - "*.tmp"
         - "*.pdf"
         - "*.gz"
+        - "*draft.md" # draft和inbox都是草稿内容，不进行渲染
+        - "*inbox.md"
       regex:
         - '.*\.(tmp|bin|tar)$'
 extra:
