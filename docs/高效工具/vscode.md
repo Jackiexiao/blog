@@ -115,3 +115,8 @@ https://code.visualstudio.com/docs/languages/markdown#_extending-the-markdown-pr
 2个方案
 1. 修改window对ctrl space 的占用：设置-高级键盘设置-输入语言热键-把Ctrl+space改成其他的，之后重启电脑
 2. ctrl +k ctrl +s 修改快捷键为 ` alt + /`
+
+### 一个shortcut执行2个指令的方法
+https://stackoverflow.com/questions/49611435/visual-studio-code-keybindings-running-two-or-more-commands-with-one-shortcut
+
+### 一个shortcut执行正操作和反操作
