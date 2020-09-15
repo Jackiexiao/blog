@@ -7,7 +7,7 @@ Welcome to Jackie's blog 欢迎来到Jackie的博客！
     
     我还将博客同步部署在Gitee上，见[Gitee page](https://jackiegeek.gitee.io/blog/)
 
-    想创建一个类似的博客/文档网站，而且仅需提交便自动部署？请看[教程](https://github.com/Jackiexiao/foam-mkdocs-template)
+    想创建一个类似的博客/文档网站，只需你的markdown文件+git push便自动部署？请看[教程](https://github.com/Jackiexiao/foam-mkdocs-template)
 
 
 === "English"
