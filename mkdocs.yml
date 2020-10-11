@@ -14,8 +14,7 @@ theme:
   icon:
     repo: fontawesome/brands/github 
   features:
-    - navigation.expand 
-    - tabs 
+    - navigation.tabs 
     - instant # https://squidfunk.github.io/mkdocs-material/setup/setting-up-navigation/#instant-loading
     - search.highlight # insiders
 markdown_extensions:
