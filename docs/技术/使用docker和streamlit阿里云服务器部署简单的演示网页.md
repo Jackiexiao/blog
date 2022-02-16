@@ -6,7 +6,7 @@
 ## 最终效果
 一个网站（ip地址）： http://47.115.79.16:8501
 
-![picture 12](../attachment/2020-09-16_04-46-47.png)  
+![picture 12](2020-09-16_04-46-47.png)  
 
 > 如果你购买了域名并且备案成功-国内需要，你就可以用域名来访问这个ip网址了，域名以及解析不在本文讨论范围内，可以上网自查，也不难
 
@@ -26,7 +26,7 @@
 ## 开始干吧！
 ### 一、购买阿里云服务器
 1. 访问[阿里云官网](https://www.aliyun.com/)，选择`云服务器ECS`，在跳转后的页面中选择`立即购买`
-![picture 1](../attachment/2020-09-16_02-14-17.png)  
+![picture 1](2020-09-16_02-14-17.png)  
 > 你会看到很多其他类型的服务器，适用场景不同。
 > 1. ECS(Elastic Compute Service)服务器可以简单理解为“弹性”服务器，也就是随时可以根据你的需求提高/降低电脑的配置，比如CPU更强，内存更大，更多服务器。
 > 2. 轻量应用服务器：适合建立轻量的网站，配置也很简单。不过我个人希望自由度高一些，就没有用这个了。
@@ -36,9 +36,9 @@
 
 > 镜像的说明：ubuntu其他版本也可以，ubuntu用的人比较多，centos 和 aliyun linux（基于centos）也可以，后两者商用多一些。
 
-![picture 2](../attachment/2020-09-16_03-03-37.png)  
+![picture 2](2020-09-16_03-03-37.png)  
 
-![picture 3](../attachment/2020-09-16_03-14-20.png)  
+![picture 3](2020-09-16_03-14-20.png)  
 
 ### 二、配置服务器
 
@@ -46,19 +46,19 @@
 
 1. 回到[阿里云官网](aliyun.com)，登录后在页面右上角有`控制台`按钮
 2. 进入控制台后，选择左上角的符号，展开选择`云服务器ECS`
-![picture 4](../attachment/2020-09-16_03-21-31.png)  
+![picture 4](2020-09-16_03-21-31.png)  
 3. 仿照图片，选择`实例`，在实例`更多`那里选择`重置密码`，之后我们要用这个密码，通过ssh连接服务器
-![picture 6](../attachment/2020-09-16_03-27-08.png)  
+![picture 6](2020-09-16_03-27-08.png)  
 > 有更加安全的连接服务器的方式，你可以在阿里云的帮助文档中看到
 4. 仿照下面几张图片，我们要修改安全组配置，加入80端口（http端口），以便之后能够访问网页
-![picture 7](../attachment/2020-09-16_03-30-11.png)  
-![picture 8](../attachment/2020-09-16_03-33-10.png)  
+![picture 7](2020-09-16_03-30-11.png)  
+![picture 8](2020-09-16_03-33-10.png)  
 选择快速添加（手动添加也差不多），这里我顺带把443https端口也开了
-![picture 9](../attachment/2020-09-16_03-33-52.png)  
+![picture 9](2020-09-16_03-33-52.png)  
 
 ### 三、ssh连接服务器
 实例列表那里有公网ip，复制一下，我的是：`101.37.146.225`
-![picture 10](../attachment/2020-09-16_03-37-04.png)  
+![picture 10](2020-09-16_03-37-04.png)  
 然后找一个ssh客户端（xshell/vscode），通过`ssh root@101.37.146.225`连接阿里云服务器，你也可以使用阿里云提供的其他连接方式（在实例页面选择`远程连接`）
 
 ### 四、安装docker
@@ -96,15 +96,16 @@ docker run -p 80:80 streamlit
 然后它会提示你`External URL: http://101.37.146.225:80`，由于80是http的默认端口，所以你在浏览器中直接输入`101.37.146.225`就可以了（换成你的阿里云公网ip地址）
 > 本文最后将streamlit部署在另一个服务器的8501端口了，所以应当访问这个：http://47.115.79.16:8501
 Done!! 搞定！你可以在网址中愉快地玩耍了
-![picture 11](../attachment/2020-09-16_04-33-45.png)  
+![picture 11](2020-09-16_04-33-45.png)  
 
 ### 六、下一步
 1. 学习docker和streamlit创建更好玩的网站！学习资料在此
     * [docker从入门到实践](https://yeasy.gitbook.io/)
     * streamlit：[王树义老师的教程](https://sspai.com/post/58474)或者[streamlit官网](https://www.streamlit.io/)
+    * [使用nginx优化部署](https://discuss.streamlit.io/t/tutorial-deploying-streamlit-app-to-aws-lightsail-with-docker-and-nginx/5561)
 2. 购买域名并将域名指向这个服务器，方便你的同学、老师、客户查看
-3. 等等等
 
 ## 参考资料
 1. [docker部署一个超简单的flask应用](https://zhuanlan.zhihu.com/p/78432719)
 2. [docker+streamlit展示spacy命名实体识别功能](https://maelfabien.github.io/project/Streamlit/)
+3. [在AWS上用docker+nginx部署streamlit](https://discuss.streamlit.io/t/tutorial-deploying-streamlit-app-to-aws-lightsail-with-docker-and-nginx/5561)

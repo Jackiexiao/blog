@@ -51,7 +51,6 @@ markdown_extensions:
 plugins:
   - search
   - roamlinks 
-    #- autolinks 
   - exclude:  # 有个mkdocs-exclude-plugin，避免部分页面被渲染
       glob:
         - "*.tmp"
