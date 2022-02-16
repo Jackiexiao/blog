@@ -60,7 +60,7 @@ ctrl k / ctrl [0-9] 即可
     - 使用命令 `snippet search` 可以快速搜索并修改 snippet
     - 注意，必须`ctrl + S`保存才能生效，而不是vim中的`:w`保存
     - 2022-1-26: 在markdown中snippet失效，不知道为什么...
-# 其他
+## 其他
 - vim 出现bug 无法撤销怎么办?→改用 vscode 的 Edit → undo
 - 新终端快捷键 （ 1.56 版本起）
     - ctrl shift 5 切分窗口
@@ -363,3 +363,5 @@ nmap k gk
 The OEM keys are the keys that vary with local keyboards. Where the US keyboard has brackets and braces, german keyboards have umlauts.
 
 They are called "OEM" because the Original Equipment Manufacturer (of the keyboard) was responsible for defining their functionality.
+
+测试更新
