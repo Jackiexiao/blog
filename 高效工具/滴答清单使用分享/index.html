@@ -1,0 +1,944 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jackiexiao.github.io/blog/%E9%AB%98%E6%95%88%E5%B7%A5%E5%85%B7/%E6%BB%B4%E7%AD%94%E6%B8%85%E5%8D%95%E4%BD%BF%E7%94%A8%E5%88%86%E4%BA%AB/">
+      
+      
+        <link rel="prev" href="../%E5%8D%81%E5%88%86%E9%92%9FSpacevim%E5%85%A5%E9%97%A8/">
+      
+      
+      <link rel="icon" href="../../attachment/portrait.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
+    
+    
+      
+        <title>滴答清单使用分享 - Jackie的博客</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7bf56d0a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#滴答清单使用分享" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jackie的博客" class="md-header__button md-logo" aria-label="Jackie的博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jackie的博客
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              滴答清单使用分享
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jackiexiao/blog" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jackiexiao/blog
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home主页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E5%93%B2%E6%80%9D/%E5%8D%81%E6%97%A5%E7%A6%85%E4%BF%AE%E8%AE%B0/" class="md-tabs__link">
+        哲思
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E6%8A%80%E6%9C%AF/%E4%BD%BF%E7%94%A8docker%E5%92%8Cstreamlit%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E7%AE%80%E5%8D%95%E7%9A%84%E6%BC%94%E7%A4%BA%E7%BD%91%E9%A1%B5/" class="md-tabs__link">
+        技术
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8A%E5%85%AB%E5%91%A8%E6%AD%A3%E5%BF%B5%E4%B9%8B%E6%97%85%E3%80%8B/" class="md-tabs__link">
+        读书笔记
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../foam%E5%85%A5%E9%97%A8%E4%B8%8E%E6%95%99%E7%A8%8B/" class="md-tabs__link md-tabs__link--active">
+        高效工具
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jackie的博客" class="md-nav__button md-logo" aria-label="Jackie的博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Jackie的博客
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jackiexiao/blog" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jackiexiao/blog
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home主页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          哲思
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          哲思
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%93%B2%E6%80%9D/%E5%8D%81%E6%97%A5%E7%A6%85%E4%BF%AE%E8%AE%B0/" class="md-nav__link">
+        十日禅修记
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          技术
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          技术
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%80%E6%9C%AF/%E4%BD%BF%E7%94%A8docker%E5%92%8Cstreamlit%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E7%AE%80%E5%8D%95%E7%9A%84%E6%BC%94%E7%A4%BA%E7%BD%91%E9%A1%B5/" class="md-nav__link">
+        使用docker和streamlit阿里云服务器部署简单的演示网页
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          读书笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          读书笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8A%E5%85%AB%E5%91%A8%E6%AD%A3%E5%BF%B5%E4%B9%8B%E6%97%85%E3%80%8B/" class="md-nav__link">
+        《八周正念之旅》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8A%E5%A6%82%E4%BD%95%E7%A7%91%E5%AD%A6%E5%9C%B0%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD%E3%80%8B/" class="md-nav__link">
+        《如何科学地学习英语》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8A%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6%E3%80%8B/" class="md-nav__link">
+        《如何阅读一本书》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8A%E5%AD%A6%E4%B9%A0%E4%B9%8B%E9%81%93%E3%80%8B/" class="md-nav__link">
+        《学习之道》
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          高效工具
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          高效工具
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../foam%E5%85%A5%E9%97%A8%E4%B8%8E%E6%95%99%E7%A8%8B/" class="md-nav__link">
+        foam入门与教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../vscode/" class="md-nav__link">
+        vscode
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8D%81%E5%88%86%E9%92%9FSpacevim%E5%85%A5%E9%97%A8/" class="md-nav__link">
+        十分钟Spacevim入门
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        滴答清单使用分享
+      </a>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="滴答清单使用分享">滴答清单使用分享<a class="headerlink" href="#滴答清单使用分享" title="Permanent link">#</a></h1>
+<p>知乎原文:<br />
+    - <a href="https://zhuanlan.zhihu.com/p/143686837"> 滴答清单使用分享 - 知乎</a></p>
+<h1 id="正文">正文<a class="headerlink" href="#正文" title="Permanent link">#</a></h1>
+<p>滴答清单是一款非常棒的时间管理工具，它还能当做团队协作、项目管理、笔记、习惯、番茄工具，大大地提升了我工作和学习的效率。</p>
+<p>作为一个已经重度使用滴答清单半年多的老用户，我在入门时走了不少弯路，<strong>要将滴答清单真正地变成生产力工具，还需要掌握正确的方法</strong>。</p>
+<p>我将滴答清单的核心功能归纳为3点：<strong>收集，执行，复盘</strong>。中间还会穿插一些我个人常用的小技巧。</p>
+<p>本文侧重让读者快速理解滴答清单的大致使用方法，如想了解具体使用方法，推荐大家阅读官方的<a href="https://guide.dida365.com/">使用手册</a></p>
+<h2 id="一快速收集">一、快速收集<a class="headerlink" href="#一快速收集" title="Permanent link">#</a></h2>
+<p>添加任务是一切任务管理工具的开始，而滴答清单的收集功能是我见过最好用的！非常智能人性化，其他软件要添加一个任务或日程鼠标要点很多下，我选择放弃。<br />
+</p>
+<h3 id="1pc端添加任务的例子">1、PC端添加任务的例子<a class="headerlink" href="#1pc端添加任务的例子" title="Permanent link">#</a></h3>
+<p>举一个在电脑端添加任务的例子，按下快捷键【Ctrl + Shift + A】呼出添加任务栏（这里演示所以基本功能）：<br />
+<img alt="picture 2" src="../../attachment/2020-08-32_12-50-23.png" />   ^bd9305</p>
+<ul>
+<li>【明早10点】：它能自动识别时间，明早10点就会提醒你要做这件任务，还可写成【10点到11点】</li>
+<li>【~工作】：把任务分类到工作清单下，你可以设置其他清单，eg：工作/个人/备忘/收藏/知识卡片</li>
+<li>【@bonny】：如果有清单协作者，你就可以@他， 他会收到指派任务的提示</li>
+<li>【跟客户面谈】：任务具体内容</li>
+<li>【！高优先级】：设置优先级，当任务很多时，可以按优先级持续从清单里取任务执行</li>
+<li>【#销售】：任务标签，方便对清单中的任务进一步归类，eg：会议/出差/文书/编程/外出</li>
+<li>除此之外，你还可以按【tab键】补充任务的细节，支持markdown/插入图片和附件哦！</li>
+</ul>
+<p>在滴答清单的其他端，android/ios等也是类似的操作方法，这里略去不讲</p>
+<p>你还可以在[设置]里头设定添加任务的默认状态，例如 默认时间为今天，默认清单为收集箱，默认优先级为 低优先级等<br />
+<br />
+下面是个gif图，展示了更多的操作细节<br />
+<br />
+<img alt="picture 3" src="dida-add-task.gif" />  </p>
+<h3 id="2快速添加收藏备忘笔记">2、快速添加收藏/备忘/笔记<a class="headerlink" href="#2快速添加收藏备忘笔记" title="Permanent link">#</a></h3>
+<p>同样的方法还可以快速添加收藏/备忘/笔记，比如：在知乎上看到一篇很好的文章：<br />
+<img alt="picture 4" src="../../attachment/2020-08-32_12-51-11.png" /><br />
+<br />
+由于可以灵活地设置重复任务，做课程表自然也不在话下，你甚至还可以将滴答清单当做简单的【知识卡片】工具，只需要将你的知识点用上述的方法收集起来，然后设置重复为【艾宾浩斯记忆法】，滴答清单就会按遗忘曲线的规律定期提醒你复习该知识点啦。<br />
+</p>
+<h3 id="3直接添加到收集箱">3、直接添加到收集箱<a class="headerlink" href="#3直接添加到收集箱" title="Permanent link">#</a></h3>
+<p>经常性的，我们只是想要快速记录下一个任务/笔记，并不想输入具体的时间/清单分类 之类的信息，那么直接写简要的文字就可以了，它会默认归类到"收集箱"中，</p>
+<p>添加任务如果没有指定清单，默认就会到【收集箱】中，比如你工作时灵光一闪，就可以先把想法记录下来，然后隔一段时间再去清空收集箱，我一般是每天清空一次。<br />
+<br />
+清空收集箱的含义是：</p>
+<ol>
+<li>如果能2分钟完成，就马上执行完成该任务；</li>
+<li>否则，描述该任务执行的信息，如：执行时间/优先级/指派人，然后把该任务从收集箱中移动到对应的清单中，比如【工作】</li>
+</ol>
+<p>清空收集箱：建议尽量先指定具体的执行时间（可以通过快捷键指定），然后再归类，如果没有指定时间，任务极有可能消失在茫茫任务海中 ^275424</p>
+<h2 id="二专注执行">二、专注执行<a class="headerlink" href="#二专注执行" title="Permanent link">#</a></h2>
+<p>前面收集了这么多任务之后，如何执行呢？这里以一天的场景为例子<br />
+</p>
+<h3 id="1先计划再行动">1、先计划再行动<a class="headerlink" href="#1先计划再行动" title="Permanent link">#</a></h3>
+<p>一日之计在于晨，执行的第一步当然是做计划啦，做计划简而言之是将今天要完成的任务列出来。列出计划之后，就按时间点以及任务优先级去执行任务<br />
+</p>
+<h4 id="1清单法">（1）清单法<a class="headerlink" href="#1清单法" title="Permanent link">#</a></h4>
+<p>清单视图可以分为两大块，前面是【今日任务】，后面是【按优先级】排序的任务。<br />
+<br />
+相比日历法，清单法适用于那种工作经常被打断的人（比如管理人员经常要应对各种会议、突发情况，很难有一段完全属于自己不被打扰的时光）</p>
+<p>此外，可以通过设置智能清单的模式，在一个"智能清单"里同时显示多个指定的清单（比如可以区别 工作时间清单（包含项目1/项目2/收集箱），非工作时间清单（包含：娱乐/购物/业余项目 等清单）<br />
+<br />
+<img alt="picture 5" src="../../attachment/2020-08-32_12-51-29.png" /><br />
+<br />
+</p>
+<h4 id="2日历法">（2）日历法<a class="headerlink" href="#2日历法" title="Permanent link">#</a></h4>
+<p><em>需先成为滴答清单付费会员</em><br />
+</p>
+<blockquote>
+<p>这个功能我觉得适合有许多确定日程的人使用（例如有大量的会议，出差，商务，课程）<br />
+对于学生，可以使用这个做成你的课程表<br />
+但在日常生活工作场景中，日历功能作用不是很大，因为大部分任务都是时间灵活的，不需要专门用日历功能去排期</p>
+</blockquote>
+<ul>
+<li>从图片右下角的【待分配任务池里】拖动任务到【今日待分配】；</li>
+<li>然后将【今日待分配】任务拖动到具体的时间点上，形成今日计划；</li>
+</ul>
+<p><img alt="picture 6" src="../../attachment/2020-08-32_12-51-40.png" />  </p>
+<p>如果你想知道自己的时间花到哪了，日历会是不错的方法！<br />
+此外，如果今天存在剩余任务没完成，拖动任务到新的日期下即可，保证日事清，没有过期遗漏的任务</p>
+<h4 id="3看板法">（3）看板法<a class="headerlink" href="#3看板法" title="Permanent link">#</a></h4>
+<p>清单界面还可以切换为看板页面（看板可自定义）<br />
+* 适用场景<br />
+    * 需要明确任务进度的，例如项目管理（未分配、进行中、验收中、已完成），软件开发（需求、队列、开发中、版本、bug） #todo 需要更好的例子<br />
+</p>
+<p><img alt="picture 7" src="../../attachment/2020-08-32_12-51-54.png" />  </p>
+<p>我个人使用列表模式为主，看板模式为辅。</p>
+<p>列表模式：最近时间点/最高优先级的一个任务就是我要关注的<br />
+看板模式：查看单个项目的开发排期的时候会用到看板。在看板中做好计划（看板能够宏观地进行规划，不同任务进度一目了然），在列表中具体执行（列表像时间一样是线性的，人只能线性地一个一个处理任务）</p>
+<h3 id="2切换场景">2、切换场景<a class="headerlink" href="#2切换场景" title="Permanent link">#</a></h3>
+<p>当你的任务很多的时候，直接查看【所有任务】会比较乱，这个时候你需要根据场景切换自己的清单，比如工作时间，就切换到【工作】清单/文件夹下，上面的清单视图、日历视图都可以调整为只显示【工作】清单的内容。（也可以使用上文提到的"智能清单"）</p>
+<p>通常[工作场景]我们会由多个[子清单]合并（通过智能清单）（当然如果工作内容较为简单，一个清单就可以搞定）。到具体某个项目的时候（比如有几个小时是给某个项目的），这个时候，切换到一个特定项目的任务清单下面即可，完成项目后，再从特定项目清单切换到工作清单。</p>
+<h3 id="3专注番茄">3、专注番茄<a class="headerlink" href="#3专注番茄" title="Permanent link">#</a></h3>
+<p>为了让执行任务的时候更加专注，你还可以使用滴答清单的番茄钟功能。如果你后期能够适应这种专注的节奏，那可以逐渐地不再使用番茄钟，但前期为了让自己养成习惯，还是坚持一下吧！<br />
+<br />
+例如你计划读某本书2个小时，那么你就可以设定4个番茄钟（每个25分钟，每次休息5分钟），在番茄钟时间内，提醒自己专注的读书，不玩手机也不做其他跟读书无关的事情。<br />
+<br />
+滴答清单的番茄页面很简洁，还有数据统计的功能，我一般用平板/手机立起来，放在桌面的一边倒计时，提醒自己该专注就专注，该休息就休息。<br />
+<img alt="picture 8" src="../../attachment/2020-08-32_12-52-06.png" /><br />
+</p>
+<h2 id="三计划与复盘">三、计划与复盘<a class="headerlink" href="#三计划与复盘" title="Permanent link">#</a></h2>
+<p>一天快结束时，是时候做个收尾了，我一般会做3个事情</p>
+<ol>
+<li>清空今天的任务，尽量做到日事清，如果实在不能完成，做个总结，重新安排剩余任务的执行时间，同时提醒自己要对任务的执行时间要有合理的预估；</li>
+<li>清空收集箱：一天下来，收集箱也会多出很多任务/笔记，将这些任务/笔记整理一下，做好安排，保证清空，无一遗漏。</li>
+<li>看一下习惯的坚持情况，做个小结。</li>
+</ol>
+<h3 id="周月季度计划与复盘">周/月/季度计划与复盘<a class="headerlink" href="#周月季度计划与复盘" title="Permanent link">#</a></h3>
+<p><img alt="picture 1" src="../../attachment/2020-08-32_12-00-17.png" />  </p>
+<ol>
+<li>首先制定季度OKR，2-3个目标（Objective），每个目标对应3-4个关键指标（Key Result）。关键指标写在OKR的注释中。</li>
+<li>每个目标下面还有对应的项目，项目通常每周制定一次计划、进行一次复盘（设置每周重复提醒）。制定的计划可以通过批量添加任务的小技巧添加到日程中。</li>
+<li>项目是为了达成关键指标，可能跟1个或者多个关键指标关联。有些时候，你可以1个关键指标就对应一个项目。</li>
+</ol>
+<p>制定年度或者月度计划同理，基本上都以周或者月为一个迭代周期（做计划，执行，最后复盘，再做新一轮的计划）</p>
+<p>2020-12-15：<br />
+为了解决计划/复盘，以及项目任务和普通任务混乱的问题，引入以下解决方案</p>
+<ol>
+<li>设置智能清单，区分工作和生活场景，但2个场景都包含"收集箱"</li>
+<li>任务分两类，</li>
+<li>一种项目类（计划拆分成的子任务）</li>
+<li>一种提醒类（可以不归类到具体的计划中，平时只需要在收集箱里躺着就好，看心情也可以做归类）</li>
+<li>项目计划<ol>
+<li>通用的，按周月季度划分的，写在单独的清单里头，并且包括在工作、生活场景中<ol>
+<li>由于内容通常较多，主要写在obsidian各年度计划中（而且不区分工作、个人，工作计划到时同步到公司相关文件中即可）#todo 这里可能今后要改进</li>
+<li>也就是滴答清单这里的主要是==起提醒 + 说明要求的作用==</li>
+</ol>
+</li>
+<li>单个任务/单个清单/项目 的计划，通常以"高优先级"的方式列在清单中，高优先级任务/项目 控制在5个内</li>
+</ol>
+</li>
+</ol>
+<h3 id="2习惯">2、习惯<a class="headerlink" href="#2习惯" title="Permanent link">#</a></h3>
+<p>你可以看到自己每个习惯的坚持情况，还可以写一下你的总结。为了避免自己遗漏打卡，我会将每天打卡的截图发送给我的朋友，并设定惩罚机制。<br />
+<img alt="picture 9" src="../../attachment/2020-08-32_12-52-37.png" />  </p>
+<p><img alt="picture 10" src="../../attachment/2020-08-32_12-52-46.png" /><br />
+</p>
+<h2 id="四进阶资料">四、进阶资料<a class="headerlink" href="#四进阶资料" title="Permanent link">#</a></h2>
+<p>如果想要进一步了解滴答清单：</p>
+<ul>
+<li>访问官网：<a href="http://www.dida365.com">www.dida365.com</a></li>
+<li>跟邹小强学用滴答清单</li>
+<li>链接：<a href="https://pan.baidu.com/s/1k1o_zVtVz_JwPqp96jEJfg">https://pan.baidu.com/s/1k1o_zVtVz_JwPqp96jEJfg</a>  提取码：befz</li>
+<li>
+<p>支持正版：<a href="https://study.163.com/course/introduction/1005530008.htm">https://study.163.com/course/introduction/1005530008.htm</a></p>
+</li>
+<li>
+<p>可以看我粗略整理的滴答清单相关内容：<a href="https://mubu.com/doc1UD9as6MJnr">https://mubu.com/doc1UD9as6MJnr</a></p>
+</li>
+</ul>
+<h2 id="五技巧">五、技巧<a class="headerlink" href="#五技巧" title="Permanent link">#</a></h2>
+<h3 id="批量添加任务">批量添加任务<a class="headerlink" href="#批量添加任务" title="Permanent link">#</a></h3>
+<p>假设我们有如下的任务:<br />
+<div class="highlight"><pre><span></span><code>1. 修改文稿 !中优先级
+2. ~工作 参加会议 !高优先级
+3. ~日常 今天完成旅游规划
+4. ~学习 阅读《三体》!低优先级
+5. ~工作 审阅合同
+6. ~日常 明天 示例任务 !高优先级 #实用
+7. 每天早上8点冥想10分钟
+</code></pre></div><br />
+【批量增加任务】直接复制所有任务到添加任务输入框，会出现提示<br />
+<img alt="picture 11" src="../../attachment/2020-08-32_12-53-02.png" />  </p>
+<p>然后所有任务就添加好啦！值得说明的是，批量添加任务依然可以使用【智能识别】功能！比如~日常 明天 示例任务 !高优先级 #实用  它能够智能的设置好任务的【清单/日期/标签/优先级】，不过前提是对应的清单/标签已经存在。<br />
+此外，在PC端，如果没有设置时间，默认设置任务为今天。默认添加到收集箱。<br />
+显示时默认按照【时间】排序，你也可以按照【标题】，那样就是按【1234567】的顺序了<br />
+<img alt="picture 12" src="../../attachment/2020-08-32_12-53-12.png" />  </p>
+<p>然后我们就可以在滴答清单上指定任务的执行时间啦！从今日任务箱中拖动任务进行安排即可，还可以设置任务的时长<br />
+<img alt="picture 13" src="../../attachment/2020-08-32_12-53-39.png" />  </p>
+<h2 id="六faq">六、FAQ<a class="headerlink" href="#六faq" title="Permanent link">#</a></h2>
+<h3 id="什么时候用清单什么时候用标签">什么时候用清单，什么时候用标签？<a class="headerlink" href="#什么时候用清单什么时候用标签" title="Permanent link">#</a></h3>
+<p>同类任务很多（大于15）的时候用清单，否则用标签。这样可以让清单数量减少。<br />
+<br />
+举个例子，你有一个娱乐清单，清单下面有标签【电影/电视剧/手游/动漫】，但是你又是一个电影迷，那这时最好进行“升级”<br />
+<br />
+娱乐清单变成娱乐清单文件夹，电影变成一个清单，电影清单下分为【推理/科幻/恐怖/爱情/奇幻】标签，你可以将标签理解为是一个“分组”方式，列表按标签 排序就可以啦 <br />
+<br />
+标签的归类方法</p>
+<table>
+<thead>
+<tr>
+<th><strong>工作</strong></th>
+<th><strong>日程</strong></th>
+<th><strong>娱乐</strong></th>
+<th><strong>地点</strong></th>
+<th><strong>场景</strong></th>
+<th><strong>阅读</strong></th>
+<th><strong>笔记</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>出差</td>
+<td>生日</td>
+<td>动漫</td>
+<td>图书馆</td>
+<td>购物</td>
+<td>未读</td>
+<td>日记</td>
+</tr>
+<tr>
+<td>会议</td>
+<td>纪念日</td>
+<td>电影</td>
+<td>家</td>
+<td>打电话</td>
+<td>在读</td>
+<td>收藏</td>
+</tr>
+<tr>
+<td>审阅</td>
+<td>节日</td>
+<td>电视剧</td>
+<td>公司</td>
+<td>电脑</td>
+<td>已读</td>
+<td>素材</td>
+</tr>
+<tr>
+<td>跟进</td>
+<td></td>
+<td></td>
+<td>路上</td>
+<td>手机</td>
+<td></td>
+<td>密码</td>
+</tr>
+</tbody>
+</table>
+<h3 id="滴答清单api">滴答清单API<a class="headerlink" href="#滴答清单api" title="Permanent link">#</a></h3>
+<p><a href="https://developer.dida365.com/docs#/openapi">https://developer.dida365.com/docs#/openapi</a></p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/realjackiexiao" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/jackiexiao" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.zhihu.com/people/realjackiexiao" target="_blank" rel="noopener" title="www.zhihu.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M170.54 148.13v217.54l23.43.01 7.71 26.37 42.01-26.37h49.53V148.13H170.54zm97.75 193.93h-27.94l-27.9 17.51-5.08-17.47-11.9-.04V171.75h72.82v170.31zm-118.46-94.39H97.5c1.74-27.1 2.2-51.59 2.2-73.46h51.16s1.97-22.56-8.58-22.31h-88.5c3.49-13.12 7.87-26.66 13.12-40.67 0 0-24.07 0-32.27 21.57-3.39 8.9-13.21 43.14-30.7 78.12 5.89-.64 25.37-1.18 36.84-22.21 2.11-5.89 2.51-6.66 5.14-14.53h28.87c0 10.5-1.2 66.88-1.68 73.44H20.83c-11.74 0-15.56 23.62-15.56 23.62h65.58C66.45 321.1 42.83 363.12 0 396.34c20.49 5.85 40.91-.93 51-9.9 0 0 22.98-20.9 35.59-69.25l53.96 64.94s7.91-26.89-1.24-39.99c-7.58-8.92-28.06-33.06-36.79-41.81L87.9 311.95c4.36-13.98 6.99-27.55 7.87-40.67h61.65s-.09-23.62-7.59-23.62v.01zm412.02-1.6c20.83-25.64 44.98-58.57 44.98-58.57s-18.65-14.8-27.38-4.06c-6 8.15-36.83 48.2-36.83 48.2l19.23 14.43zm-150.09-59.09c-9.01-8.25-25.91 2.13-25.91 2.13s39.52 55.04 41.12 57.45l19.46-13.73s-25.67-37.61-34.66-45.86h-.01zM640 258.35c-19.78 0-130.91.93-131.06.93v-101c4.81 0 12.42-.4 22.85-1.2 40.88-2.41 70.13-4 87.77-4.81 0 0 12.22-27.19-.59-33.44-3.07-1.18-23.17 4.58-23.17 4.58s-165.22 16.49-232.36 18.05c1.6 8.82 7.62 17.08 15.78 19.55 13.31 3.48 22.69 1.7 49.15.89 24.83-1.6 43.68-2.43 56.51-2.43v99.81H351.41s2.82 22.31 25.51 22.85h107.94v70.92c0 13.97-11.19 21.99-24.48 21.12-14.08.11-26.08-1.15-41.69-1.81 1.99 3.97 6.33 14.39 19.31 21.84 9.88 4.81 16.17 6.57 26.02 6.57 29.56 0 45.67-17.28 44.89-45.31v-73.32h122.36c9.68 0 8.7-23.78 8.7-23.78l.03-.01z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "instant", "search.highlight"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,1453 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://jackiexiao.github.io/blog/%E9%AB%98%E6%95%88%E5%B7%A5%E5%85%B7/vscode/">
+      
+      
+        <link rel="prev" href="../foam%E5%85%A5%E9%97%A8%E4%B8%8E%E6%95%99%E7%A8%8B/">
+      
+      
+        <link rel="next" href="../%E5%8D%81%E5%88%86%E9%92%9FSpacevim%E5%85%A5%E9%97%A8/">
+      
+      <link rel="icon" href="../../attachment/portrait.png">
+      <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.2">
+    
+    
+      
+        <title>vscode - Jackie的博客</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7bf56d0a.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a0c5b2b5.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vscode" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../.." title="Jackie的博客" class="md-header__button md-logo" aria-label="Jackie的博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Jackie的博客
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              vscode
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/jackiexiao/blog" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jackiexiao/blog
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home主页
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E5%93%B2%E6%80%9D/%E5%8D%81%E6%97%A5%E7%A6%85%E4%BF%AE%E8%AE%B0/" class="md-tabs__link">
+        哲思
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E6%8A%80%E6%9C%AF/%E4%BD%BF%E7%94%A8docker%E5%92%8Cstreamlit%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E7%AE%80%E5%8D%95%E7%9A%84%E6%BC%94%E7%A4%BA%E7%BD%91%E9%A1%B5/" class="md-tabs__link">
+        技术
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8A%E5%85%AB%E5%91%A8%E6%AD%A3%E5%BF%B5%E4%B9%8B%E6%97%85%E3%80%8B/" class="md-tabs__link">
+        读书笔记
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../foam%E5%85%A5%E9%97%A8%E4%B8%8E%E6%95%99%E7%A8%8B/" class="md-tabs__link md-tabs__link--active">
+        高效工具
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Jackie的博客" class="md-nav__button md-logo" aria-label="Jackie的博客" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Jackie的博客
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/jackiexiao/blog" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    jackiexiao/blog
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home主页
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          哲思
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          哲思
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E5%93%B2%E6%80%9D/%E5%8D%81%E6%97%A5%E7%A6%85%E4%BF%AE%E8%AE%B0/" class="md-nav__link">
+        十日禅修记
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          技术
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          技术
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E6%8A%80%E6%9C%AF/%E4%BD%BF%E7%94%A8docker%E5%92%8Cstreamlit%E9%98%BF%E9%87%8C%E4%BA%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%83%A8%E7%BD%B2%E7%AE%80%E5%8D%95%E7%9A%84%E6%BC%94%E7%A4%BA%E7%BD%91%E9%A1%B5/" class="md-nav__link">
+        使用docker和streamlit阿里云服务器部署简单的演示网页
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          读书笔记
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          读书笔记
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8A%E5%85%AB%E5%91%A8%E6%AD%A3%E5%BF%B5%E4%B9%8B%E6%97%85%E3%80%8B/" class="md-nav__link">
+        《八周正念之旅》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8A%E5%A6%82%E4%BD%95%E7%A7%91%E5%AD%A6%E5%9C%B0%E5%AD%A6%E4%B9%A0%E8%8B%B1%E8%AF%AD%E3%80%8B/" class="md-nav__link">
+        《如何科学地学习英语》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8A%E5%A6%82%E4%BD%95%E9%98%85%E8%AF%BB%E4%B8%80%E6%9C%AC%E4%B9%A6%E3%80%8B/" class="md-nav__link">
+        《如何阅读一本书》
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/%E3%80%8A%E5%AD%A6%E4%B9%A0%E4%B9%8B%E9%81%93%E3%80%8B/" class="md-nav__link">
+        《学习之道》
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          高效工具
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          高效工具
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../foam%E5%85%A5%E9%97%A8%E4%B8%8E%E6%95%99%E7%A8%8B/" class="md-nav__link">
+        foam入门与教程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          vscode
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        vscode
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#层级折叠" class="md-nav__link">
+    层级折叠
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#面包屑" class="md-nav__link">
+    面包屑
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#easy-snippet" class="md-nav__link">
+    easy snippet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#其他" class="md-nav__link">
+    其他
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%8D%81%E5%88%86%E9%92%9FSpacevim%E5%85%A5%E9%97%A8/" class="md-nav__link">
+        十分钟Spacevim入门
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E6%BB%B4%E7%AD%94%E6%B8%85%E5%8D%95%E4%BD%BF%E7%94%A8%E5%88%86%E4%BA%AB/" class="md-nav__link">
+        滴答清单使用分享
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#层级折叠" class="md-nav__link">
+    层级折叠
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#面包屑" class="md-nav__link">
+    面包屑
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#easy-snippet" class="md-nav__link">
+    easy snippet
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#其他" class="md-nav__link">
+    其他
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+  
+  
+
+
+<h1 id="vscode">vscode<a class="headerlink" href="#vscode" title="Permanent link">#</a></h1>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/388281604">vscode技巧之"面包屑":代码导航栏 - jackiexiao的文章 - 知乎</a></li>
+</ul>
+<h2 id="层级折叠">层级折叠<a class="headerlink" href="#层级折叠" title="Permanent link">#</a></h2>
+<p>ctrl k / ctrl [0-9] 即可</p>
+<h2 id="面包屑">面包屑<a class="headerlink" href="#面包屑" title="Permanent link">#</a></h2>
+<ul>
+<li>面包屑在什么场景下有用<ul>
+<li>浏览别人仓库代码时</li>
+<li>文档很长时（例如 在 markdown 中充当 目录功能，当然你可以直接搜索，但有时你记不住所有的标题名字）</li>
+</ul>
+</li>
+<li>vscode开启面包屑<ul>
+<li>搜索:  breadcrumbs.enabled  开启即可</li>
+</ul>
+</li>
+<li>官方文档（包含了详细完整的介绍、相关配置，推荐）<ul>
+<li><a href="https://code.visualstudio.com/docs/editor/editingevolved#_breadcrumbs"> Code Navigation in Visual Studio Code</a></li>
+</ul>
+</li>
+<li>面包屑相关快捷键<ul>
+<li>Ctrl+shift+. 或者 ctrl shif + ; </li>
+<li>两个快捷键效果有区别，一个是打开当前，一个是在面包屑的树层级上跳转</li>
+<li>基本操作<ul>
+<li>ctrl n / p 或者 上下箭头 进行切换</li>
+<li>esc 退出面包屑</li>
+<li>可以直接输入英文字母进行"高亮搜索"，然后按 ctrl n/ p 或上下键 在匹配项中跳转</li>
+<li>左右键可以在层级中跳转（很遗憾，好像没有 对应的 ctrl +xx 系列键...</li>
+<li>space 可以展开 层级</li>
+<li>enter 跳转到对应的面包屑</li>
+</ul>
+</li>
+<li>所有默认的快捷键可以通过 ctrl k + ctrl s ，然后在快捷键页面中 搜索: breadcrumbs 来获取!<ul>
+<li>ctrl + enter 在新的页面中打开</li>
+<li>ctrl left 和 right 可以左右跳转（且无视当前层级，默认的 left 和 right 限制在当前文件）</li>
+</ul>
+</li>
+<li>如果你想替换成 vim 的导航方式，可以添加如下快捷键<ul>
+<li>来源: <a href="https://github.com/Microsoft/vscode/issues/58930#issuecomment-422671191"> Breadcrumbs keyboard navigation shortcuts · Issue #58930 · microsoft/vscode · GitHub</a></li>
+<li>ctrl p 搜索 key binding</li>
+<li>或者 ctrl shift p 搜索 shortcut（用户部分）<br />
+<div class="highlight"><pre><span></span><code><span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ctrl+h&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;breadcrumbs.focusPrevious&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;when&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;breadcrumbsActive &amp;&amp; breadcrumbsVisible&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ctrl+j&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;list.focusDown&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;when&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;breadcrumbsActive &amp;&amp; breadcrumbsVisible&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ctrl+k&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;list.focusUp&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;when&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;breadcrumbsActive &amp;&amp; breadcrumbsVisible&quot;</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nt">&quot;key&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ctrl+l&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;command&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;breadcrumbs.focusNext&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nt">&quot;when&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;breadcrumbsActive &amp;&amp; breadcrumbsVisible&quot;</span>
+<span class="w">    </span><span class="p">}</span>
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="easy-snippet">easy snippet<a class="headerlink" href="#easy-snippet" title="Permanent link">#</a></h2>
+<ul>
+<li><a href="https://zhuanlan.zhihu.com/p/386347236">知乎文章: Easy Snippet - vscode最好的snippet代码片段管理器</a></li>
+<li><a href="https://github.com/inu1255/vscode-easy-snippet">easy snippet </a><ul>
+<li>创建snippet的快捷键是: <code>ctrl k + ctrl shift s</code></li>
+<li>使用命令 <code>snippet search</code> 可以快速搜索并修改 snippet</li>
+<li>注意，必须<code>ctrl + S</code>保存才能生效，而不是vim中的<code>:w</code>保存</li>
+<li>2022-1-26: 在markdown中snippet失效，不知道为什么...</li>
+</ul>
+</li>
+</ul>
+<h2 id="其他">其他<a class="headerlink" href="#其他" title="Permanent link">#</a></h2>
+<ul>
+<li>vim 出现bug 无法撤销怎么办?→改用 vscode 的 Edit → undo</li>
+<li>新终端快捷键 （ 1.56 版本起）<ul>
+<li>ctrl shift 5 切分窗口</li>
+<li>alt 上下键 切换 terminal Pane</li>
+<li>Move to previous terminal - Ctrl+PageUp (macOS Cmd+Shift+])</li>
+<li>Move to next terminal - Ctrl+PageDown (macOS Cmd+shift+[)</li>
+<li>Focus terminal tabs view - Ctrl+Shift+ (macOS Cmd+Shift+) - Terminal tabs preview</li>
+</ul>
+</li>
+<li>刷新当前文件（例如你在终端中修改了） ?→&gt;revert file</li>
+<li>ctrl +T 速度太慢的问题<ul>
+<li><a href="https://stackoverflow.com/questions/51874486/visual-studio-code-intellisense-is-very-slow-is-there-anything-i-can-do"> python - Visual Studio Code Intellisense is very slow - Is there anything I can do? - Stack Overflow</a></li>
+<li><a href="https://github.com/microsoft/vscode-cpptools/issues/2751">https://github.com/microsoft/vscode-cpptools/issues/2751</a></li>
+</ul>
+</li>
+<li>tmux 使用 code -r filename 打开文件的问题<ul>
+<li><a href="https://github.com/microsoft/vscode-remote-release/issues/2763"> code command not working in tmux in remote terminal · Issue #2763 · microsoft/vscode-remote-release · GitHub</a></li>
+<li>里头有个很麻烦的解决方案，我没有去尝试...<ul>
+<li><a href="https://github.com/microsoft/vscode-remote-release/issues/2763#issuecomment-642979476"> code command not working in tmux in remote terminal · Issue #2763 · microsoft/vscode-remote-release · GitHub</a></li>
+</ul>
+</li>
+<li>还是采用上述的方法解决了<ul>
+<li>2021-6-22 : 但是使用 一段时间之后，出现了错误: Unable to connect to VS Code server.Error in request，不清楚为什么<ul>
+<li>重新开一个终端就可以了&gt;。</li>
+<li>这个方法时而行，时而不行，不清楚为什么</li>
+<li>昨天尝试还可以的，今天就不行了</li>
+<li>hmmm 把所有 tmux 关闭掉 重新开就可以。。。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>临时解决方法: 如无必要，不用tmux ...</li>
+</ul>
+</li>
+<li>TODO<ul>
+<li>多个侧边栏问题，不知道为什么vscode不支持...见：<a href="https://github.com/Microsoft/vscode/issues/26777">https://github.com/Microsoft/vscode/issues/26777</a></li>
+<li>vscode 不支持音频很蛋疼，例如无法播放远程文件夹的音频，无法在jupyter notebook中播放音频....</li>
+</ul>
+</li>
+<li>字体问题<ul>
+<li>font famile<ul>
+<li>原来的<br />
+<div class="highlight"><pre><span></span><code>Consolas, &#39;Courier New&#39;, monospace, &#39;Microsoft Yahei&#39;,  &#39;微软雅黑&#39;,
+</code></pre></div><br />
+cosolas 这个时候空格跟字母的大小一致 （推荐这个）<br />
+'微软雅黑' 这个空格只有半个字符<br />
+'Courier New' 这个字体很细</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>theme<ul>
+<li>ctrl shift P 选择 theme</li>
+<li>插件 one monokai theme ，选择这个，在插件主页有 "set color theme"</li>
+</ul>
+</li>
+<li>faq<ul>
+<li>open file in new tab /window 在新窗口中打开<ul>
+<li>user setting中，加入<br />
+<div class="highlight"><pre><span></span><code><span class="nt">&quot;workbench.editor.enablePreview&quot;</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>加速搜索<ul>
+<li>忽略搜索文件夹<ul>
+<li>在设置中搜索"search"，找到 ignore_pattern 添加就可以 <a href="https://stackoverflow.com/questions/29971600/choose-folders-to-be-ignored-during-search-in-vs-code">参考</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>重新加载窗口 <br />
+<div class="highlight"><pre><span></span><code>Developer: Reload Window
+</code></pre></div></li>
+<li>python debug 当前 module launch.json 的配置<ul>
+<li>需要一个插件: commandvariable<br />
+<div class="highlight"><pre><span></span><code><span class="p">{</span>
+<span class="w">    </span><span class="c1">// Use IntelliSense to learn about possible attributes.</span>
+<span class="w">    </span><span class="c1">// Hover to view descriptions of existing attributes.</span>
+<span class="w">    </span><span class="c1">// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387</span>
+<span class="w">    </span><span class="nt">&quot;version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0.2.0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;configurations&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+
+<span class="w">        </span><span class="p">{</span>
+<span class="w">          </span><span class="nt">&quot;name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Python: Module CmdVar&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;python&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;request&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;launch&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;console&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;integratedTerminal&quot;</span><span class="p">,</span>
+<span class="w">          </span><span class="nt">&quot;module&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;${command:extension.commandvariable.file.relativeDirDots}.${fileBasenameNoExtension}&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>vscode setting的变量<ul>
+<li>参考：<a href="https://code.visualstudio.com/docs/editor/variables-reference">https://code.visualstudio.com/docs/editor/variables-reference</a></li>
+</ul>
+</li>
+<li>提高vscode速度<ul>
+<li>忽略一些文件夹（以便加快搜索）</li>
+<li>还可以增加 search exclude <mark>TODO</mark><br />
+<div class="highlight"><pre><span></span><code><span class="nx">setting</span><span class="p">.</span><span class="nx">json</span>
+<span class="w">    </span><span class="s2">&quot;files.exclude&quot;</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="s2">&quot;**/.git&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">         </span><span class="c1">// this is a default value</span>
+<span class="w">        </span><span class="s2">&quot;**/.DS_Store&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">    </span><span class="c1">// this is a default value</span>
+<span class="w">        </span><span class="s2">&quot;**/data&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">    </span><span class="c1">// this is a default value</span>
+
+<span class="w">        </span><span class="s2">&quot;**/node_modules&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w"> </span><span class="c1">// this excludes all folders </span>
+<span class="w">            </span><span class="c1">// named &quot;node_modules&quot; from </span>
+<span class="w">            </span><span class="c1">// the explore tree</span>
+
+<span class="w">        </span><span class="c1">// alternative version</span>
+<span class="w">        </span><span class="s2">&quot;node_modules&quot;</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="w">    </span><span class="c1">// this excludes the folder </span>
+<span class="w">            </span><span class="c1">// only from the root of</span>
+<span class="w">            </span><span class="c1">// your workspace </span>
+<span class="w">    </span><span class="p">}</span><span class="w"> </span>
+</code></pre></div></li>
+</ul>
+</li>
+</ul>
+<h1 id="shortcut快捷键">shortcut快捷键<a class="headerlink" href="#shortcut快捷键" title="Permanent link">#</a></h1>
+<p>查看全部快捷键(看这个最好):https―/code.visualstudio.com/shortcuts/keyboard-shortcuts-windows.pdf<br />
+  - 也可以 Ctrl K + Ctrl R 打开这个快捷键列表<br />
+设置/查找快捷键的方法（需要掌握）: 可以在vscode 中 按快捷键 ctrl + K ctrl + S 打开快捷键列表</p>
+<p>切换到文件浏览器 ?→ctrl shift E<br />
+切换到debug ?→ctrl shift D<br />
+切换到Problems ?→ctrl shift M</p>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>打开快捷键设置</td>
+<td>Ctrl+k  + ctrl + s</td>
+</tr>
+<tr>
+<td>打开终端</td>
+<td>Ctrl+`</td>
+</tr>
+<tr>
+<td>删除行</td>
+<td>Ctrl+Shift+K</td>
+</tr>
+<tr>
+<td>在当前行下插入新的一行</td>
+<td>Ctrl+Enter</td>
+</tr>
+<tr>
+<td>旁边窗口的快捷键</td>
+<td></td>
+</tr>
+<tr>
+<td>Debug窗口</td>
+<td>Ctrl shift+d</td>
+</tr>
+<tr>
+<td>多行编辑A方案</td>
+<td>Alt+shift+鼠标左键 或者 鼠标中键/滚轮键按压</td>
+</tr>
+<tr>
+<td>终端切换</td>
+<td>Ctrl+`</td>
+</tr>
+<tr>
+<td>窗口切换</td>
+<td>Ctrl+1 2</td>
+</tr>
+<tr>
+<td>文件切换</td>
+<td>Alt+1 2</td>
+</tr>
+<tr>
+<td>进入编辑器页面(toggle panel)</td>
+<td>Ctrl+J</td>
+</tr>
+<tr>
+<td>进入终端(toggle terminal)</td>
+<td>Ctrl+`</td>
+</tr>
+<tr>
+<td>进入语法错误提示页面</td>
+<td>Ctrl+shift+M</td>
+</tr>
+<tr>
+<td>跳转到下一个错误的地方</td>
+<td>F8</td>
+</tr>
+<tr>
+<td>跳转到定义</td>
+<td>Ctrl+Click</td>
+</tr>
+<tr>
+<td>在侧边文件中显示跳转的定义</td>
+<td>Ctrl+Alt+Click.</td>
+</tr>
+<tr>
+<td>回到最左边的窗口</td>
+<td>Ctrl+shift+E 之类的 或者 Ctrl+0</td>
+</tr>
+<tr>
+<td>ctrl shift alt A ?→add and commit all files (跟滴答清单冲突，所以多加了一个 alt 键）</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>F12</p>
+<table>
+<thead>
+<tr>
+<th>英文</th>
+<th>功能</th>
+<th>快捷键</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Go to Definition</td>
+<td>到定义</td>
+<td>F12 或者 ctrl+]</td>
+</tr>
+<tr>
+<td>Go to Declaration</td>
+<td>到声明</td>
+<td>无</td>
+</tr>
+<tr>
+<td>Go to Type Definition</td>
+<td>到类型定义</td>
+<td>无</td>
+</tr>
+<tr>
+<td>Go to implementations</td>
+<td>到实现</td>
+<td>Ctrl+F12</td>
+</tr>
+<tr>
+<td>Go to References</td>
+<td>到引用/提及/参考</td>
+<td><strong>shift+F12</strong> 会出现一个小窗口供你在所有引用中选择, 或者 ctrl+]</td>
+</tr>
+<tr>
+<td>Peek Definition</td>
+<td>瞄一眼定义</td>
+<td>Alt+F12</td>
+</tr>
+<tr>
+<td>open definition to the side</td>
+<td>在一边打开定义</td>
+<td>Ctrl+k F12</td>
+</tr>
+</tbody>
+</table>
+<p>Ctrl+P<br />
+<div class="highlight"><pre><span></span><code><span class="o">?</span><span class="w"> </span><span class="nx">相当于帮助</span><span class="p">,</span><span class="w"> </span><span class="nx">提示你可以使用什么命令</span>
+<span class="err">##</span><span class="w"> </span><span class="nx">跳转到某个符号</span><span class="o">/</span><span class="nx">标题</span><span class="o">/</span><span class="nx">变量</span><span class="w"> </span>
+</code></pre></div><br />
+- 直接enter: 在原窗口中打开<br />
+- Ctrl+enter: 在侧边窗口中打开<br />
+- vscode cheat sheet 上缺失的快捷键<br />
+| 功能                | 命令               |<br />
+| ------------------- | ------------------ |<br />
+| 面包屑交互          | Ctrl+shift+. 或者 ctrl shif + ; |<br />
+| breadcrumb 左右层级 | Ctrl+左右箭头      |</p>
+<h2 id="常用命令">常用命令<a class="headerlink" href="#常用命令" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>功能</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>打开快捷键</td>
+<td>Preferences: Open Keyboard Shortcuts (可以加 json)</td>
+</tr>
+<tr>
+<td>在文件浏览器新建文件</td>
+<td>File: New File</td>
+</tr>
+</tbody>
+</table>
+<h2 id="插件">插件<a class="headerlink" href="#插件" title="Permanent link">#</a></h2>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Remote-SSH</td>
+<td>linux远程编程</td>
+</tr>
+<tr>
+<td>gitlens</td>
+<td>git 管理</td>
+</tr>
+<tr>
+<td>Git History</td>
+<td>用来查看git log或则一个文件的git历史，比较不同的分支，commits。</td>
+</tr>
+<tr>
+<td>Code Runner</td>
+<td>支持多种语言的代码的立即执行。</td>
+</tr>
+<tr>
+<td>Visual Studio IntelliCode</td>
+<td>自动代码不全, 类似另外一个付费的插件TabNine</td>
+</tr>
+<tr>
+<td>Path Intellisense</td>
+<td>自动路径补全</td>
+</tr>
+<tr>
+<td>Image Preview</td>
+<td>鼠标悬浮在链接或者装订线(gutter)左边可以预览到图片</td>
+</tr>
+<tr>
+<td>better comments</td>
+<td>使注释有人性化的高亮显示 * ! TODO @ //  都会有不同的颜色，可以用 #+符号 或者行开头使用</td>
+</tr>
+<tr>
+<td>Open in application</td>
+<td>右键在默认应用中打开，然而不能ctrl + click打开</td>
+</tr>
+<tr>
+<td>draw.io</td>
+<td>vscode里画流程图</td>
+</tr>
+<tr>
+<td>code runner</td>
+<td>一键运行代码<code>Ctrl+Alt+N</code> 终止<code>Ctrl+Alt+M</code></td>
+</tr>
+<tr>
+<td>Excel Viewer</td>
+<td>用 更好的格式 看表格 csv 文件</td>
+</tr>
+<tr>
+<td>File Utils</td>
+<td>提供命令行(以File: 开头)的方式来快速移动，删除，重命名文件</td>
+</tr>
+<tr>
+<td>### search</td>
+<td></td>
+</tr>
+<tr>
+<td>需求:</td>
+<td></td>
+</tr>
+<tr>
+<td>1. 类似 grep -r / remnote search 的整个仓库内容(而不是文件名) 模糊查找插件</td>
+<td></td>
+</tr>
+<tr>
+<td>2. vscode 自带的 <code>ctrl shift F</code>缺点</td>
+<td></td>
+</tr>
+<tr>
+<td>1. 只能 alt enter 搜索，而不能在下拉框中搜索</td>
+<td></td>
+</tr>
+<tr>
+<td>2. 似乎没办法 fuzzy search，只能正则表达式匹配...  <code>get.{0,8}put</code></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>目前的解决方案<br />
+1. 文档内搜索<br />
+    1. 全文搜索 <br />
+        1. <code>fuzzy search</code><br />
+        2. vim<br />
+    2. 标题搜索 <code>Ctrl shift O</code><br />
+2. 整个仓库搜索<br />
+    1. 全文搜索 <br />
+        1. <code>ctrl shift F</code> + 正则表达式<br />
+        2. <code>fzf search</code><br />
+    2. 标题搜索 <code>ctrl + T</code></p>
+<p>2022-1-26: <br />
+- 花了2小时... 看了一圈，很有可能要自己写插件，可以参考 fuzzy go to line 的代码<br />
+- 太难了，我放弃了..</p>
+<p>尝试的插件列表</p>
+<ul>
+<li>fzf fuzzy quick open GOOD 唯一贴合自己需求的，但是用起来还是不太爽<ul>
+<li><code>fzf: add workspace</code> 第一次使用可能需要设置</li>
+<li><code>fzf: search using fzf and rg</code></li>
+<li>依赖于 fzf 和 rg，不过我自己测试，其实就是唤起终端进行搜索，但搜索结果**有时无法跳转**回 vscode 编辑页面，不知道为什么...</li>
+</ul>
+</li>
+<li>jaco / fuzzy search : <code>search: Fuzzy outline</code> GOOD 还能用的...<ul>
+<li>可以在当前文档中搜索，并将结果实时展示出来(而不需要像vim那样一个个跳转) 还是挺实用的，可惜没有真的做到"fuzzy"，也没有做到在整个仓库中搜索|</li>
+</ul>
+</li>
+<li>fuzzy go to line: <a href="https://github.com/kylqin/vscode-fuzzy-goto-line">https://github.com/kylqin/vscode-fuzzy-goto-line</a><ul>
+<li>类似上面的插件，也只能在当前文件中搜索，而且也没有真正 fuzzy</li>
+</ul>
+</li>
+<li>search everywhere<ul>
+<li>每次重启vscode的时候，需要 scan file ，花了我28秒(大量markdown文件)，而且按 <code>ctrl alt p</code>的时候非常卡</li>
+</ul>
+</li>
+<li>findItfaster<ul>
+<li>可惜只能用于终端... 而且需要安装 fzf ，有其他很多类似的插件，有可能只能在linux上用，window用不了，或者安装比较麻烦</li>
+</ul>
+</li>
+<li>Incremental Grep<ul>
+<li>有bug，使用的时候报错 <code>fatal: ambiguous argument '': unknown revision or path no int the working tree</code></li>
+</ul>
+</li>
+<li>vscode-git-grep<ul>
+<li>优点: 目前唯一一个可以全文搜索的，并且在下拉框中显示结果，但其实还不如 <code>ctrl shift F</code> 里头的正则表达式..</li>
+<li>缺点: 只能在git中检索, 没有即时搜索，每次都需要先确认</li>
+<li>bug: 不支持正则表达式</li>
+</ul>
+</li>
+<li>[[rg|ripgrep]] (不是一个插件) ，只是很多插件中提到要先下载这个...<ul>
+<li><code>rg "get.{0,8}put"</code></li>
+</ul>
+</li>
+</ul>
+<p>有没有可能在 vscode-neovim 中安装 fzf 的插件呢? 貌似不行...</p>
+<p>搜索关键词 - fuzzy search grep fzf</p>
+<h3 id="neovim">neovim<a class="headerlink" href="#neovim" title="Permanent link">#</a></h3>
+<ul>
+<li>复制到剪贴板<ul>
+<li>将下面的内容复制到  C:\Users\USERNAME\AppData\Local\nvim\init.vim  (这个AppData可能是隐藏文件夹）</li>
+<li>最后重启 vscode<br />
+<div class="highlight"><pre><span></span><code><span class="nb">set</span> <span class="n">clipboard</span><span class="o">+=</span><span class="n">unnamedplus</span>
+</code></pre></div></li>
+</ul>
+</li>
+<li>路过折叠块时不展开折叠<br />
+<div class="highlight"><pre><span></span><code><span class="n">nmap</span> <span class="n">j</span> <span class="n">gj</span>
+<span class="n">nmap</span> <span class="n">k</span> <span class="n">gk</span>
+</code></pre></div></li>
+</ul>
+<h1 id="faq">FAQ<a class="headerlink" href="#faq" title="Permanent link">#</a></h1>
+<ul>
+<li>指定区域 fold<ul>
+<li>Python #region or <strong># region **#endregion or **# endregion</strong></li>
+<li>To fold and unfold only the regions defined by markers use:<ul>
+<li>Fold Marker Regions (Ctrl+K Ctrl+8) folds all marker regions.</li>
+<li>Unfold Marker Regions (Ctrl+K Ctrl+9) unfolds all marker regions</li>
+</ul>
+</li>
+<li>" <a href="https://diigo.com/0jnxiz">https://diigo.com/0jnxiz</a></li>
+</ul>
+</li>
+<li>在新标签页中打开文件<ul>
+<li>单击文件名是预览(这时会替换当前的页面)</li>
+<li>双击文件名则是在新标签页中打开</li>
+<li>如果不想要这个功能的话:</li>
+<li>给你配置settings.json里加一条：</li>
+<li>"workbench.editor.enablePreview": false,</li>
+<li>"workbench.editor.enablePreviewFromQuickOpen": false,</li>
+</ul>
+</li>
+<li>打开setting.json<ul>
+<li>命令行里直接输入 Open workspace/ setting(json) /user settting</li>
+</ul>
+</li>
+<li>vscode各种bug?<ul>
+<li>
+<ol>
+<li>vscode 加载插件需要时间</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>vscode更改设置需要时间(比如切换python的interpreter)</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>有时候重启vscode就好了</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>winddow下 vscode cmd改为cmder<ul>
+<li><a href="https://github.com/cmderdev/cmder/wiki/Seamless-VS-Code-Integration"> Seamless VS Code Integration · cmderdev/cmder Wiki · GitHub</a></li>
+</ul>
+</li>
+<li>Ctrl + space 解决冲突<h2 id="--通常自动补全都是自动生成的不需要按ctrl-space不过ctrl-space-会被window和搜狗占用">- 通常自动补全都是自动生成的，不需要按Ctrl space，不过ctrl space 会被window和搜狗占用<a class="headerlink" href="#--通常自动补全都是自动生成的不需要按ctrl-space不过ctrl-space-会被window和搜狗占用" title="Permanent link">#</a></h2>
+<ul>
+<li>2个方案</li>
+<li>
+<ol>
+<li>修改window对ctrl space 的占用：设置-高级键盘设置-输入语言热键-把Ctrl+space改成其他的，之后重启电脑</li>
+</ol>
+</li>
+<li>
+<ol>
+<li>ctrl +k ctrl +s 修改快捷键为 <code>alt + /</code></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>一个shortcut执行2个指令的方法<ul>
+<li><a href="https://stackoverflow.com/questions/49611435/visual-studio-code-keybindings-running-two-or-more-commands-with-one-shortcut">https://stackoverflow.com/questions/49611435/visual-studio-code-keybindings-running-two-or-more-commands-with-one-shortcut</a></li>
+</ul>
+</li>
+<li>一个shortcut执行正操作和反操作<ul>
+<li>
+<ol>
+<li>法1：设定不同的“when”，比如toggle pane</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>vscode 无法连接远程服务器<ul>
+<li>2 关闭 服务器上 所有 vscode 的进程 （优先这个，不行的话，就下面的步骤）</li>
+<li>1 删除 服务器上的 .vscode-server 重新连接（会重装）</li>
+</ul>
+</li>
+<li>drag and drop 不work（服务器拉到本地的操作不成功）<ul>
+<li>确实是有bug...而且vscode还没解决</li>
+<li><a href="https://github.com/microsoft/vscode/issues/93599"> Can't drag files from a remote vscode window to a local window · Issue #93599 · microsoft/vscode · GitHub</a></li>
+<li>不过你可以用 download 来解决这个问题</li>
+</ul>
+</li>
+<li>Missing or invalid credentials.<ul>
+<li>Error: connect ECONNREFUSED /run/user/2078/vscode-git-29959dbc73.sock</li>
+<li>方法1: 使用 xshell 连接</li>
+<li>方法2: <strong>推荐</strong><ul>
+<li>You are trying to use git from a terminal in vscode. The problem comes from the authentication handler of vscode. To solve the problem:<ul>
+<li>Open vscode File &gt; Preferences &gt; Settings</li>
+<li>Search for git.terminalAuthentication</li>
+<li>Uncheck the option</li>
+</ul>
+</li>
+<li>You have to re-open the terminal to make it work.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="其他_1">其他<a class="headerlink" href="#其他_1" title="Permanent link">#</a></h1>
+<h1 id="markdown">markdown<a class="headerlink" href="#markdown" title="Permanent link">#</a></h1>
+<ul>
+<li>快捷键（自己的设置）<br />
+        - ctrl shift 6 ?→toggle code block<br />
+        - ctrl shift &#8532;/4 ?→toggle header<br />
+        - ctrl shift s ?→checkboxes<br />
+        - ctrl shift &#8542; ?→number / bullet list/points</li>
+<li><a href="https://code.visualstudio.com/docs/languages/markdown#_extending-the-markdown-preview">markdown preview theme 预览主题</a></li>
+</ul>
+<h2 id="todo-功能">todo 功能<a class="headerlink" href="#todo-功能" title="Permanent link">#</a></h2>
+<p>我用alt + enter 来toggle checkbox (create/delete)<br />
+用 alt + c 来 toggle checkbox done (done/undo)</p>
+<p>插件： markdown checkbox + 自定义快捷键</p>
+<p>快捷键 oem_3是什么<br />
+中文键盘下就是符号：`， 在Esc键的下面。类似的 括号，冒号之类是oem_数字键</p>
+<p>The OEM keys are the keys that vary with local keyboards. Where the US keyboard has brackets and braces, german keyboards have umlauts.</p>
+<p>They are called "OEM" because the Original Equipment Manufacturer (of the keyboard) was responsible for defining their functionality.</p>
+<p>测试更新</p>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/realjackiexiao" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/jackiexiao" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://www.zhihu.com/people/realjackiexiao" target="_blank" rel="noopener" title="www.zhihu.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.3.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M170.54 148.13v217.54l23.43.01 7.71 26.37 42.01-26.37h49.53V148.13H170.54zm97.75 193.93h-27.94l-27.9 17.51-5.08-17.47-11.9-.04V171.75h72.82v170.31zm-118.46-94.39H97.5c1.74-27.1 2.2-51.59 2.2-73.46h51.16s1.97-22.56-8.58-22.31h-88.5c3.49-13.12 7.87-26.66 13.12-40.67 0 0-24.07 0-32.27 21.57-3.39 8.9-13.21 43.14-30.7 78.12 5.89-.64 25.37-1.18 36.84-22.21 2.11-5.89 2.51-6.66 5.14-14.53h28.87c0 10.5-1.2 66.88-1.68 73.44H20.83c-11.74 0-15.56 23.62-15.56 23.62h65.58C66.45 321.1 42.83 363.12 0 396.34c20.49 5.85 40.91-.93 51-9.9 0 0 22.98-20.9 35.59-69.25l53.96 64.94s7.91-26.89-1.24-39.99c-7.58-8.92-28.06-33.06-36.79-41.81L87.9 311.95c4.36-13.98 6.99-27.55 7.87-40.67h61.65s-.09-23.62-7.59-23.62v.01zm412.02-1.6c20.83-25.64 44.98-58.57 44.98-58.57s-18.65-14.8-27.38-4.06c-6 8.15-36.83 48.2-36.83 48.2l19.23 14.43zm-150.09-59.09c-9.01-8.25-25.91 2.13-25.91 2.13s39.52 55.04 41.12 57.45l19.46-13.73s-25.67-37.61-34.66-45.86h-.01zM640 258.35c-19.78 0-130.91.93-131.06.93v-101c4.81 0 12.42-.4 22.85-1.2 40.88-2.41 70.13-4 87.77-4.81 0 0 12.22-27.19-.59-33.44-3.07-1.18-23.17 4.58-23.17 4.58s-165.22 16.49-232.36 18.05c1.6 8.82 7.62 17.08 15.78 19.55 13.31 3.48 22.69 1.7 49.15.89 24.83-1.6 43.68-2.43 56.51-2.43v99.81H351.41s2.82 22.31 25.51 22.85h107.94v70.92c0 13.97-11.19 21.99-24.48 21.12-14.08.11-26.08-1.15-41.69-1.81 1.99 3.97 6.33 14.39 19.31 21.84 9.88 4.81 16.17 6.57 26.02 6.57 29.56 0 45.67-17.28 44.89-45.31v-73.32h122.36c9.68 0 8.7-23.78 8.7-23.78l.03-.01z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "instant", "search.highlight"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fc8c2696.min.js"></script>
+      
+    
+  </body>
+</html>
