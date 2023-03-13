@@ -138,7 +138,7 @@ https://www.jianshu.com/p/2ab1ffe53b31
 "vscodeMarkdownNotes.newNoteDirectory": "docs/",
 ```
 
-### 将笔记分享到github/gitee page上
+### 将笔记分享到github page上
 1. 使用mkdocs-material（推荐）
 教程：https://github.com/jackiexiao/foam-mkdocs-template
 
