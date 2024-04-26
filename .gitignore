@@ -1,4 +1,4 @@
-.obsidian/cache
+.obsidian/
 resource/.*
 **/*.ipynb_checkpoints
 .ipynb_checkpoints/
