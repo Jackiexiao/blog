@@ -1,12 +1,52 @@
+temp.*
+temp/
 .obsidian/
-resource/.*
-**/*.ipynb_checkpoints
-.ipynb_checkpoints/
-dataset/IMDB/*
-dataset/MNIST/*
-kaggle_result/*
-site/*
+.Trash/
+.trash/
+.DS_Store
 
-# 文件过大，不使用git保存的，使用坚果云或者百度云自动同步，敏感部分用dropbox
-attachment/*
-code/d2l-zh/*
+# IDE related
+
+.idea
+
+# Obsidian
+
+**/.obsidian/*
+!**/.obsidian/workspace*
+!**/.obsidian/graph*
+!**/.obsidian/snippets/
+
+# Temporary files
+
+.temp
+
+# Nuxt
+
+.nuxt
+
+# Node.js
+
+node_modules
+.npmrc
+
+# VitePress
+
+**/.vitepress/dist
+**/.vitepress/docsMetadata.json
+**/.vitepress/cache/
+
+# Netlify
+
+.netlify/functions-serve/*
+
+# Generated files
+
+components.d.ts
+
+# Local env files
+
+*.local
+
+# Logs
+
+*.log

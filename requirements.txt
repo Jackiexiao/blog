@@ -1,5 +1,0 @@
-mkdocs
-mkdocs-material
-mkdocs-material-extensions
-mkdocs-exclude==1.0.2
-mkdocs-roamlinks-plugin==0.1.3
