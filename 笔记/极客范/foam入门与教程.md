@@ -3,7 +3,7 @@
 foam是什么？
 
 什么是双向链接？
-我的理解：通过点击 `[[文件名]]` 可以跳转到相应的文件（相当于智能的超链接），而且还可以查到谁（哪个文件）链接了这个文件
+我的理解：通过点击 `[文件名](文件名)` 可以跳转到相应的文件（相当于智能的超链接），而且还可以查到谁（哪个文件）链接了这个文件
 
 - 要了解更多有关使用Foam的信息，请阅读
   - [英文：foam的官方文档](https://foambubble.github.io/foam/)
@@ -121,7 +121,7 @@ foam是什么？
 1. 侧边栏, 直接打开左侧的outline
 2. 在文件中插入目录, 打开命令窗口, `create toc`
 
-1. 文件命名问题, 只能接受全小写的, 以`-`连接的名称, 例如`[[file-format-style]]`
+1. 文件命名问题, 只能接受全小写的, 以`-`连接的名称, 例如`[file-format-style](file-format-style)`
 2. 需要保证每个md文件开头都有一个 `## heading` heading的名称可以改
 
 修改默认文件夹
@@ -150,7 +150,7 @@ https://github.com/foambubble/foam-template
 
 - 任意拖拽窗口
 - 支持tag（vscode中有markdown-tags插件，不过我没用过）
-- 支持高级的[[]]格式
+- 支持高级的[foam入门与教程](.md)格式
 - 支持publish，云同步（付费）
 
 然而对vscode是真爱，所以主力还是vscode
