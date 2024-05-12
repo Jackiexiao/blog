@@ -146,6 +146,9 @@ devDependencies:
   vitepress-plugin-comment-with-giscus:
     specifier: ^1.1.15
     version: 1.1.15(vue@3.4.27)
+  vitepress-sidebar:
+    specifier: ^1.22.0
+    version: 1.22.0
   vue:
     specifier: ^3.4.21
     version: 3.4.27(typescript@5.4.5)
@@ -6483,6 +6486,13 @@ packages:
       '@giscus/vue': 2.4.0(vue@3.4.27)
     transitivePeerDependencies:
       - vue
+    dev: true
+
+  /vitepress-sidebar@1.22.0:
+    resolution: {integrity: sha512-qweTBD1D+KRM2PJA8gHhSE3Nf6yXOdW49MgPm6Hpq/zJUWTEBVmwN3u+wZ8fWInckS5zp254jLjmXxhgBGwlSw==}
+    engines: {node: '>=18.0.0'}
+    dependencies:
+      gray-matter: 4.0.3
     dev: true
 
   /vitepress@1.1.4(@algolia/client-search@4.23.3)(less@4.2.0)(markdown-it-mathjax3@4.3.2)(postcss@8.4.38)(search-insights@2.13.0)(typescript@5.4.5):

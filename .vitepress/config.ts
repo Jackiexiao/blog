@@ -8,6 +8,7 @@ import { InlineLinkPreviewElementTransform } from '@nolebase/vitepress-plugin-in
 import { buildEndGenerateOpenGraphImages } from '@nolebase/vitepress-plugin-og-image/vitepress'
 import { UnlazyImages } from '@nolebase/markdown-it-unlazy-img'
 
+import { generateSidebar } from 'vitepress-sidebar'
 import { discordLink, githubRepoLink, siteDescription, siteName, targetDomain } from '../metadata'
 import { creatorNames, creatorUsernames } from './creators'
 import { sidebar } from './docsMetadata.json'
@@ -210,7 +211,29 @@ export default defineConfig({
       { text: '独立开发者手册', link: '/独立开发者手册/' },
       { text: '最近更新', link: '/toc' },
     ],
-    sidebar,
+    // sidebar,
+    sidebar: generateSidebar([
+      {
+        documentRootPath: '笔记',
+        // scanStartPath: null,
+        resolvePath: '/笔记/',
+        // useTitleFromFileHeading: true,
+        collapsed: true,
+        collapseDepth: 2,
+        excludeFiles: ['c-css.md'],
+        excludeFolders: ['隐藏'],
+      },
+      {
+        documentRootPath: '独立开发者手册',
+        // scanStartPath: null,
+        resolvePath: '/独立开发者手册/',
+        collapsed: true,
+        collapseDepth: 2,
+        // useTitleFromFrontmatter: true,
+        // excludeFiles: ['package.json.md', 'helpful-links.md'],
+        // excludeFolders: ['examples', 'vitepress-how-to'],
+      },
+    ]),
   },
   markdown: {
     theme: {

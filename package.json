@@ -76,6 +76,7 @@
     "vite-plugin-inspect": "^0.8.3",
     "vitepress": "^1.0.2",
     "vitepress-plugin-comment-with-giscus": "^1.1.15",
+    "vitepress-sidebar": "^1.22.0",
     "vue": "^3.4.21"
   }
 }
