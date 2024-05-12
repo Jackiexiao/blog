@@ -1,14 +1,15 @@
 {
-  "name": "nolebase",
+  "name": "jackiexiao_blog",
   "type": "module",
   "version": "1.0.0",
   "author": {
-    "name": "Nólëbase",
-    "email": "nolebase@ayaka.moe",
-    "url": "https://github.com/nolebase"
+    "name": "jackiexiao",
+    "email": "jackie.xiao@outlook.com",
+    "url": "https://github.com/jackiexiao/blog"
   },
   "license": "MIT",
   "keywords": [
+    "jackiexiao",
     "vitepress",
     "nolebase",
     "markdown",
@@ -74,6 +75,7 @@
     "vite": "^5.2.8",
     "vite-plugin-inspect": "^0.8.3",
     "vitepress": "^1.0.2",
+    "vitepress-plugin-comment-with-giscus": "^1.1.15",
     "vue": "^3.4.21"
   }
 }

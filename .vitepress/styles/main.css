@@ -204,17 +204,17 @@ html, body {
   Discord 链接按钮样式
 */
 
-.VPHero.VPHomeHero .actions a[href="https://discord.gg/XuNFDcDZGj"] {
+.VPHero.VPHomeHero .actions a[href="https://discord.gg/fnwTQRbX"] {
   color: white;
   background-color: #404eed;
 }
 
-.VPHero.VPHomeHero .actions a[href="https://discord.gg/XuNFDcDZGj"]:hover {
+.VPHero.VPHomeHero .actions a[href="https://discord.gg/fnwTQRbX"]:hover {
   color: white;
   background-color: #6975f2;
 }
 
-.VPHero.VPHomeHero .actions a[href="https://discord.gg/XuNFDcDZGj"]:active {
+.VPHero.VPHomeHero .actions a[href="https://discord.gg/fnwTQRbX"]:active {
   color: white;
   background-color: #404eed;
 }
@@ -223,17 +223,17 @@ html, body {
   暗色模式下 Discord 链接按钮样式
 */
 
-.dark .VPHero.VPHomeHero .actions a[href="https://discord.gg/XuNFDcDZGj"] {
+.dark .VPHero.VPHomeHero .actions a[href="https://discord.gg/fnwTQRbX"] {
   color: white;
   background-color: #444c9e;
 }
 
-.dark .VPHero.VPHomeHero .actions a[href="https://discord.gg/XuNFDcDZGj"]:hover {
+.dark .VPHero.VPHomeHero .actions a[href="https://discord.gg/fnwTQRbX"]:hover {
   color: white;
   background-color: #404eed;
 }
 
-.dark .VPHero.VPHomeHero .actions a[href="https://discord.gg/XuNFDcDZGj"]:active {
+.dark .VPHero.VPHomeHero .actions a[href="https://discord.gg/fnwTQRbX"]:active {
   color: white;
   background-color: #444c9e;
 }

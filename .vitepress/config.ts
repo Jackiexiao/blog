@@ -121,9 +121,6 @@ export default defineConfig({
       name: 'msapplication-TileColor',
       content: '#603cba',
     }],
-    // Proxying Plausible through Netlify | Plausible docs
-    // https://plausible.io/docs/proxy/guides/netlify
-    ['script', { 'defer': 'true', 'data-domain': 'nolebase.ayaka.io', 'data-api': '/api/v1/page-external-data/submit', 'src': '/assets/page-external-data/js/script.js' }],
   ],
   themeConfig: {
     outline: { label: '页面大纲', level: 'deep' },
@@ -210,6 +207,7 @@ export default defineConfig({
     nav: [
       { text: '主页', link: '/' },
       { text: '笔记', link: '/笔记/' },
+      { text: '独立开发者手册', link: '/独立开发者手册/' },
       { text: '最近更新', link: '/toc' },
     ],
     sidebar,
