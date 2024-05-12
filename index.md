@@ -8,7 +8,7 @@ titleTemplate: 宇宙为何存在,而非一片虚无
 hero:
   name: jackiexiao
   text: jackie的博客
-  tagline: jackie的知识库,记录了他对世界的理解
+  tagline: 宇宙为何存在,而非一片虚无
   image:
     src: /logo.svg
     alt: Vitest
