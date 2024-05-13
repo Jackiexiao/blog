@@ -1,6 +1,29 @@
 # vscode
 - [vscode技巧之"面包屑":代码导航栏 - jackiexiao的文章 - 知乎](https://zhuanlan.zhihu.com/p/388281604)
 
+## cspell
+
+code spell 插件可以帮助你解决 单词拼读错误问题
+## format on save 设置
+
+```json
+"editor.formatOnSave": true,
+"editor.formatOnSaveMode": "modifications",
+"editor.formatOnType": true,
+"editor.formatOnPaste": true,
+```
+## ruff 代替 black flake8
+[[ruff]]
+## save on delay 和 auto format on save 同时启用的方法
+https://marketplace.visualstudio.com/items?itemName=BdSoftware.format-on-auto-save
+
+不过这个会带来保存速度变慢的问题
+
+
+## vscode watcher file 占用大量内存
+
+![[Pasted image 20231103151938.png]]
+
 ## 层级折叠
 
 ctrl k / ctrl [0-9] 即可
@@ -13,7 +36,7 @@ ctrl k / ctrl [0-9] 即可
 - vscode开启面包屑
     - 搜索:  breadcrumbs.enabled  开启即可
 - 官方文档（包含了详细完整的介绍、相关配置，推荐）
-    - [](https://code.visualstudio.com/docs/editor/editingevolved#_breadcrumbs)
+    - [ Code Navigation in Visual Studio Code](https://code.visualstudio.com/docs/editor/editingevolved#_breadcrumbs)
 - 面包屑相关快捷键
     - Ctrl+shift+. 或者 ctrl shif + ; 
     - 两个快捷键效果有区别，一个是打开当前，一个是在面包屑的树层级上跳转
@@ -28,7 +51,7 @@ ctrl k / ctrl [0-9] 即可
         - ctrl + enter 在新的页面中打开
         - ctrl left 和 right 可以左右跳转（且无视当前层级，默认的 left 和 right 限制在当前文件）
     - 如果你想替换成 vim 的导航方式，可以添加如下快捷键
-        - 来源: [](https://github.com/Microsoft/vscode/issues/58930#58930%20·%20microsoft/vscode%20·%20GitHub](https://github.com/Microsoft/vscode/issues/58930#58930%20·%20microsoft/vscode%20·%20GitHub](https://github.com/Microsoft/vscode/issues/58930#58930%20·%20microsoft/vscode%20·%20GitHub](https://github.com/Microsoft/vscode/issues/58930#58930%20·%20microsoft/vscode%20·%20GitHub](https://github.com/Microsoft/vscode/issues/58930#58930%20·%20microsoft/vscode%20·%20GitHub](https://github.com/Microsoft/vscode/issues/58930#58930%20·%20microsoft/vscode%20·%20GitHub](https://github.com/Microsoft/vscode/issues/58930#58930%20·%20microsoft/vscode%20·%20GitHub](https://github.com/Microsoft/vscode/issues/58930#58930%20·%20microsoft/vscode%20·%20GitHub](https://github.com/Microsoft/vscode/issues/58930#issuecomment-422671191)
+        - 来源: [ Breadcrumbs keyboard navigation shortcuts · Issue #58930 · microsoft/vscode · GitHub](https://github.com/Microsoft/vscode/issues/58930#issuecomment-422671191)
         - ctrl p 搜索 key binding
         - 或者 ctrl shift p 搜索 shortcut（用户部分）
 ```json
@@ -65,8 +88,12 @@ ctrl k / ctrl [0-9] 即可
 - 新终端快捷键 （ 1.56 版本起）
     - ctrl shift 5 切分窗口
     - alt 上下键 切换 terminal Pane
+        - Mac 中： cmd + option + 左右切换左右终端
+    - shift ctrl + \`  新建终端
+    - cmd + ctrl + 左右调整页面
+    - cmd 上下键 在同一个 terminal 的命令行之间跳转
     - Move to previous terminal - Ctrl+PageUp (macOS Cmd+Shift+])
-    - Move to next terminal - Ctrl+PageDown (macOS Cmd+shift+[)
+    - Move to next terminal - Ctrl+PageDown (macOS `Cmd+shift+[`)
     - Focus terminal tabs view - Ctrl+Shift+\ (macOS Cmd+Shift+\) - Terminal tabs preview
 - 刷新当前文件（例如你在终端中修改了） ?→>revert file
 - ctrl +T 速度太慢的问题
@@ -75,7 +102,7 @@ ctrl k / ctrl [0-9] 即可
 - tmux 使用 code -r filename 打开文件的问题
     - [ code command not working in tmux in remote terminal · Issue #2763 · microsoft/vscode-remote-release · GitHub](https://github.com/microsoft/vscode-remote-release/issues/2763)
     - 里头有个很麻烦的解决方案，我没有去尝试...
-        - [](https://github.com/microsoft/vscode-remote-release/issues/2763#2763%20·%20microsoft/vscode-remote-release%20·%20GitHub](https://github.com/microsoft/vscode-remote-release/issues/2763#2763%20·%20microsoft/vscode-remote-release%20·%20GitHub](https://github.com/microsoft/vscode-remote-release/issues/2763#2763%20·%20microsoft/vscode-remote-release%20·%20GitHub](https://github.com/microsoft/vscode-remote-release/issues/2763#2763%20·%20microsoft/vscode-remote-release%20·%20GitHub](https://github.com/microsoft/vscode-remote-release/issues/2763#2763%20·%20microsoft/vscode-remote-release%20·%20GitHub](https://github.com/microsoft/vscode-remote-release/issues/2763#2763%20·%20microsoft/vscode-remote-release%20·%20GitHub](https://github.com/microsoft/vscode-remote-release/issues/2763#2763%20·%20microsoft/vscode-remote-release%20·%20GitHub](https://github.com/microsoft/vscode-remote-release/issues/2763#2763%20·%20microsoft/vscode-remote-release%20·%20GitHub](https://github.com/microsoft/vscode-remote-release/issues/2763#issuecomment-642979476)
+        - [ code command not working in tmux in remote terminal · Issue #2763 · microsoft/vscode-remote-release · GitHub](https://github.com/microsoft/vscode-remote-release/issues/2763#issuecomment-642979476)
     - 还是采用上述的方法解决了
         - 2021-6-22 : 但是使用 一段时间之后，出现了错误: Unable to connect to VS Code server.Error in request，不清楚为什么
             - 重新开一个终端就可以了>。
@@ -83,9 +110,6 @@ ctrl k / ctrl [0-9] 即可
             - 昨天尝试还可以的，今天就不行了
             - hmmm 把所有 tmux 关闭掉 重新开就可以。。。
     - 临时解决方法: 如无必要，不用tmux ...
-- TODO
-    - 多个侧边栏问题，不知道为什么vscode不支持...见：https://github.com/Microsoft/vscode/issues/26777
-    - vscode 不支持音频很蛋疼，例如无法播放远程文件夹的音频，无法在jupyter notebook中播放音频....
 - 字体问题
     - font famile
         - 原来的
@@ -275,7 +299,7 @@ Ctrl+P
     - 优点: 目前唯一一个可以全文搜索的，并且在下拉框中显示结果，但其实还不如 `ctrl shift F` 里头的正则表达式..
     - 缺点: 只能在git中检索, 没有即时搜索，每次都需要先确认
     - bug: 不支持正则表达式
-- [ripgrep](rg) (不是一个插件) ，只是很多插件中提到要先下载这个...
+- [[rg|ripgrep]] (不是一个插件) ，只是很多插件中提到要先下载这个...
     - `rg "get.{0,8}put"`
     
 有没有可能在 vscode-neovim 中安装 fzf 的插件呢? 貌似不行...
@@ -349,7 +373,7 @@ nmap k gk
         - ctrl shift 2/3/4 ?→toggle header
         - ctrl shift s ?→checkboxes
         - ctrl shift 7/8 ?→number / bullet list/points
-- [](https://code.visualstudio.com/docs/languages/markdown#_extending-the-markdown-preview)
+- [markdown preview theme 预览主题](https://code.visualstudio.com/docs/languages/markdown#_extending-the-markdown-preview)
 
 ## todo 功能
 我用alt + enter 来toggle checkbox (create/delete)
@@ -363,5 +387,3 @@ nmap k gk
 The OEM keys are the keys that vary with local keyboards. Where the US keyboard has brackets and braces, german keyboards have umlauts.
 
 They are called "OEM" because the Original Equipment Manufacturer (of the keyboard) was responsible for defining their functionality.
-
-测试更新

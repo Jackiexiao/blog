@@ -17,26 +17,28 @@ hero:
       text: 开始阅读
       link: /笔记/index
     - theme: alt
-      text: 加入 Discord 服务器
-      link: https://discord.gg/fnwTQRbX
+      text: 独立开发者手册(WIP)
+      link: /独立开发者手册/index
+    # - theme: alt
+    #   text: 加入 Discord 服务器
+    #   link: https://discord.gg/fnwTQRbX
     - theme: alt
       text: GitHub 上浏览
       link: https://github.com/jackiexiao/blog
 
 features:
-  - title: 独立开发
+  - title: 独立开发者手册
     details: 关于独立开发你所需要知道的一切(WIP)
     icon: 🌈
   - title: 语音AI算法
     details: 语音算法,资源,教程
     icon: 📃
-  - title: 极客范
+  - title: 程序员的日常
     details: 一堆好玩有用的效率工具,极客生活记录
     icon: 🚀
   - title: LessWrong
     details: 怀疑一切,从头构建关于世界的知识
     icon: 🗃
 ---
-# index
 
 <HomePage />
