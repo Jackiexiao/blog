@@ -1,16 +1,12 @@
->抛砖引玉，期待诸位不吝赐教（手机验证后可以直接编辑文档），为开源出一份力
 # 声明
 
-基于冬色 cnlinxi 的博客：[https://cnlinxi.github.io/blog/](https://cnlinxi.github.io/blog/) 新增了一些内容，具体可查看历史编辑记录，不用 github 一是编辑比较方便，二是容易插入多媒体数据
-
-# 更新日志
-
-2023-12-07：更新文本规范化部分，添加了一些例子；转载已获得原作者同意；
+> [!INFO]
+> 基于 [冬色的博客](https://cnlinxi.github.io/blog/) 修改而来
 
 # 推荐教程
 
-* [A book on “Neural Text-to-Speech Synthesis”, by Xu Tan has been published by Springe](https://link.springer.com/book/9789819908264)
-* [https://tts-tutorial.github.io/interspeech2022/](https://tts-tutorial.github.io/interspeech2022/)
+- [A book on “Neural Text-to-Speech Synthesis”, by Xu Tan has been published by Springe](https://link.springer.com/book/9789819908264)
+- [https://tts-tutorial.github.io/interspeech2022/](https://tts-tutorial.github.io/interspeech2022/)
 # 语音合成概述
 
 ## 背景和概述
@@ -121,7 +117,7 @@
 1. 数据筛选。由于被试有可能没有受到监督，因此需要对收集到的评分进行事后检查，如删除使用扬声器试听的评分。另外，为了控制个体因素对整体结果的影响，减少偏离整体数据的异常值，需要计算每个人的评分与总体得分序列的相关性，相关性的度量使用相关系数来实现，如果相关系数 r 大于 0.25，则保留；否则拒绝该被试的所有评分。相关系数 r 的计算方法如下：
 $$r=\frac{\mathop{cov}(\mu_{1n},...,\mu_{Mn};\mu_1,...,\mu_M)}{\sqrt{\mathop{var}(\mu_{1n},...,\mu_{Mn})}\cdot \sqrt{\mathop{var}(\mu_1,...,\mu_M)}} $$
 
-其中， $$M$$ 为句子数量， $$N$$ 为被试数量， $$\mu_{mn}$$ 为被试 $$n$$ 对句子 $$m$$ 给出的评分， $$1\leq m\leq M$$ ， $$1\leq n\leq N$$ ， $$\mu_m=1/N\sum_{n=1}^N\mu_{mn}$$ 为句子 $$m$$ 的总体平均分， $$\mathop{cov}$$ 为协方差， $$\mathop{var}$$ 为方差。
+其中， $M$ 为句子数量， $N$ 为被试数量， $\mu_{mn}$ 为被试 $n$ 对句子 $m$ 给出的评分， $1\leq m\leq M$ ， $1\leq n\leq N$ ， $\mu_m=1/N\sum_{n=1}^N\mu_{mn}$ 为句子 $m$ 的总体平均分， $\mathop{cov}$ 为协方差， $\mathop{var}$ 为方差。
 
 # 语言学
 
@@ -236,7 +232,7 @@ IPA 的字母构成会随着规范的修改而变动，2018 年发布的标准�
 
 检查文本和录制的语音是否一一对应，录制的音频本身一句话是否能量渐弱，参与训练的语音前后静音段要保持一致，能量要进行规范化。可使用预训练的语音活动检测（Voice Activity Detection，VAD）工具，或者直接根据语音起止的电平值确定前后静音段。可以使用一些开源的工具，比如[ pyloudnorm ](https://github.com/csteinmetz1/pyloudnorm)统一所有语音的整体能量，这将有助于声学模型的收敛。当然，在声学模型模型训练时，首先就要对所有语料计算均值方差，进行统一的规范化，但是这里最好实现统一能量水平，防止一句话前后能量不一致。能量规整的示例代码如下。
 
-```plain
+```python
 def normalize_wav(wav_path, sample_rate, target_loudness=-24.0)
     y, sr = librosa.load(YOUR_WAV_PATH, sr=SAMPLE_RATE)
     meter = pyln.Meter(sr)  # create BS.1770 meter
@@ -519,11 +515,11 @@ TN的难点在于一词多义: 数字，标点符号等在不同上下文中表�
 
 ### 短时能量
 
-短时能量体现的是信号在不同时刻的强弱程度。设第n帧语音信号的短时能量用 $$E_n$$ 表示，则其计算公式为：
+短时能量体现的是信号在不同时刻的强弱程度。设第n帧语音信号的短时能量用 $E_n$ 表示，则其计算公式为：
 
 $$E_n=\sum_{m=0}^{M-1}x_n^2(m)$$
 
-上式中， $$M$$ 为帧长， $$x_n(m)$$ 为该帧中的样本点。
+上式中， $M$ 为帧长， $x_n(m)$ 为该帧中的样本点。
 
 ### 声强和声强级
 
@@ -553,7 +549,7 @@ $$SIL=10{\rm log}(\frac{I}{I'})$$
 
 $$Z_n=\sum_{n=0}^{N-1}\sum_{m=0}^{M-1}|{\rm sgn}(x_n(m))-{\rm sgn}(x_n(m-1))|$$
 
-其中，$N$ 表示帧数， $$M$$ 表示每一帧中的样本点个数， $${\rm sgn()}$$ 为符号函数，即
+其中，$N$ 表示帧数， $M$ 表示每一帧中的样本点个数， ${\rm sgn()}$ 为符号函数，即
 
 $${\rm sgn}=\left\{\begin{matrix} & 1,x \geq 0 \\ & -1,x<0 \end{matrix}\right.$$
 
@@ -563,7 +559,7 @@ $${\rm sgn}=\left\{\begin{matrix} & 1,x \geq 0 \\ & -1,x<0 \end{matrix}\right.$$
 
 ### 基频和基音周期
 
-基音周期反映了声门相邻两次开闭之间的时间间隔，基频（fundamental frequency，f0/F0）则是基音周期的倒数，对应着声带振动的频率，代表声音的音高，声带振动越快，基频越高。它是语音激励源的一个重要特征，比如可以通过基频区分性别。一般来说，成年男性基频在100 $$\sim$$ 250Hz左右，成年女性基频在150 $$\sim$$ 350Hz左右，女声的音高一般比男声稍高。
+基音周期反映了声门相邻两次开闭之间的时间间隔，基频（fundamental frequency，f0/F0）则是基音周期的倒数，对应着声带振动的频率，代表声音的音高，声带振动越快，基频越高。它是语音激励源的一个重要特征，比如可以通过基频区分性别。一般来说，成年男性基频在100 $\sim$ 250Hz左右，成年女性基频在150 $\sim$ 350Hz左右，女声的音高一般比男声稍高。
 
 如下图所示，蓝色箭头指向的明亮横线对应频率就是基频，决定音高；而绿框中的明亮横线统称为谐波。谐波是基频对应的整数次频率成分，由声带发声带动空气共振形成的，对应着声音三要素的音色。谐波的位置，相邻的距离共同形成了音色特征。谐波之间距离近听起来则偏厚粗，之间距离远听起来偏清澈。在男声变女声的时候，除了基频的移动，还需要调整谐波间的包络，距离等，否则将会丢失音色信息。
 
@@ -633,7 +629,7 @@ $${\rm sgn}=\left\{\begin{matrix} & 1,x \geq 0 \\ & -1,x<0 \end{matrix}\right.$$
 >"利用同态处理方法，对语音信号求离散傅里叶变换之后取对数，再求反变换就可以得到倒谱系数。其中，LPC倒谱（LPCCEP）是建立在LPC谱上的，而梅尔倒谱系数（Mel Frequency Cepstrum Coefficient，MFCC）则是基于梅尔频谱的。"
 1. LPCC。LPCC特征假定信号存在一种线性预测的结构，这对于周期特性的浊音描述比较准确，而对于辅音则相当于强加了一种错误的结构。MFCC相邻帧特征近乎独立，所以能够比较好地描述辅音，但忽略了信号可能的内在结构，如相邻帧之间的关联，经验表明MFCC更好用，并且经常会加入差分特征以减弱其独立性。
 >"线性预测倒谱系数（LPCC）是根据声管模型建立的特征参数，是对声道响应的特征表征。梅尔频谱倒谱系数（MFCC）是基于人类听觉机理提取出的特征参数，是对人耳听觉的特征表征。"
-对于一段1秒的波形，假设采样率16kHz，采样位深16bit，则包含样本点 $$1\times 16000=16000 $$ 个，所占容量 $$1\times 16000\times 16 /8=32000 $$字节（B）。
+对于一段1秒的波形，假设采样率16kHz，采样位深16bit，则包含样本点 $1\times 16000=16000 $ 个，所占容量 $1\times 16000\times 16 /8=32000 $字节（B）。
 
 # 语音特征提取
 
@@ -647,17 +643,17 @@ $${\rm sgn}=\left\{\begin{matrix} & 1,x \geq 0 \\ & -1,x<0 \end{matrix}\right.$$
 
 语音经过说话人的口唇辐射发出，受到唇端辐射抑制，高频能量明显降低。一般来说，当语音信号的频率提高两倍时，其功率谱的幅度下降约6dB，即语音信号的高频部分受到的抑制影响较大。在进行语音信号的分析和处理时，可采用预加重（pre-emphasis）的方法补偿语音信号高频部分的振幅，在傅里叶变换操作中避免数值问题，本质是施加高通滤波器。假设输入信号第
 
-$$n$$ 个采样点为 $$x[n]$$ ，则预加重公式如下：
+$$n$ 个采样点为 $x[n]$ ，则预加重公式如下：  
 
-$$x'[n]=x[n]-a\times x[n-1]$$
+$$ x'[n]=x[n]-a\times x[n-1] $$
 
-其中， $$a$$ 是预加重系数，一般取 $$a=0.97$$ 或 $$a=0.95$$ 。
+其中， $a$ 是预加重系数，一般取 $a=0.97$ 或 $a=0.95$ 。
 
 ### 分帧
 
-语音信号是非平稳信号，考虑到发浊音时声带有规律振动，即基音频率在短时范围内时相对固定的，因此可以认为语音信号具有短时平稳特性，一般认为10ms~50ms的语音信号片段是一个准稳态过程。短时分析采用分帧方式，一般每帧帧长为20ms或50ms。假设语音采样率为16kHz，帧长为20ms，则一帧有 $$16000\times 0.02=320$$ 个样本点。
+语音信号是非平稳信号，考虑到发浊音时声带有规律振动，即基音频率在短时范围内时相对固定的，因此可以认为语音信号具有短时平稳特性，一般认为10ms~50ms的语音信号片段是一个准稳态过程。短时分析采用分帧方式，一般每帧帧长为20ms或50ms。假设语音采样率为16kHz，帧长为20ms，则一帧有 $16000\times 0.02=320$ 个样本点。
 
-相邻两帧之间的基音有可能发生变化，如两个音节之间，或者声母向韵母过渡。为确保声学特征参数的平滑性，一般采用重叠取帧的方式，即相邻帧之间存在重叠部分。一般来说，帧长和帧移的比例为 $$1:4$$ 或 $$1:5$$ 。
+相邻两帧之间的基音有可能发生变化，如两个音节之间，或者声母向韵母过渡。为确保声学特征参数的平滑性，一般采用重叠取帧的方式，即相邻帧之间存在重叠部分。一般来说，帧长和帧移的比例为 $1:4$ 或 $1:5$ 。
 
 ### 加窗
 
@@ -667,13 +663,13 @@ $$x'[n]=x[n]-a\times x[n-1]$$
 
 $$W_{ham}[n]=0.54-0.46\mathop{cos}(\frac{2\pi n}{N}-1)$$
 
-其中， $$0\leq n\leq N-1$$ ， $$N$$ 是窗的长度。
+其中， $0\leq n\leq N-1$ ， $N$ 是窗的长度。
 
 汉宁窗的窗函数为：
 
 $$W_{han}[n]=0.5[1-\mathop{cos}(\frac{2\pi n}{N}-1)]$$
 
-其中， $$0\leq n\leq N-1$$ ， $$N$$ 是窗的长度。
+其中， $0\leq n\leq N-1$ ， $N$ 是窗的长度。
 
 ## 短时傅里叶变换
 
@@ -689,11 +685,11 @@ $$\int_{-\infty}^{+\infty}e^{j\alpha t}e^{-j\beta t}dt=0,\quad if\ \alpha\neq \b
 
 基于正弦函数的正交性，通过相关处理可以从语音信号分离出对应不同频率的正弦信号。对于离散采样的语音信号，可以采用离散傅里叶变换（DFT）。DFT的第
 
-$$k$$ 个点计算如下：
+$$k$ 个点计算如下：
 
 $$X[k]=\sum_{n=0}^{N-1} x[n]e^{-\frac{j2\pi kn}{K}},\quad k=0,1,...,K-1$$
 
-其中， $$x[n]$$ 是时域波形第 $$n$$ 个采样点值， $$X[k]$$ 是第 $$k$$ 个傅里叶频谱值， $$N$$ 是采样点序列的点数， $$K$$ 是频谱系数的点数，且 $$K\geq N$$ 。利用DFT获得的频谱值通常是复数形式，这是因为上式中，
+其中， $x[n]$ 是时域波形第 $n$ 个采样点值， $X[k]$ 是第 $k$ 个傅里叶频谱值， $N$ 是采样点序列的点数， $K$ 是频谱系数的点数，且 $K\geq N$ 。利用DFT获得的频谱值通常是复数形式，这是因为上式中，
 
 $$e^{-\frac{j2\pi kn}{K}}=\mathop{cos}(\frac{2\pi kn}{K})-j\mathop{sin}(\frac{2\pi kn}{K})$$
 
@@ -707,11 +703,11 @@ $$X_{real}[k]=\sum_{n=0}^{N-1}x[n]\mathop{cos}(\frac{2\pi kn}{K})$$
 
 $$X_{imag}[k]=\sum_{n=0}^{N-1}x[n]\mathop{sin}(\frac{2\pi kn}{K})$$
 
-$$N$$ 个采样点序列组成的时域信号经过DFT之后，对应 $$K$$ 个频率点。经DFT变换得到信号的频谱表示，其频谱幅值和相位随着频率变化而变化。
+$$N$ 个采样点序列组成的时域信号经过DFT之后，对应 $K$ 个频率点。经DFT变换得到信号的频谱表示，其频谱幅值和相位随着频率变化而变化。  
 
 在语音信号处理中主要关注信号的频谱幅值，也称为振幅频谱/振幅谱：
 
-$$X_{magnitude}[k]=\sqrt{X_{real}[k]^2+X_{imag}[k]^2}$$
+$$ X_{magnitude}[k]=\sqrt{X_{real}[k]^2+X_{imag}[k]^2} $$
 
 能量频谱/能量谱是振幅频谱的平方：
 
@@ -723,11 +719,11 @@ $$X_{power}[k]=X_{real}[k]^2+X_{imag}[k]^2$$
 
 $$x[n]=\frac{1}{K}\sum_{k=0}^{K-1}X[k]e^{\frac{j2\pi kn}{N}},\quad n=0,1,...,N-1$$
 
-离散傅里叶变换（DFT）的计算复杂度为 $O(N^2)$，可以采用快速傅里叶变换（FFT），简化计算复杂度，在 $$O(N\mathop{log}_2 N)$$ 的时间内计算出DFT。在实际应用中，对语音信号进行分帧加窗处理，将其分割成一帧帧的离散序列，可视为短时傅里叶变换（STFT）：
+离散傅里叶变换（DFT）的计算复杂度为 $O(N^2)$，可以采用快速傅里叶变换（FFT），简化计算复杂度，在 $O(N\mathop{log}_2 N)$ 的时间内计算出DFT。在实际应用中，对语音信号进行分帧加窗处理，将其分割成一帧帧的离散序列，可视为短时傅里叶变换（STFT）：
 
 $$X[k,l]=\sum_{n=0}^{N-1} x_l[n]e^{-\frac{j2\pi nk}{K}}=\sum_{n=0}^{N-1} w[n]x[n+lL]e^{-\frac{j2\pi nk}{K}}$$
 
-其中， $$K$$ 是DFT后的频率点个数， $$k$$ 是频率索引， $$0\leq k< K$$ 。 $$X[k,l]$$ 建立起索引为 $$lL$$ 的时域信号，与索引为 $$k$$ 的频域信号之间的关系。
+其中， $K$ 是DFT后的频率点个数， $k$ 是频率索引， $0\leq k< K$ 。 $X[k,l]$ 建立起索引为 $lL$ 的时域信号，与索引为 $k$ 的频域信号之间的关系。
 
 ## 听觉特性
 
@@ -741,7 +737,7 @@ $$X[k,l]=\sum_{n=0}^{N-1} x_l[n]e^{-\frac{j2\pi nk}{K}}=\sum_{n=0}^{N-1} w[n]x[n
 
 $$mel(f)=2595\mathop{lg}(1+\frac{f}{700})$$
 
-```plain
+```python
 from matplotlib import pyplot as plt
 import numpy as np
 x = np.linspace(0, 5000, 50000)
@@ -772,19 +768,19 @@ $$f_{mel}^{-1}=700\cdot (10^{\frac{f_{mel}}{2595}}-1)$$
 
 人耳对响度的感知有一个范围，当声音低于某个响度时，人耳是无法感知到的，这个响度值称为听觉阈值，或称听阈。在实际环境中，但一个较强信号（掩蔽音）存在时，听阈就不等于安静时的阈值，而是有所提高。这意味着，邻近频率的两个声音信号，弱响度的声音信号会被强响度的声音信号所掩蔽（Mask），这就是`频域掩蔽`。
 
-根据听觉频域分辨率和频域掩蔽的特点，定义能够引起听觉主观变化的频率带宽为一个`临界频带`。一个临界频带的宽度被称为一个Bark，Bark频率 $$Z(f)$$ 和线性频率 $$f$$ 的对应关系定义如下：
+根据听觉频域分辨率和频域掩蔽的特点，定义能够引起听觉主观变化的频率带宽为一个`临界频带`。一个临界频带的宽度被称为一个Bark，Bark频率 $Z(f)$ 和线性频率 $f$ 的对应关系定义如下：
 
 $$Z(f)=6\mathop{ln}(\frac{f}{600}+((\frac{f}{600})^2+1)^{\frac{1}{2}})$$
 
-其中，线性频率 $$f$$ 的单位为Hz，临界频带 $$Z(f)$$ 的单位为Bark。
+其中，线性频率 $f$ 的单位为Hz，临界频带 $Z(f)$ 的单位为Bark。
 
 ## 倒谱分析
 
-语音信号的产生模型包括发生源（Source）和滤波器（Filter）。人在发声时，肺部空气受到挤压形成气流，气流通过声门（声带）振动产生声门源激励 $$e[n]$$ 。对于浊音，激励 $$e[n]$$ 是以基音周期重复的单位冲激；对于清音， $$e[n]$$ 是平稳白噪声。该激励信号 $$e[n]$$ 经过咽喉、口腔形成声道的共振和调制，特别是舌头能够改变声道的容积，从而改变发音，形成不同频率的声音。气流、声门可以等效为一个激励源，声道等效为一个时变滤波器，语音信号 $$x[n]$$ 可以被看成激励信号 $$e[n]$$ 与时变滤波器的单位响应 $$v[n]$$ 的卷积：
+语音信号的产生模型包括发生源（Source）和滤波器（Filter）。人在发声时，肺部空气受到挤压形成气流，气流通过声门（声带）振动产生声门源激励 $e[n]$ 。对于浊音，激励 $e[n]$ 是以基音周期重复的单位冲激；对于清音， $e[n]$ 是平稳白噪声。该激励信号 $e[n]$ 经过咽喉、口腔形成声道的共振和调制，特别是舌头能够改变声道的容积，从而改变发音，形成不同频率的声音。气流、声门可以等效为一个激励源，声道等效为一个时变滤波器，语音信号 $x[n]$ 可以被看成激励信号 $e[n]$ 与时变滤波器的单位响应 $v[n]$ 的卷积：
 
 $$x[n]=e[n]*v[n]$$
 
-已知语音信号 $$x[n]$$ ，待求出上式中参与卷积的各个信号分量，也就是解卷积处理。除了线性预测方法外，还可以采用`倒谱分析`实现解卷积处理。倒谱分析，又称为`同态滤波`，采用时频变换，得到对数功率谱，再进行逆变换，分析出倒谱域的倒谱系数。
+已知语音信号 $x[n]$ ，待求出上式中参与卷积的各个信号分量，也就是解卷积处理。除了线性预测方法外，还可以采用`倒谱分析`实现解卷积处理。倒谱分析，又称为`同态滤波`，采用时频变换，得到对数功率谱，再进行逆变换，分析出倒谱域的倒谱系数。
 
 同态滤波的处理过程如下：
 
@@ -801,9 +797,9 @@ $$Z^{-1}(\hat{X}[z])=Z^{-1}(\hat{E}[z]+\hat{V}[z])=\hat{e}[n]+\hat{v}[z]\approx 
 
 $$\hat{c}[m]=\sum_{k=1}^N{\rm log}X[k]{\rm cos}(\frac{\pi (k-0.5)m}{N}),\quad m=1,2,...,M$$
 
-其中，$X[k]$是DFT变换系数， $$N$$ 是DFT系数的个数， $$M$$ 是DCT变换的个数。
+其中，$X[k]$是DFT变换系数， $N$ 是DFT系数的个数， $M$ 是DCT变换的个数。
 
-此时， $$\hat{x}[n]$$ 是复倒谱信号，可采用逆运算，恢复出语音信号，但DCT不可逆，从倒谱信号 $$\hat{c}[m]$$ 不可还原出语音 $$x[n]$$ 。
+此时， $\hat{x}[n]$ 是复倒谱信号，可采用逆运算，恢复出语音信号，但DCT不可逆，从倒谱信号 $\hat{c}[m]$ 不可还原出语音 $x[n]$ 。
 
 ## 常见的声学特征
 
@@ -818,7 +814,7 @@ $$\hat{c}[m]=\sum_{k=1}^N{\rm log}X[k]{\rm cos}(\frac{\pi (k-0.5)m}{N}),\quad m=
 FBank的特征提取过程如下：
 
 1. 将信号进行预加重、分帧、加窗，然后进行短时傅里叶变换（STFT）获得对应的`频谱`。
-2. 求频谱的平方，即`能量谱`。进行梅尔滤波，即将每个滤波频带内的能量进行叠加，第 $$k$$ 个滤波器输出功率谱为 $$X[k]$$ 。
+2. 求频谱的平方，即`能量谱`。进行梅尔滤波，即将每个滤波频带内的能量进行叠加，第 $k$ 个滤波器输出功率谱为 $X[k]$ 。
 3. 将每个滤波器的输出取对数，得到相应频带的对数功率谱。
 $$Y_{\rm FBank}[k]={\rm log}X[k]$$
 
@@ -826,13 +822,13 @@ FBank特征本质上是对数功率谱，包括低频和高频信息。相比于
 
 ### MFCC
 
-MFCC和FBank唯一的不同就在于，获得FBank特征之后，再经过反离散余弦变换，就得到 $$L$$ 个MFCC系数。在实际操作中，得到的 $$L$$ 个MFCC特征值可以作为`静态特征`，再对这些静态特征做一阶和二阶差分，得到相应的静态特征。
+MFCC和FBank唯一的不同就在于，获得FBank特征之后，再经过反离散余弦变换，就得到 $L$ 个MFCC系数。在实际操作中，得到的 $L$ 个MFCC特征值可以作为`静态特征`，再对这些静态特征做一阶和二阶差分，得到相应的静态特征。
 
 ## 具体操作
 
 ### 利用librosa读取音频
 
-```plain
+```python
 from matplotlib import pyplot as plt
 import numpy as np
 import librosa
@@ -861,7 +857,7 @@ plt.show()
 ```
 ![](assets/image17.png)
 
-音频有不同的编码类型，librosa默认采取浮点格式读取，即读取的样本点均是 $$[-1,-1]$$ 之间的浮点值。更详细的文档参见[SoX](http://sox.sourceforge.net/sox.html)的`Input & Output File Format Options`部分。
+音频有不同的编码类型，librosa默认采取浮点格式读取，即读取的样本点均是 $[-1,-1]$ 之间的浮点值。更详细的文档参见[SoX](http://sox.sourceforge.net/sox.html)的`Input & Output File Format Options`部分。
 
 |选项|描述|常见可选项|
 |:----|:----|:----|
@@ -873,7 +869,7 @@ plt.show()
 
 ### 提取梅尔频谱
 
-```plain
+```python
 sample_rate = 16000
 preemphasis = 0.97
 n_fft = 1024
@@ -914,7 +910,7 @@ plot_spectrogram(mel_spec, 'mel_spectrogram.png')
 
 ### 提取MFCC
 
-```plain
+```python
 from scipy.fftpack import dct
 num_ceps = 12  # MFCC阶数，可选值2~13
 mfcc = dct(mel_spec, type=2, axis=1, norm='ortho')[:, 1 : (num_ceps + 1)]
@@ -932,7 +928,7 @@ plot_spectrogram(mfcc, 'mfcc_lift.png')
 
 在语音合成中，类似于深度学习其它领域，输入数据要进行均值方差归一化，使得数据量纲一致并遵循一定分布，避免模型梯度爆炸，降低学习难度：
 
-```plain
+```python
 frame_num = mel_spec.shape[0]
 cep_sum = np.sum(mel_spec, axis=0)
 cep_squ_sum = np.sum(np.square(mel_spec), axis=0)
@@ -966,11 +962,11 @@ Tacotron-2 的声学模型部分采用典型的序列到序列结构。编码器
 
 $$score(s_{i-1},h_j)=v_a^T{\rm tanh}(Ws_{i-1}+Vh_j+Uf_{i,j}+b)$$
 
-其中， $v_a，W，V，U$为待训练参数， $$b$$ 是偏置值， $$s_{i-1}$$ 为上一时间步 $$i-1$$ 的解码器隐状态， $$h_j$$ 为当前时间步 $$j$$ 的编码器隐状态， $$f_{i,j}$$ 为上一个解码步的注意力权重 $$\alpha_{i-1}$$ 经卷积获得的位置特征，如下式：
+其中， $v_a，W，V，U$为待训练参数， $b$ 是偏置值， $s_{i-1}$ 为上一时间步 $i-1$ 的解码器隐状态， $h_j$ 为当前时间步 $j$ 的编码器隐状态， $f_{i,j}$ 为上一个解码步的注意力权重 $\alpha_{i-1}$ 经卷积获得的位置特征，如下式：
 
 $$f_{i,j}=F*\alpha_{i-1}$$
 
-其中， $$\alpha_{i-1}$$ 是经过 softmax 的注意力权重的累加和。位置敏感注意力机制不但综合了内容方面的信息，而且关注了位置特征。解码过程从输入上一解码步或者真实音频的频谱进入解码器预处理网络开始，到线性映射输出该时间步上的频谱帧结束，模型的解码过程如下图所示。
+其中， $\alpha_{i-1}$ 是经过 softmax 的注意力权重的累加和。位置敏感注意力机制不但综合了内容方面的信息，而且关注了位置特征。解码过程从输入上一解码步或者真实音频的频谱进入解码器预处理网络开始，到线性映射输出该时间步上的频谱帧结束，模型的解码过程如下图所示。
 
 ![](assets/image23.png)
 
@@ -978,7 +974,7 @@ $$f_{i,j}=F*\alpha_{i-1}$$
 
 $$s_{final}=s_i+s_i'$$
 
-其中， $$s_i$$ 是解码器输出， $$s_{final}$$ 表示最终输出的梅尔频谱， $$s_i'$$ 是后处理网络的输出，解码器的输出经过后处理网络之后获得 $$s_i'$$ 。
+其中， $s_i$ 是解码器输出， $s_{final}$ 表示最终输出的梅尔频谱， $s_i'$ 是后处理网络的输出，解码器的输出经过后处理网络之后获得 $s_i'$ 。
 
 在 Tacotron-2 原始论文中，直接将梅尔频谱送入声码器 WaveNet 生成最终的时域波形。但是 WaveNet 计算复杂度过高，几乎无法实际使用，因此可以使用其它声码器，比如 Griffin-Lim、HiFiGAN 等。
 
@@ -989,24 +985,24 @@ Tacotron2 的损失函数主要包括以下 4 个方面：
 1. 进入后处理网络前后的平方损失。
 $${\rm MelLoss}=\frac{1}{n}\sum_{i=1}^n(y_{real,i}^{mel}-y_{before,i}^{mel})^2+\frac{1}{n}\sum_{i=1}^n(y_{real,i}^{mel}-y_{after,i}^{mel})^2$$
 
-其中， $$y_{real,i}^{mel}$$ 表示从音频中提取的真实频谱，$y_{before，i}^{mel}，y_{after，i}^{mel}$
+其中， $y_{real,i}^{mel}$ 表示从音频中提取的真实频谱，$y_{before，i}^{mel}，y_{after，i}^{mel}$$
 
-分别为进入后处理网络前、后的解码器输出， $$n$$ 为每批的样本数。
+分别为进入后处理网络前、后的解码器输出， $n$ 为每批的样本数。
 
 1. 从 CBHG 模块中输出线性谱的平方损失。
 $${\rm LinearLoss}=\frac{1}{n}\sum_{i=1}^{n}(y_{real,i}^{linear}-y_{i}^{linear})^2$$
 
-其中， $$y_{real,i}^{linear}$$ 是从真实语音中计算获得的线性谱，$y_{i}^{linear}$ 是从 CBHG 模块输出的线性谱。
+其中， $y_{real,i}^{linear}$ 是从真实语音中计算获得的线性谱，$y_{i}^{linear}$ 是从 CBHG 模块输出的线性谱。
 
 1. 停止符交叉熵
 $${\rm StopTokenLoss}=-[y\cdot {\rm log}(p)+(1-y)\cdot {\rm log}(1-p)]$$
 
-其中， $$y$$ 为停止符真实概率分布， $$p$$ 是解码器线性映射输出的预测分布。
+其中， $y$ 为停止符真实概率分布， $p$ 是解码器线性映射输出的预测分布。
 
 1. L2 正则化
 $${\rm RegulationLoss}=\frac{1}{K}\sum_{k=1}^K w_k^2$$
 
-其中， $$K$$ 为参数总数， $$w_k$$ 为模型中的参数，这里排除偏置值、RNN 以及线性映射中的参数。最终的损失函数为上述 4 个部分的损失之和，如下式：
+其中， $K$ 为参数总数， $w_k$ 为模型中的参数，这里排除偏置值、RNN 以及线性映射中的参数。最终的损失函数为上述 4 个部分的损失之和，如下式：
 
 $${\rm Loss}={\rm MelLoss}+{\rm LinearLoss}+{\rm StopTokenLoss}+{\rm RegulationLoss}$$
 
@@ -1030,7 +1026,7 @@ FastSpeech 2 和上代 FastSpeech 的编解码器均是采用 FFT（feed-forward
 
 在对时长、基频和能量单独建模时，所使用的网络结构实际是相似的，在论文中称这种语音属性建模网络为变量适配器（Variance Adaptor）。时长预测的输出也作为基频和能量预测的输入。最后，基频预测和能量预测的输出，以及依靠时长信息展开的编码器输入元素加起来，作为下游网络的输入。变量适配器主要是由 2 层卷积和 1 层线性映射层组成，每层卷积后加 ReLU 激活、LayerNorm 和 Dropout。代码摘抄自[FastSpeech2]（[https://github.com/ming024/FastSpeech2)](https://github.com/ming024/FastSpeech2))，添加了一些注释。
 
-```plain
+```python
 class VariancePredictor(nn.Module):
     """ Duration, Pitch and Energy Predictor """
     def __init__(self):
@@ -1070,7 +1066,7 @@ class VariancePredictor(nn.Module):
         return out
 ```
 利用该变量适配器对时长、基频和能量进行建模。
-```plain
+```python
 class VarianceAdaptor(nn.Module):
     """ Variance Adaptor """
     def __init__(self):
@@ -1119,7 +1115,7 @@ class VarianceAdaptor(nn.Module):
         return x, log_duration_prediction, pitch_prediction, energy_prediction, mel_len, mel_mask
 ```
 同样是通过长度调节器（Length Regulator），利用时长信息将编码器输出长度扩展到频谱长度。具体实现就是根据 duration 的具体值，直接上采样。一个音素时长为 2，就将编码器输出复制 2 份，给 3 就直接复制 3 份，拼接之后作为最终的输出。实现代码：
-```plain
+```python
 class LengthRegulator(nn.Module):
     """ Length Regulator """
     def __init__(self):
@@ -1159,7 +1155,7 @@ class LengthRegulator(nn.Module):
         return output, mel_len
 ```
 对于音高和能量的预测，模块的主干网络相似，但使用方法有所不同。以音高为例，能量的使用方式相似。首先对预测出的实数域音高值进行分桶，映射为一定范围内的自然数集，然后做嵌入。
-```plain
+```python
 pitch_prediction = self.pitch_predictor(x, mel_mask)
 if pitch_target is not None:
     pitch_embedding = self.pitch_embedding(
@@ -1174,13 +1170,13 @@ else:
 
 ### 损失函数
 
-FastSpeech 2 的目标函数由 PostNet 前后的频谱均方差，时长、音高和能量的均方差组成。时长映射到指数域（时长预测器输出的数值 $$x$$ 作为指数，最终的预测时长为 $$e^x$$ ），音高映射到对数域（音高预测器输出的数值 $$x$$ 做对数，作为最终的音高 $${\rm log} x$$ ），而能量直接采用能量预测器的输出值。整体的损失函数为：
+FastSpeech 2 的目标函数由 PostNet 前后的频谱均方差，时长、音高和能量的均方差组成。时长映射到指数域（时长预测器输出的数值 $x$ 作为指数，最终的预测时长为 $e^x$ ），音高映射到对数域（音高预测器输出的数值 $x$ 做对数，作为最终的音高 ${\rm log} x$ ），而能量直接采用能量预测器的输出值。整体的损失函数为：
 
 $${\rm Loss}={\rm Loss}_{mel}+{\rm Loss}_{mel}^{post}+{\rm Loss}_{duration}+{\rm Loss}_{pitch}+{\rm Loss}_{energy}$$
 
 频谱的损失函数形式采用均方差（MSE），时长、基频和能量采用平均绝对误差（MAE），具体的实现如下：
 
-```plain
+```python
 log_d_target.requires_grad = False
 p_target.requires_grad = False
 e_target.requires_grad = False
@@ -1217,10 +1213,10 @@ VITS（Variational Inference with adversarial learning for end-to-end Text-to-Sp
 
 VITS 包括三个部分：
 
-1. 后验编码器。如上图（a）的左下部分所示，在训练时输入线性谱，输出隐变量 $$z$$ ，推断时隐变量 $$z$$ 则由 $$f_\theta$$ 产生。VITS 的后验编码器采用 WaveGlow 和 Glow-TTS 中的非因果 WaveNet 残差模块。应用于多人模型时，将说话人嵌入向量添加进残差模块，`仅用于训练`。这里的隐变量 $$z$$ 可以理解为 Tacotron / FastSpeech 中的梅尔频谱。
-2. 解码器。如上图（a）左上部分所示，解码器从提取的隐变量 $$z$$ 中生成语音波形，这个解码器实际就是声码器 HiFi-GAN V1 的生成器。应用于多人模型时，在说话人嵌入向量之后添加一个线性层，拼接到 $$f_\theta$$ 的输出隐变量 $$z$$ 。
-3. 先验编码器。如上图（a）右侧部分所示，先验编码器结构比较复杂，作用类似于 Tacotron / FastSpeech 的声学模型，只不过 VITS 是将音素映射为中间表示 $$z$$ ，而不是将音素映射为频谱。包括文本编码器和提升先验分布复杂度的标准化流 $$f_\theta$$ 。应用于多人模型时，向标准化流的残差模块中添加说话人嵌入向量。
-4. 随机时长预测器。如上图（a）右侧中间橙色部分。从条件输入 $$h_{text}$$ 估算音素时长的分布。应用于多人模型时，在说话人嵌入向量之后添加一个线性层，并将其拼接到文本编码器的输出 $$h_{text}$$ 。
+1. 后验编码器。如上图（a）的左下部分所示，在训练时输入线性谱，输出隐变量 $z$ ，推断时隐变量 $z$ 则由 $f_\theta$ 产生。VITS 的后验编码器采用 WaveGlow 和 Glow-TTS 中的非因果 WaveNet 残差模块。应用于多人模型时，将说话人嵌入向量添加进残差模块，`仅用于训练`。这里的隐变量 $z$ 可以理解为 Tacotron / FastSpeech 中的梅尔频谱。
+2. 解码器。如上图（a）左上部分所示，解码器从提取的隐变量 $z$ 中生成语音波形，这个解码器实际就是声码器 HiFi-GAN V1 的生成器。应用于多人模型时，在说话人嵌入向量之后添加一个线性层，拼接到 $f_\theta$ 的输出隐变量 $z$ 。
+3. 先验编码器。如上图（a）右侧部分所示，先验编码器结构比较复杂，作用类似于 Tacotron / FastSpeech 的声学模型，只不过 VITS 是将音素映射为中间表示 $z$ ，而不是将音素映射为频谱。包括文本编码器和提升先验分布复杂度的标准化流 $f_\theta$ 。应用于多人模型时，向标准化流的残差模块中添加说话人嵌入向量。
+4. 随机时长预测器。如上图（a）右侧中间橙色部分。从条件输入 $h_{text}$ 估算音素时长的分布。应用于多人模型时，在说话人嵌入向量之后添加一个线性层，并将其拼接到文本编码器的输出 $h_{text}$ 。
 5. 判别器。实际就是 HiFi-GAN 的多周期判别器，在上图中未画出，`仅用于训练`。目前看来，对于任意语音合成模型，加入判别器辅助都可以显著提升表现。
 ### 变分推断
 
@@ -1231,22 +1227,22 @@ VITS 在训练时实际还是会生成梅尔频谱以指导模型的训练，重
 
 $${\rm L}_{recon}=||x_{mel}-\hat{x}_{mel}||_1$$
 
-但在推断时并不需要生成梅尔频谱。在实现上，不上采样整个隐变量 $$z$$ ，而只是使用部分序列作为解码器的输入。
+但在推断时并不需要生成梅尔频谱。在实现上，不上采样整个隐变量 $z$ ，而只是使用部分序列作为解码器的输入。
 
 1. KL 散度
-先验编码器 $$c$$ 的输入包括从文本生成的音素 $$c_{text}$$ ，和音素、隐变量之间的对齐 $$A$$ 。所谓的对齐就是 $$|c_{text}|\times |z|$$ 大小的严格单调注意力矩阵，表示每一个音素的发音时长。因此 KL 散度是：
+先验编码器 $c$ 的输入包括从文本生成的音素 $c_{text}$ ，和音素、隐变量之间的对齐 $A$ 。所谓的对齐就是 $|c_{text}|\times |z|$ 大小的严格单调注意力矩阵，表示每一个音素的发音时长。因此 KL 散度是：
 
 $${\rm L}_{kl}={\rm log}q_{\phi}(z|x_{lin})-{\rm log}p_\theta (z|c_{text},A)$$
 
-其中， $$q_{\phi}(z|x_{lin})$$ 表示给定输入 $$x$$ 的后验分布，$p_\theta（z|c）$ 表示给定条件 $$c$$ 的隐变量 $$z$$ 的先验分布。其中隐变量 $$z$$ 为：
+其中， $q_{\phi}(z|x_{lin})$ 表示给定输入 $x$ 的后验分布，$p_\theta（z|c）$ 表示给定条件 $c$ 的隐变量 $z$ 的先验分布。其中隐变量 $z$ 为：
 
 $$z\sim q_\phi(z|x_{lin})=\mathbb{N}(z;\mu_\phi(x_{lin}),\sigma_\phi(x_{lin}))$$
 
-为了给后验编码器提供更高分辨率的信息，使用线性谱而非梅尔频谱作为后验编码器 $$\phi_\theta$$ 的输入。同时，为了生成更加逼真的样本，提高先验分布的表达能力比较重要，因此引入标准化流，在文本编码器产生的简单分布和复杂分布间进行可逆变换。也就是说，在经过上采样的编码器输出之后，加入一系列可逆变换：
+为了给后验编码器提供更高分辨率的信息，使用线性谱而非梅尔频谱作为后验编码器 $\phi_\theta$ 的输入。同时，为了生成更加逼真的样本，提高先验分布的表达能力比较重要，因此引入标准化流，在文本编码器产生的简单分布和复杂分布间进行可逆变换。也就是说，在经过上采样的编码器输出之后，加入一系列可逆变换：
 
 $$p_\theta(z|c)=\mathbb{N}(f_\theta(z);\mu_\theta(c),\sigma_\theta(c))|{\rm det}\frac{\partial f_\theta(z)}{\partial z}|$$
 
-其中，上式中的 $$c$$ 就是上采样的编码器输出：
+其中，上式中的 $c$ 就是上采样的编码器输出：
 
 $$c=[c_{text},A]$$
 
@@ -1255,11 +1251,11 @@ $$c=[c_{text},A]$$
 由于在训练时没有对齐的真实标签，因此在训练的每一次迭代时都需要估计对齐。
 
 1. 单调对齐搜索
-为了估计文本和语音之间的对齐 $$A$$ ，VITS 采用了类似于 Glow-TTS 中的单调对齐搜索（Monotonic Alignment Search，MAS）方法，该方法寻找一个最优的对齐路径以最大化利用标准化流 $$f$$ 参数化数据的对数似然：
+为了估计文本和语音之间的对齐 $A$ ，VITS 采用了类似于 Glow-TTS 中的单调对齐搜索（Monotonic Alignment Search，MAS）方法，该方法寻找一个最优的对齐路径以最大化利用标准化流 $f$ 参数化数据的对数似然：
 
 $$A=\underset{\hat{A}}{\rm argmax}{\rm log}p(x|c_{text},\hat{A})=\underset{\hat{A}}{\rm argmax}{\rm log}\mathbb{N}(f(x);\mu(c_{text},\hat{A}),\sigma(c_{text},\hat{A}))$$
 
-MAS 约束获得的最优对齐必须是单调且无跳过的。但是无法直接将 MAS 直接应用到 VITS，因为 VITS 优化目标是 ELBO 而非确定的隐变量 $$z$$ 的对数似然，因此稍微改变了一下 MAS，寻找最优的对齐路径以最大化 ELBO：
+MAS 约束获得的最优对齐必须是单调且无跳过的。但是无法直接将 MAS 直接应用到 VITS，因为 VITS 优化目标是 ELBO 而非确定的隐变量 $z$ 的对数似然，因此稍微改变了一下 MAS，寻找最优的对齐路径以最大化 ELBO：
 
 $$\underset{\hat{A}}{\rm argmax}{\rm log}p_\theta (x_{mel}|z)-{\rm log}\frac{q_\theta(z|x_{lin})}{p_\theta (z|c_{text},\hat{A})}$$
 
@@ -1272,7 +1268,7 @@ $${\rm log}p_\theta (d|c_{text}\geq \mathbb{E}_{q_\theta (u,v|d,c_{text})}[{\rm 
 
 ### 对抗训练
 
-引入判别器 $$D$$ 判断输出是解码器 $$G$$ 的输出，还是真实的波形 $$y$$ 。VITS 用于对抗训练的损失函数包括两个部分，第一部分是用于对抗训练的最小二乘损失函数（least-squares loss function）：
+引入判别器 $D$ 判断输出是解码器 $G$ 的输出，还是真实的波形 $y$ 。VITS 用于对抗训练的损失函数包括两个部分，第一部分是用于对抗训练的最小二乘损失函数（least-squares loss function）：
 
 $${\rm L}_{adv}(D)=\mathbb{E}_{(y,z)}[(D(y)-1)^2+(D(G(z)))^2]$$
 
@@ -1282,7 +1278,7 @@ $${\rm L}_{adv}(G)=\mathbb{E}_z[(D(G(z))-1)^2]$$
 
 $${\rm L}_{fm}(G)=\mathbb{E}_{(y,c)}[\sum_{l=1}^T\frac{1}{N_l}||D^l(y)-D^l(G(z))||_1]$$
 
-其中， $$T$$ 表示判别器的层数， $$D^l$$ 表示第 $$l$$ 层判别器的特征图（feature map）， $$N_l$$ 表示特征图的数量。特征匹配损失可以看作是重建损失，用于约束判别器中间层的输出。
+其中， $T$ 表示判别器的层数， $D^l$ 表示第 $l$ 层判别器的特征图（feature map）， $N_l$ 表示特征图的数量。特征匹配损失可以看作是重建损失，用于约束判别器中间层的输出。
 
 ### 总体损失
 
@@ -1330,7 +1326,7 @@ Griffin-Lim 在已知幅度谱，不知道相位谱的情况下重建语音，�
 
 摘抄自[ Build End-To-End TTS Tacotron: Griffin Lim 信号估计算法](https://zhuanlan.zhihu.com/p/25002923)。
 
-```plain
+```python
 def griffin_lim(stftm_matrix, shape, min_iter=20, max_iter=50, delta=20):
     y = np.random.random(shape)
     y_iter = []
@@ -1344,7 +1340,7 @@ def griffin_lim(stftm_matrix, shape, min_iter=20, max_iter=50, delta=20):
     return y_iter
 ```
 具体使用：
-```plain
+```python
 # assume 1 channel wav file
 sr, data = scipy.io.wavfile.read(input_wav_path)
 # 由 STFT -> STFT magnitude
@@ -1447,7 +1443,7 @@ TANDEM-STRAIGHT 直接使用周期响应计算声带的振动，而 Legacy-STRAI
 
 WORLD 声码器有较为成熟的[开源实现](https://github.com/mmorise/World)，并且有对应的 Python 封装：[PyWORLD: A Python wrapper of WORLD Vocoder](https://github.com/JeremyCCHsu/Python-Wrapper-for-World-Vocoder)，另有[官方实现](http://ml.cs.yamanashi.ac.jp/world/english)。以下示例包括了通过 PyWorld 提取声学参数，合成原始音频，修改部分声学参数，编辑原始音频。
 
-```plain
+```python
 import pyworld as pw
 from scipy.io import wavfile
 import matplotlib.pyplot as plt
@@ -1554,26 +1550,30 @@ NHV 论文地址：[Neural Homomorphic Vocoder](https://www.isca-speech.org/arch
 
 ![](assets/image36.png)
 
-源-滤波器示意图如上图所示， $${e[n]}$$ 表示源（source）， $$h[n]$$ 为滤波器， $$s[n]$$ 则是重建的样本点。在 NHV 中，神经网络负责建模源-滤波器模型中的线性时变（Linear Time-Varying，LTV）滤波器。类似于谐波噪音加性模型（Harmonic plus Noise model），NHV 分别生成谐波和噪音成分。谐波部分，主要是通过线性时变脉冲串（LTV filtered impulse trains）建模发音部分的周期性振动；噪音部分，包括背景噪音、不发音成分、以及发音部分中的随机成分，通过线性时变滤波噪音建模。将原始的语音信号 $$x$$ 和重建信号 $$s$$ 切分为若干个帧长 $$L$$ 的不重叠帧， $$m$$ 为帧索引， $$n$$ 为样本点索引， $$c$$ 为特征索引，因此总帧数和总样本点数满足：
+源-滤波器示意图如上图所示， ${e[n]}$ 表示源（source）， $h[n]$ 为滤波器， $s[n]$ 则是重建的样本点。在 NHV 中，神经网络负责建模源-滤波器模型中的线性时变（Linear Time-Varying，LTV）滤波器。类似于谐波噪音加性模型（Harmonic plus Noise model），NHV 分别生成谐波和噪音成分。谐波部分，主要是通过线性时变脉冲串（LTV filtered impulse trains）建模发音部分的周期性振动；噪音部分，包括背景噪音、不发音成分、以及发音部分中的随机成分，通过线性时变滤波噪音建模。将原始的语音信号 $x$ 和重建信号 $s$ 切分为若干个帧长 $L$ 的不重叠帧， $m$ 为帧索引， $n$ 为样本点索引， $c$ 为特征索引，因此总帧数和总样本点数满足：
 
 $$N=M\times L$$
 
-上式中， $$N$$ 表示样本点总数， $$M$$ 表示不重叠帧帧数， $$L$$ 表示每个帧中的样本点个数。
+上式中， $N$ 表示样本点总数， $M$ 表示不重叠帧帧数， $L$ 表示每个帧中的样本点个数。
 
-脉冲响应 $$h$$ 是因果的，谐波脉冲响应 $$h_h$$ 和噪音脉冲响应 $$h_n$$ 无限长， $$n\in \mathbb{Z}$$ 。
+脉冲响应 $h$ 是因果的，谐波脉冲响应 $h_h$ 和噪音脉冲响应 $h_n$ 无限长， $n\in \mathbb{Z}$ 。
 
 ![](assets/image37.png)
 
-NHV 的语音生成过程如上图所示，首先通过帧级别基频 $$f_0[m]$$ 生成脉冲串 $$p[n]$$ ，从高斯分布中采样得到噪音信号 $$u[n]$$ ；接着神经网络利用对数域梅尔谱 $$S[m,c]$$ 估计出每一帧的谐波脉冲响应 $$h_h[m,n]$$ 和噪音脉冲响应 $$h_n[m,n]$$ ；接着脉冲串 $$p[n]$$ 和噪音信号 $$u[n]$$ 通过 LTV 线性时变滤波器获得谐波成分 $$s_h[n]$$ 和噪音成分 $$s_n[n]$$ ；最后， $$s_h[n]$$ 和 $$s_n[n]$$ 加起来，并通过可训练的因果有限冲激响应滤波器 $$h[n]$$ 滤波，获得最终的语音样本点 $$s[n]$$ 。
+NHV 的语音生成过程如上图所示，首先通过帧级别基频 $f_0[m]$ 生成脉冲串 $p[n]$ ，从高斯分布中采样得到噪音信号 $u[n]$ ；接着神经网络利用对数域梅尔谱 $S[m,c]$ 估计出每一帧的谐波脉冲响应 $h_h[m,n]$ 和噪音脉冲响应 $h_n[m,n]$ ；接着脉冲串 $p[n]$ 和噪音信号 $u[n]$ 通过 LTV 线性时变滤波器获得谐波成分 $s_h[n]$ 和噪音成分 $s_n[n]$ ；最后， $s_h[n]$ 和 $s_n[n]$ 加起来，并通过可训练的因果有限冲激响应滤波器 $h[n]$ 滤波，获得最终的语音样本点 $s[n]$ 。
 
 
 ### 脉冲串生成器
 
 利用低通正弦波的和生成脉冲串：
 
-$$p(t)=\left\{\begin{array}{l} \sum_{k=1}^{2kf_0(t)0 \\ 0,\quad if\ f_0(t)=0 \end{array}\right.$$
+$$p(t)=\left\{\begin{array}{l}
+    \sum_{k=1}^{2kf_0(t)<f_s}{\rm cos}(\int_{0}^{t}2\pi k f_0(\tau){\rm d}\tau),\quad if\ f_0(t)>0 \\ 
+    0,\quad if\ f_0(t)=0
+   \end{array}\right.$$
 
-其中，通过 zero-order hold 或者线性插值从 $$f_0[m]$$ 中重建 $$f_0(t)$$ ，且 $$p[n]=p(n/f_s)$$ ， $$f_s$$ 为采样率。
+
+其中，通过 zero-order hold 或者线性插值从 $f_0[m]$ 中重建 $f_0(t)$ ，且 $p[n]=p(n/f_s)$ ， $f_s$ 为采样率。
 
 由于加性生成时，根据采样率和帧移需要加和 200 个正弦函数，计算量较大，因此可以采用近似算法：将基频周期四舍五入到采样周期的倍数，此时离散脉冲序列是稀疏的，然后可以按顺序生成，一次生成一个音高。
 
@@ -1581,7 +1581,7 @@ $$p(t)=\left\{\begin{array}{l} \sum_{k=1}^{2kf_0(t)0 \\ 0,\quad if\ f_0(t)=0 \en
 
 ![](assets/image38.png)
 
-使用复数谱 $$\hat{h}_h$$ 和 $$\hat{h}_n$$ 作为冲激响应 $$h_h$$ 和 $$h_n$$ 的中间表示，复数谱同时描述了幅度响应和滤波器的组延迟（group delay），滤波器的组延迟会影响语音的音色。不同于使用线性相位或最小相位滤波器，NHV 使用符合相位滤波器，从数据中学习相位特性。限制复倒谱的长度相当于限制幅度和相位响应的分辨率，这提供了控制滤波器复杂性的简单方法------神经网络只预测低频带系数，高频带谱系数设置为零。实验中，每帧预测两个 10ms 复数谱。实现上，无限冲激响应 IIR，比如 $$h_h[m,n]$$ 和 $$h_n[m,n]$$ 通过有限冲激响应 FIR 近似，离散傅里叶变换的窗长必须足够大，以避免混叠现象，实验中窗长设置为 $$N=1024$$ 。
+使用复数谱 $\hat{h}_h$ 和 $\hat{h}_n$ 作为冲激响应 $h_h$ 和 $h_n$ 的中间表示，复数谱同时描述了幅度响应和滤波器的组延迟（group delay），滤波器的组延迟会影响语音的音色。不同于使用线性相位或最小相位滤波器，NHV 使用符合相位滤波器，从数据中学习相位特性。限制复倒谱的长度相当于限制幅度和相位响应的分辨率，这提供了控制滤波器复杂性的简单方法------神经网络只预测低频带系数，高频带谱系数设置为零。实验中，每帧预测两个 10ms 复数谱。实现上，无限冲激响应 IIR，比如 $h_h[m,n]$ 和 $h_n[m,n]$ 通过有限冲激响应 FIR 近似，离散傅里叶变换的窗长必须足够大，以避免混叠现象，实验中窗长设置为 $N=1024$ 。
 
 ### 线性时变（LTV）滤波器和可训练的有限冲激响应（FIRs）
 
@@ -1599,18 +1599,18 @@ $$y(n)=\sum_{k=0}^M b_k x(n-k)$$
 
 $$s_h[n]=\sum_{m=0}^{M}(w_L[n-mL]\cdot p[n])*h_h[m,n]$$
 
-卷积可以在时域和频域上应用，可训练的 FIR 滤波器 $$h[n]$$ 可以应用到语音生成的最后一步，谐波部分的卷积过程如下图所示。
+卷积可以在时域和频域上应用，可训练的 FIR 滤波器 $h[n]$ 可以应用到语音生成的最后一步，谐波部分的卷积过程如下图所示。
 
 ![](assets/image39.png)
 
 ### 神经网络的训练
 
 1. 多尺度 STFT 损失
-因为要求原始信号 $$x$$ 和重建信号 $$s$$ 的声门激励（Glottal Closure Instants，GCIs）完全对齐，因此在重建信号 $$x[n]$$ 和原始信号 $$s[n]$$ 之间无法施加点级损失，而多尺度 STFT 计算损失时允许信号间相位错位。类似于多子带 MelGAN，多尺度 STFT 损失定义为不同参数下原始和重建幅度谱之间的 L1 距离之和：
+因为要求原始信号 $x$ 和重建信号 $s$ 的声门激励（Glottal Closure Instants，GCIs）完全对齐，因此在重建信号 $x[n]$ 和原始信号 $s[n]$ 之间无法施加点级损失，而多尺度 STFT 计算损失时允许信号间相位错位。类似于多子带 MelGAN，多尺度 STFT 损失定义为不同参数下原始和重建幅度谱之间的 L1 距离之和：
 
 $${\rm L}_R=\frac{1}{C}\sum_{i=0}^{C-1}\frac{1}{K_i}(||X_i-S_i||_1+||{\rm log}X_i-{\rm log}S_i||_1)$$
 
-上式中， $$X_i$$ 和 $$S_i$$ 分别为原始信号 $$x$$ 和重建信号 $$s$$ 在参数 $$i$$ 设置下计算获得的幅度谱，每个幅度谱包括 $$K_i$$ 个值，共 $$C$$ 组 STFT 参数配置，组数越多，重建信号的混叠问题一般越少。
+上式中， $X_i$ 和 $S_i$ 分别为原始信号 $x$ 和重建信号 $s$ 在参数 $i$ 设置下计算获得的幅度谱，每个幅度谱包括 $K_i$ 个值，共 $C$ 组 STFT 参数配置，组数越多，重建信号的混叠问题一般越少。
 
 > Yang G, Yang S, Liu K, et al. Multi-band MelGAN: Faster waveform generation for high-quality text-to-speech\[C\]. 2021 IEEE Spoken Language Technology Workshop (SLT). IEEE, 2021: 492-498.
 
@@ -1621,7 +1621,7 @@ $${\rm L}_D=\mathbb{E}_{x,S}[{\rm max}(0,1-D(x,S))]+\mathbb{E}_{f_0,S}[{\rm max}
 
 $${\rm G}=\mathbb{E}_{f_0,S}[-D(G(f_0,S),S)]$$
 
-上式中， $$D(x,S)$$ 表示判别器网络， $$D$$ 输入原始信号 $$x$$ 或重建信号 $$s$$ ，以及真实 log 域梅尔频谱 $$S$$ ， $$f_0$$ 表示基频，生成器 $$G(f_0,S)$$ 输出重建信号 $$s$$ 。
+上式中， $D(x,S)$ 表示判别器网络， $D$ 输入原始信号 $x$ 或重建信号 $s$ ，以及真实 log 域梅尔频谱 $S$ ， $f_0$ 表示基频，生成器 $G(f_0,S)$ 输出重建信号 $s$ 。
 
 ### 小结
 
@@ -1645,14 +1645,14 @@ HiFiGAN 的生成器主要有两块，一个是上采样结构，具体由一维
 
 对于上采样操作，可以使用插值算法进行处理，比如最近邻插值（Nearest neighbor interpolation）、双线性插值（Bi-Linear interpolation）、双立方插值（Bi-Cubic interpolation）等，但是这些插值算法说到底是人工规则，而神经网络可以自动学习合适的变换，[转置卷积（ConvTransposed）](https://pytorch.org/docs/master/generated/torch.nn.ConvTranspose1d.html)，也称反卷积 Deconvolution、微步卷积 Fractionally-strided Convolution，则是合适的上采样结构。一般的卷积中，每次卷积操作都是对输入张量和卷积核的每个元素进行相乘再加和，卷积的输入和输出是`多对一`的映射关系，而转置卷积则反过来，是`一对多`的映射关系。从计算机的内部实现来看，定义：
 
-1. $$X$$ 为输入张量，大小为 $$X_{width}\times X_{height}$$
-2. $$Y$$ 为输出张量，大小为 $$Y_{width}\times Y_{height}$$
-3. $$C$$ 为卷积核，大小为 $$C_{width}\times C_{height}$$
-经过普通的卷积运算之后，将大张量 $$X$$ "下采样"到小张量 $$Y$$ 。具体来说，首先将输入张量展平为向量，也即是 $$[X_{width}\times X_{height},1]$$ ，同时也将卷积核展平成向量到输入张量 $$X$$ 的大小：由于卷积核小于输入张量，在行和列上都用 0 填充至输入张量大小，然后展平，则卷积核向量大小为 $$[1,X_{width}\times X_{height}]$$ ；同时按照步长，左侧填充 0 偏移该卷积核向量，最终，卷积核向量的个数为输出张量元素个数，则构成的卷积核张量大小为 $$[Y_{width}\times Y_{height},X_{width}\times X_{height}]$$ ，卷积核张量和输入张量矩阵乘，获得输出张量 $$[Y_{width}\times Y_{height},1]$$ ，重塑大小为 $$C_{width},C_{height}$$ 。
+1. $X$ 为输入张量，大小为 $X_{width}\times X_{height}$$
+2. $Y$ 为输出张量，大小为 $Y_{width}\times Y_{height}$$
+3. $C$ 为卷积核，大小为 $C_{width}\times C_{height}$$
+经过普通的卷积运算之后，将大张量 $X$ "下采样"到小张量 $Y$ 。具体来说，首先将输入张量展平为向量，也即是 $[X_{width}\times X_{height},1]$ ，同时也将卷积核展平成向量到输入张量 $X$ 的大小：由于卷积核小于输入张量，在行和列上都用 0 填充至输入张量大小，然后展平，则卷积核向量大小为 $[1,X_{width}\times X_{height}]$ ；同时按照步长，左侧填充 0 偏移该卷积核向量，最终，卷积核向量的个数为输出张量元素个数，则构成的卷积核张量大小为 $[Y_{width}\times Y_{height},X_{width}\times X_{height}]$ ，卷积核张量和输入张量矩阵乘，获得输出张量 $[Y_{width}\times Y_{height},1]$ ，重塑大小为 $C_{width},C_{height}$ 。
 
-此时，如果使用卷积核张量的转置 $$[X_{width}\times X_{height},Y_{width}\times Y_{height}]$$ 矩阵乘展平的 $$[Y_{width}\times Y_{height},1]$$ ，得到的结果就是 $$[X_{width}\times X_{height},1]$$ ，和刚刚的输入张量大小相同，这就完成了一次`转置卷积`。但实际上，上述操作并非可逆关系，卷积将输入张量"下采样"到输出张量，本质是有损压缩的过程，由于在卷积中使用的`卷积核张量`并非可逆矩阵，转置卷积操作之后并不能恢复到原始的数值，仅仅是恢复到原始的形状。这其实也就是线性谱与梅尔频谱关系，加权求和得到梅尔频谱之后就回不来了，顶多求梅尔滤波器组的伪逆，近似恢复到线性谱。
+此时，如果使用卷积核张量的转置 $[X_{width}\times X_{height},Y_{width}\times Y_{height}]$ 矩阵乘展平的 $[Y_{width}\times Y_{height},1]$ ，得到的结果就是 $[X_{width}\times X_{height},1]$ ，和刚刚的输入张量大小相同，这就完成了一次`转置卷积`。但实际上，上述操作并非可逆关系，卷积将输入张量"下采样"到输出张量，本质是有损压缩的过程，由于在卷积中使用的`卷积核张量`并非可逆矩阵，转置卷积操作之后并不能恢复到原始的数值，仅仅是恢复到原始的形状。这其实也就是线性谱与梅尔频谱关系，加权求和得到梅尔频谱之后就回不来了，顶多求梅尔滤波器组的伪逆，近似恢复到线性谱。
 
-此外，在使用转置卷积时需要注意棋盘效应（Checkboard artifacts）。棋盘效应主要是由于转置卷积的"不均匀重叠"（Uneven overlap）造成的，输出中每个像素接受的信息量与相邻像素不同，在输出上找不到连续且均匀重叠的区域，表现是图像中一些色块的颜色比周围色块要深，像棋盘上的方格，参见[ Deconvolution and Checkerboard Artifacts](https://distill.pub/2016/deconv-checkerboard)。避免棋盘效应的方法主要有：kernel_size 的大小尽可能被 stride 整除，尽可能使用 stride=1 的转置卷积；堆叠转置卷积减轻重叠；网络末尾使用 $$1\times 1$$ 的转置卷积等。
+此外，在使用转置卷积时需要注意棋盘效应（Checkboard artifacts）。棋盘效应主要是由于转置卷积的"不均匀重叠"（Uneven overlap）造成的，输出中每个像素接受的信息量与相邻像素不同，在输出上找不到连续且均匀重叠的区域，表现是图像中一些色块的颜色比周围色块要深，像棋盘上的方格，参见[ Deconvolution and Checkerboard Artifacts](https://distill.pub/2016/deconv-checkerboard)。避免棋盘效应的方法主要有：kernel_size 的大小尽可能被 stride 整除，尽可能使用 stride=1 的转置卷积；堆叠转置卷积减轻重叠；网络末尾使用 $1\times 1$ 的转置卷积等。
 
 通过上述的原理部分，可以看出卷积和转置卷积是对偶运算，输入变输出，输出变输入，卷积的输入输出大小关系为：
 
@@ -1675,7 +1675,7 @@ $$L_{out}=(L_{in}-1)\times stride+kernel\_size-2\times padding$$
 7. [Pytorch-Conv1d](https://pytorch.org/docs/master/generated/torch.nn.Conv1d.html)
 转置卷积实现的上采样层定义为：
 
-```plain
+```python
 self.ups = nn.ModuleList()
 for i, (u, k) in enumerate(zip(h.upsample_rates, h.upsample_kernel_sizes)):
     self.ups.append(weight_norm(ConvTranspose1d(h.upsample_initial_channel//(2**i), 
@@ -1697,7 +1697,7 @@ $$hop\_length=256=8\times 8\times 2\times 2$$
 
 转置卷积的上采样容易导致棋盘效应，因此每次转置卷积上采样之后，都会跟着一个多感受野融合（MRF）的残差网络，以进一步提升样本点的生成质量。多感受野融合模块是一种利用带洞卷积和普通卷积提高生成器感受野的结构，带洞卷积的扩张倍数逐步递增，如 dilation=1，3，5，每个带洞卷积之后，跟着卷积核大于 1 的普通卷积，从而实现带洞卷积和普通卷积的交替使用。带洞卷积和普通卷积的输入输出大小保持不变，在一轮带洞和普通卷积完成之后，原始输入跳连到卷积的结果，从而实现一轮"多感受野融合"。多感受野融合的具体实现上，论文中提出了两种参数量不同的残差网络。一种是参数量较多，多组带洞卷积（dilation=1，3，5）和普通卷积交替使用，HiFiGAN v1 （config_v1.json）和 HiFiGAN v2 （config_v2.json）均使用该种多感受野融合（MRF）模块。:
 
-```plain
+```python
 class ResBlock1(torch.nn.Module):
     def __init__(self, h, channels, kernel_size=3, dilation=(1, 3, 5)):
         super(ResBlock1, self).__init__()
@@ -1735,7 +1735,7 @@ class ResBlock1(torch.nn.Module):
             remove_weight_norm(l)
 ```
 另外一种 MRF 大大减少了参数量，仅由两层带洞卷积（dilation=1，3）组成，但依然保持了跳跃连接的结构：
-```plain
+```python
 class ResBlock2(torch.nn.Module):
     def __init__(self, h, channels, kernel_size=3, dilation=(1, 3)):
         super(ResBlock2, self).__init__()
@@ -1757,10 +1757,10 @@ class ResBlock2(torch.nn.Module):
         for l in self.convs:
             remove_weight_norm(l)
 ```
-注意到两种 MRF 都使用了 weight_norm 对神经网络的权重进行规范化，相比于 batch_norm，weight_norm 不依赖 mini-batch 的数据，对噪音数据更为鲁棒；并且，可以应用于 RNN 等时序网络上；此外，weight_norm 直接对神经网络的权重值进行规范化，前向和后向计算时，带来的额外计算和存储开销都较小。weight_norm 本质是利用方向 $$v$$ 和幅度张量 $$g$$ 替代权重张量 $$w$$ ：
+注意到两种 MRF 都使用了 weight_norm 对神经网络的权重进行规范化，相比于 batch_norm，weight_norm 不依赖 mini-batch 的数据，对噪音数据更为鲁棒；并且，可以应用于 RNN 等时序网络上；此外，weight_norm 直接对神经网络的权重值进行规范化，前向和后向计算时，带来的额外计算和存储开销都较小。weight_norm 本质是利用方向 $v$ 和幅度张量 $g$ 替代权重张量 $w$ ：
 $$w=g\frac{v}{||v||}$$
 
-方向张量 $$v$$ 和 $$w$$ 大小相同，幅度张量 $$g$$ 比 $$w$$ 少一维，使得 $$w$$ 能够比较容易地整体缩放。不直接优化 $$w$$ ，而是训练 $$v$$ 和 $$g$$ 。
+方向张量 $v$ 和 $w$ 大小相同，幅度张量 $g$ 比 $w$ 少一维，使得 $w$ 能够比较容易地整体缩放。不直接优化 $w$ ，而是训练 $v$ 和 $g$ 。
 
 同时注意到，在推理时需要 remove_weight_norm，这是因为训练时需要计算权重矩阵的方向和幅度张量，而在推理时，参数已经优化完成，要恢复回去，所以在推理时就直接移除 weight_norm 机制。
 
@@ -1776,7 +1776,7 @@ HiFiGAN 的判别器有两个，分别是多尺度和多周期判别器，从两
 
 多尺度判别器的核心是多次平均池化，缩短序列长度，每次序列长度池化至原来的一半，然后进行卷积。具体来说，多尺度判别器首先对原样本点进行一次"原尺寸判别"，其中"原尺寸判别"模块中一维卷积的参数规范化方法为谱归一化（spectral_norm）；接着对样本点序列进行平均池化，依次将序列长度减半，然后对"下采样"的样本点序列进行判别，该模块中一维卷积的参数规范化方法为权重归一化（weight_norm）。在每一个特定尺度的子判别器中，首先进行若干层分组卷积，并对卷积的参数进行规范化；接着利用 leaky_relu 进行激活；在经过多个卷积层之后，最后利用输出通道为 1 的卷积层进行后处理，展平后作为输出。
 
-```plain
+```python
 class MultiScaleDiscriminator(torch.nn.Module):
     def __init__(self):
         super(MultiScaleDiscriminator, self).__init__()
@@ -1806,8 +1806,8 @@ class MultiScaleDiscriminator(torch.nn.Module):
             fmap_gs.append(fmap_g)
         return y_d_rs, y_d_gs, fmap_rs, fmap_gs
 ```
-上述代码中 y_d_rs 和 y_d_gs 分别是真实和生成样本的多尺度判别器展平后的整体输出，fmap_rs 和 y_d_gs 分别是真实和生成样本经过每一层卷积的特征图（feature map）。子判别器 DiscriminatorS 由若干层卷积组成，最后一层输出通道为 1，之后对输出进行展平。注意到，与 MelGAN 不同，多尺度判别器的第一个子判别器 DiscriminatorS 使用谱归一化 spectral_norm，之后两个子判别器则是正常使用权重归一化 weight_norm 规整可训练参数。谱归一化实际是在每次更新完可训练参数 $$W$$ 之后，都除以 $$W$$ 的奇异值，以保证整个网络满足利普希茨连续性，使得 GAN 的训练更稳定。参见[ GAN 的谱归一化（Spectral Norm）和矩阵的奇异值分解（Singular Value Decompostion）](https://kaizhao.net/posts/spectral-norm)。DiscriminatorS 的具体实现如下：
-```plain
+上述代码中 y_d_rs 和 y_d_gs 分别是真实和生成样本的多尺度判别器展平后的整体输出，fmap_rs 和 y_d_gs 分别是真实和生成样本经过每一层卷积的特征图（feature map）。子判别器 DiscriminatorS 由若干层卷积组成，最后一层输出通道为 1，之后对输出进行展平。注意到，与 MelGAN 不同，多尺度判别器的第一个子判别器 DiscriminatorS 使用谱归一化 spectral_norm，之后两个子判别器则是正常使用权重归一化 weight_norm 规整可训练参数。谱归一化实际是在每次更新完可训练参数 $W$ 之后，都除以 $W$ 的奇异值，以保证整个网络满足利普希茨连续性，使得 GAN 的训练更稳定。参见[ GAN 的谱归一化（Spectral Norm）和矩阵的奇异值分解（Singular Value Decompostion）](https://kaizhao.net/posts/spectral-norm)。DiscriminatorS 的具体实现如下：
+```python
 class DiscriminatorS(torch.nn.Module):
     def __init__(self, use_spectral_norm=False):
         super(DiscriminatorS, self).__init__()
@@ -1840,7 +1840,7 @@ x 是子判别器展平后的整体输出，大小为[B，l]；fmap 是经过卷
 
 多周期判别器的重点是将一维样本点序列以一定周期折叠为二维平面，例如一维样本点序列[1，2，3，4，5，6]，如果以 3 为周期，折叠成二维平面则是[[1，2，3]，[4，5，6]]，然后对这个二维平面施加二维卷积。具体来说，每个特定周期的子判别器首先进行填充，保证样本点数是周期的整倍数，以方便"折叠"为二维平面；接下来进入多个卷积层，输出通道数分别为[32,128,512,1024]，卷积之后利用 leaky_relu 激活，卷积层参数规范化方法均为权重归一化（weight_norm）；然后经过多个卷积层之后，利用一个输入通道数为 1024，输出通道为 1 的卷积层进行后处理；最后展平，作为多周期判别器的最终输出。多周期判别器包含多个周期不同的子判别器，在论文代码中周期数分别设置为[2，3，5，7，11]。
 
-```plain
+```python
 class MultiPeriodDiscriminator(torch.nn.Module):
     def __init__(self):
         super(MultiPeriodDiscriminator, self).__init__()
@@ -1866,7 +1866,7 @@ class MultiPeriodDiscriminator(torch.nn.Module):
         return y_d_rs, y_d_gs, fmap_rs, fmap_gs
 ```
 上述代码中 y_d_rs 和 y_d_gs 分别是真实和生成样本的多周期判别器输出，fmap_rs 和 fmap_gs 分别是真实和生成样本经过每一层卷积后输出的特征图（feature map）。子判别器 DiscriminatorP 由若干层二维卷积组成：
-```plain
+```python
 class DiscriminatorP(torch.nn.Module):
     def __init__(self, period, kernel_size=5, stride=3, use_spectral_norm=False):
         super(DiscriminatorP, self).__init__()
@@ -1911,7 +1911,7 @@ $${\rm L}_{Adv}(D;G)=\mathbb{E}_{(x,s)}[(D(x)-1)^2+(D(G(s)))^2]$$
 
 对应的代码实现：
 
-```plain
+```python
 def discriminator_loss(disc_real_outputs, disc_generated_outputs):
     loss = 0
     r_losses = []
@@ -1927,11 +1927,11 @@ def discriminator_loss(disc_real_outputs, disc_generated_outputs):
 生成器的生成对抗损失定义为：
 $${\rm L}_{Adv}(G;D)=\mathbb{E}_{s}[(D(G(s))-1)^2]$$
 
-其中， $$x$$ 表示真实音频， $$s$$ 表示梅尔频谱。
+其中， $x$ 表示真实音频， $s$ 表示梅尔频谱。
 
 对应的生成器代码实现：
 
-```plain
+```python
 def generator_loss(disc_outputs):
     loss = 0
     gen_losses = []
@@ -1948,11 +1948,11 @@ def generator_loss(disc_outputs):
 
 $${\rm L}_{Mel}(G)=E_{(x,s)}[||\phi(x)-\phi(G(s))||_1]$$
 
-其中， $$\phi$$ 表示将语音转换为梅尔频谱的映射函数。
+其中， $\phi$ 表示将语音转换为梅尔频谱的映射函数。
 
 对应的损失函数实现：
 
-```plain
+```python
 loss_mel = F.l1_loss(y_mel, y_g_hat_mel)
 ```
 上述代码中，y_mel 表示真实语音对应的梅尔频谱，y_g_hat_mel 表示梅尔频谱合成语音之后，合成语音又转换回来得到的梅尔频谱。
@@ -1962,9 +1962,9 @@ loss_mel = F.l1_loss(y_mel, y_g_hat_mel)
 
 $${\rm L}_{FM}(G;D)=\mathbb{E}_{x,s}[\sum_{i=1}^T\frac{1}{N_i}||D^i(x)-D^i(G(s))||_1]$$
 
-其中， $$T$$ 表示判别器中特征提取层的层数， $$D^i$$ 表示提取的特征， $$N_i$$ 表示第 $$i$$ 层判别器网络提取的特征数量。对应的代码为：
+其中， $T$ 表示判别器中特征提取层的层数， $D^i$ 表示提取的特征， $N_i$ 表示第 $i$ 层判别器网络提取的特征数量。对应的代码为：
 
-```plain
+```python
 def feature_loss(fmap_r, fmap_g):
     loss = 0
     for dr, dg in zip(fmap_r, fmap_g):
@@ -1977,17 +1977,17 @@ def feature_loss(fmap_r, fmap_g):
 1. 生成器的整体损失为：
 $${\rm L}_G={\rm L}_{Adv}(G;D)+\lambda_{fm}{\rm L}_{FM}(G;D)+\lambda_{mel}{\rm L}_{Mel}(G)$$
 
-其中， $$\lambda_{fm}$$ 和 $$\lambda_{mel}$$ 分别为特征匹配和梅尔频谱损失的加权系数，实验中 $\lambda_{fm}=2，\lambda_{mel}=45$。
+其中， $\lambda_{fm}$ 和 $\lambda_{mel}$ 分别为特征匹配和梅尔频谱损失的加权系数，实验中 $\lambda_{fm}=2，\lambda_{mel}=45$。
 
 因为 HiFiGAN 的判别器是由多尺度判别器和多周期判别器组成，因此生成器的总体损失又可以写作：
 
 $${\rm L}_G=\sum_{k=1}^K[{\rm L}_{Adv}(G;D_k)+\lambda_{fm}{\rm L}_{FM}(G;D_k)]+\lambda_{mel}{\rm L}_{Mel}(G)$$
 
-其中， $$K$$ 为多尺度判别器和多周期判别器的个数， $$D_k$$ 表示第 $$k$$ 个 MPD 和 MSD 的子判别器。
+其中， $K$ 为多尺度判别器和多周期判别器的个数， $D_k$ 表示第 $k$ 个 MPD 和 MSD 的子判别器。
 
 对应的代码为：
 
-```plain
+```python
 # L1 Mel-Spectrogram Loss
 loss_mel = F.l1_loss(y_mel, y_g_hat_mel) * 45
 y_df_hat_r, y_df_hat_g, fmap_f_r, fmap_f_g = mpd(y, y_g_hat)
@@ -2005,11 +2005,11 @@ $${\rm L}_D={\rm L}_{Adv}(D;G)$$
 
 $${\rm L}_D=\sum_{k=1}^K{\rm L}_{Adv}(D_k;G)$$
 
-其中， $$K$$ 为多尺度判别器和多周期判别器的个数， $$D_k$$ 表示第 $$k$$ 个 MPD 和 MSD 的子判别器。
+其中， $K$ 为多尺度判别器和多周期判别器的个数， $D_k$ 表示第 $k$ 个 MPD 和 MSD 的子判别器。
 
 对应的代码为：
 
-```plain
+```python
 # MPD
 y_df_hat_r, y_df_hat_g, _, _ = mpd(y, y_g_hat.detach())
 loss_disc_f, losses_disc_f_r, losses_disc_f_g = discriminator_loss(y_df_hat_r, y_df_hat_g)

@@ -13,7 +13,7 @@ code spell 插件可以帮助你解决 单词拼读错误问题
 "editor.formatOnPaste": true,
 ```
 ## ruff 代替 black flake8
-[[ruff]]
+ruff
 ## save on delay 和 auto format on save 同时启用的方法
 https://marketplace.visualstudio.com/items?itemName=BdSoftware.format-on-auto-save
 
@@ -22,7 +22,7 @@ https://marketplace.visualstudio.com/items?itemName=BdSoftware.format-on-auto-sa
 
 ## vscode watcher file 占用大量内存
 
-![[Pasted image 20231103151938.png]]
+<!-- ![[Pasted image 20231103151938.png]] -->
 
 ## 层级折叠
 
@@ -299,7 +299,7 @@ Ctrl+P
     - 优点: 目前唯一一个可以全文搜索的，并且在下拉框中显示结果，但其实还不如 `ctrl shift F` 里头的正则表达式..
     - 缺点: 只能在git中检索, 没有即时搜索，每次都需要先确认
     - bug: 不支持正则表达式
-- [[rg|ripgrep]] (不是一个插件) ，只是很多插件中提到要先下载这个...
+- rg|ripgrep (不是一个插件) ，只是很多插件中提到要先下载这个...
     - `rg "get.{0,8}put"`
     
 有没有可能在 vscode-neovim 中安装 fzf 的插件呢? 貌似不行...
