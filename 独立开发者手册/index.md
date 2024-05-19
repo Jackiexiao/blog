@@ -1,7 +1,23 @@
+---
+title: 1.从这开始
+---
 
-# 独立开发者手册WIP
+# index
 > [!WARNING]
-> WIP: Work In Progress
+> WIP: Work In Progress 还在建设中
+> 在此之前, 推荐阅读类似的内容:
+
+### 独立开发者手册列表(随机排序)
+- https://wiki.decohack.com/
+- https://indiehacker.one/
+- [中文SideProject Guide](https://sideproject.guide/idea)
+- [《一人企业方法论》2.0 ](https://github.com/easychen/one-person-businesses-methodology-v2.0)
+- [程序员如何优雅地赚零花钱](https://github.com/easychen/howto-make-more-money)
+- [精益副业》](https://github.com/easychen/lean-side-bussiness)
+- [全栈开发路线图](https://learnku.com/articles/68565)
+- [程序员的第二曲线](https://symbol.iamkasong.com/)
+- [独立开发者出海之路](https://github.com/hua1995116/indiehackers-steps)
+- https://github.com/Decohack/Decohack-Wiki
 
 ## [[tl;dr]]
 

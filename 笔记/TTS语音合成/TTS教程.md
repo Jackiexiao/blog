@@ -1,4 +1,4 @@
-# 声明
+# TTS教程
 
 > [!INFO]
 > 基于 [冬色的博客](https://cnlinxi.github.io/blog/) 修改而来
