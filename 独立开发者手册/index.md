@@ -1,5 +1,8 @@
 ---
 title: 1.从这开始
+aliases:
+  - 独立开发者手册
+  - indie-book
 ---
 
 # index
@@ -19,7 +22,26 @@ title: 1.从这开始
 - [独立开发者出海之路](https://github.com/hua1995116/indiehackers-steps)
 - https://github.com/Decohack/Decohack-Wiki
 
+### 独立开发者工具合集
+https://github.com/weijunext/indie-hacker-tools
+
+### 模板
+
+shipfa.st => 不推荐
+superstarter => 推荐
+https://opensaas.sh/ => 免费, 基于 wasp 框架...
+
 ## [[tl;dr]]
+
+## 先开始做
+
+卡颂：和大家分享个个人感受 —— 我从副业到现在自由职业一直在做圈层生意，最开始没看过任何教程，全靠个人摸索做到副业超百万 等自由职业后想系统研究下，学了学运营、产品交付，发现咋这么复杂呢，越学越不敢动手做了 所以还是先做起来遇到卡点再针对性学比较好，自己瞎学纯纯的为了学而学
+
+## 关于手册
+
+这里很多都是转载（复制粘贴）过来的。只是为了帮助自己更好地整理笔记。
+
+建议读者阅读的时候，第一遍可以非常快速的浏览，有个大概印象就好。然后开始干，”先下场把手弄脏“， 需要什么再来学习什么
 
 ## what 独立开发是什么
 
