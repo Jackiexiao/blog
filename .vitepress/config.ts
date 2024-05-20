@@ -105,6 +105,18 @@ export default defineConfig({
         content: `${targetDomain}/og.png`,
       },
     ],
+    [
+      'script',
+      { async: '', src: 'https://www.googletagmanager.com/gtag/js?id=G-NG03TTB5MJ' },
+    ],
+    [
+      'script',
+      {},
+      `window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-NG03TTB5MJ');`,
+    ],
 
     [
       'link',
