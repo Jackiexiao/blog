@@ -10,6 +10,7 @@ aliases:
 > WIP: Work In Progress 还在建设中
 > 在此之前, 推荐阅读类似的内容:
 
+
 ### 独立开发者手册列表(随机排序)
 - https://wiki.decohack.com/
 - https://indiehacker.one/
@@ -29,7 +30,12 @@ https://github.com/weijunext/indie-hacker-tools
 
 shipfa.st => 不推荐
 superstarter => 推荐
-https://opensaas.sh/ => 免费, 基于 wasp 框架...
+https://opensaas.sh/ => 免费, but 基于 wasp 框架...
+
+### 独立开发者社群
+- https://solo.xin/ （似乎已不再活跃， 不推荐）
+- https://www.w2solo.com/
+
 
 ## [[tl;dr]]
 
@@ -58,3 +64,8 @@ https://opensaas.sh/ => 免费, 基于 wasp 框架...
 
 ## how
 我始终相信，精细化的分工，最直接的激励是能最大化生产效率的。专业的人&专业的工具干专业的事。所以本文档的目的并不是教会你事无巨细，所有事情都自己操心的“独立开发”，而且想帮助你找到你最热爱的事情（最热爱的事情终将会转化为你最擅长的事情），然后将其他事情外包给最专业的人，最专业的工具完成
+
+
+## todo
+- [ ] 整理个人笔记
+- [ ] 整理多个来源的 独立开发者笔记

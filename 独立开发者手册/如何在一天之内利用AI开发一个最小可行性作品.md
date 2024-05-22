@@ -10,3 +10,9 @@ chrome 网页翻译/总结工具： 豆包 / sidebar 插件
 PPT 工具： https://gamma.app/
 UI 设计工具：
 快速的客服能力: todo 
+
+AI 编程助手: 
+
+Github Copilot 19美刀元
+[通义灵码TONGYI Lingma](https://tongyi.aliyun.com/lingma/download) 
+[百度Comate](https://comate.baidu.com/zh]

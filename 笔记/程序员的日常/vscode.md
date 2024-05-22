@@ -19,14 +19,13 @@ https://marketplace.visualstudio.com/items?itemName=BdSoftware.format-on-auto-sa
 
 不过这个会带来保存速度变慢的问题
 
-
-## vscode watcher file 占用大量内存
-
-<!-- ![[Pasted image 20231103151938.png]] -->
-
 ## 层级折叠
 
-ctrl k / ctrl [0-9] 即可
+ctrl k / ctrl [0-9] 即可 折叠
+
+展开 ctrl k + ctrl j
+
+展开折叠当前 `option + cmd + [ / ] `
 
 
 ## 面包屑

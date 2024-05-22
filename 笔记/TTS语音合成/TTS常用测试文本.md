@@ -42,3 +42,15 @@ The musicians, decades apart in age and experience, have repeatedly battled one 
 
 We're going to be here to help the Gulf region get back on its feet as quickly as possible, as long as it takes,
 Actually这个proposal是非常creative的，但是这个schedule来得及吗？consumer 可以accept吗？我concern的点但在这个power point 都没有被 discuss到实在有点 pity！我比较prefer能够用比较 detail的approach来 present这个 topic。
+
+
+### 多字漏字测试
+一一一一一一一一一一
+啊啊啊啊啊啊啊啊啊啊
+
+### 基本读音覆盖测试
+123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ
+
+### 多音字
+人要是行，干一行，行一行。一行行，行行行；要是不行，干一行，不行一行。一行不行，行行不行。
+
