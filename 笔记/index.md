@@ -25,7 +25,7 @@ title: 从这开始
 ### 进行中的项目
 - [gennia.cn](https://gennia.cn): 一个开源的多人联机的即时战略小游戏
 - [hackathonweekly周周黑客马拉松](https://hackathonweekly.com): 线上线下的独立开发者聚会~ 欢迎一起搞事
-- [独立开发者手册-Working in Process](https://www.jackiexiao.com/%E7%8B%AC%E7%AB%8B%E5%BC%80%E5%8F%91%E8%80%85%E6%89%8B%E5%86%8C/)
+- [独立开发者手册](https://www.hackathonweekly.com/indie-handbook/getting-started.html)
 
 ### 未来希望能做的项目
 - lesswrong.ai : 基于 AI 从头构建一整套关于世界的理论体系，从基本公理或者各类假设出发，通过严谨地逻辑推理，一步步得到它们所能支持的结论。

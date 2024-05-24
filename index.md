@@ -16,9 +16,6 @@ hero:
     - theme: brand
       text: 开始阅读
       link: /笔记/index
-    - theme: alt
-      text: 独立开发者手册(WIP)
-      link: /独立开发者手册/index
     # - theme: alt
     #   text: 加入 Discord 服务器
     #   link: https://discord.gg/fnwTQRbX
@@ -27,9 +24,6 @@ hero:
       link: https://github.com/jackiexiao/blog
 
 features:
-  - title: 独立开发者手册
-    details: 关于独立开发你所需要知道的一切(WIP)
-    icon: 🌈
   - title: 语音AI算法
     details: 语音算法,资源,教程
     icon: 📃
