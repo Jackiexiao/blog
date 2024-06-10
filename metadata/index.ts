@@ -4,7 +4,7 @@ export const siteShortName = 'jackiexiao'
 export const siteDescription = 'jackie的博客'
 
 /** 文档所在目录 */
-export const include = ['笔记']
+export const include = ['笔记', 'build_in_public']
 
 /** Repo */
 export const githubRepoLink = 'https://github.com/jackiexiao/blog'

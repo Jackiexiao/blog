@@ -193,7 +193,7 @@ export default defineConfig({
 
           contentPart = content ||= src
 
-          const headingMatch = content.match(/^#{1} .*/m)
+          const headingMatch = content.match(/^# .*/m)
           const hasHeading = !!(headingMatch && headingMatch[0] && headingMatch.index !== undefined)
 
           if (hasHeading) {
@@ -220,6 +220,7 @@ export default defineConfig({
     nav: [
       { text: '主页', link: '/' },
       { text: '笔记', link: '/笔记/' },
+      { text: 'Build In Public', link: '/build_in_public/WeeklyRecord' },
       { text: '最近更新', link: '/toc' },
     ],
     // sidebar,
@@ -236,24 +237,24 @@ export default defineConfig({
         excludeFiles: ['c-css.md'],
         excludeFolders: ['隐藏'],
       },
-      // {
-      //   documentRootPath: '独立开发者手册',
-      //   // scanStartPath: null,
-      //   resolvePath: '/独立开发者手册/',
-      //   collapsed: true,
-      //   collapseDepth: 2,
-      //   // useFolderLinkFromIndexFile: 点击文件夹名称的时候,会跳转到文件夹下的 index 文件
-      //   // 如果你只想让你的文件夹名称只能展开或者关闭,而不是链接到什么地方,请不要用这个选项, 比如 vitepress 官网就是这样的
-      //   // useFolderLinkFromIndexFile: true,
-      //   includeRootIndexFile: true, // 包含根目录下的 index 文件, 默认显示为 index
-      //   useTitleFromFrontmatter: true, // 这样可以使用 frontmatter 中的 title 字段作为标题(而不是 index)
-      //   // 目前看来排序的最佳方案是这个, 不需要花很多精力维护.没有数字排序的会被自动隐藏. 另外文件夹名称中也要添加数字排序
-      //   // sortMenusOrderNumericallyFromTitle: true,
-      //   // prefixSeparator: '.',
-      //   // removePrefixAfterOrdering: true,
-      //   // excludeFiles: ['package.json.md', 'helpful-links.md'],
-      //   // excludeFolders: ['examples', 'vitepress-how-to'],
-      // },
+      {
+        documentRootPath: 'build_in_public',
+        // scanStartPath: null,
+        resolvePath: '/build_in_public/',
+        collapsed: true,
+        collapseDepth: 2,
+        // useFolderLinkFromIndexFile: 点击文件夹名称的时候,会跳转到文件夹下的 index 文件
+        // 如果你只想让你的文件夹名称只能展开或者关闭,而不是链接到什么地方,请不要用这个选项, 比如 vitepress 官网就是这样的
+        // useFolderLinkFromIndexFile: true,
+        includeRootIndexFile: false, // 包含根目录下的 index 文件, 默认显示为 index
+        useTitleFromFrontmatter: true, // 这样可以使用 frontmatter 中的 title 字段作为标题(而不是 index)
+        // 目前看来排序的最佳方案是这个, 不需要花很多精力维护.没有数字排序的会被自动隐藏. 另外文件夹名称中也要添加数字排序
+        // sortMenusOrderNumericallyFromTitle: true,
+        // prefixSeparator: '.',
+        // removePrefixAfterOrdering: true,
+        // excludeFiles: ['package.json.md', 'helpful-links.md'],
+        // excludeFolders: ['examples', 'vitepress-how-to'],
+      },
     ]),
   },
   markdown: {

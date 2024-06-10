@@ -24,16 +24,15 @@ hero:
       link: https://github.com/jackiexiao/blog
 
 features:
-  - title: 语音AI算法
-    details: 语音算法,资源,教程
+  - title: 独立开发blog
+    details: 记录独立开发的点点滴滴
     icon: 📃
   - title: 程序员的日常
     details: 一堆好玩有用的效率工具,极客生活记录
     icon: 🚀
-  - title: LessWrong
-    details: 怀疑一切,从头构建关于世界的知识
+  - title: 谈谈人生
+    details: 关于我对这个世界的看法
     icon: 🗃
 ---
-# index
 
 <HomePage />
