@@ -1,5 +1,7 @@
 # TTS常用测试文本
 
+英文测试文本建议使用这个
+https://techcommunity.microsoft.com/t5/ai-azure-ai-services-blog/9-more-realistic-ai-voices-for-conversations-now-generally/ba-p/4099471
 
 ### 自然度测试
 > 来源： 微软晓晓的演示文本

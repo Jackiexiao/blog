@@ -7,7 +7,7 @@ import fs from 'fs-extra'
 import fg from 'fast-glob'
 import Git from 'simple-git'
 import matter from 'gray-matter'
-import uniq from 'lodash/uniq'
+import uniq from 'lodash'
 import TagsAlias from '../.vitepress/docsTagsAlias.json'
 import type { ArticleTree, DocsMetadata, DocsTagsAlias, Tag } from './types/metadata'
 

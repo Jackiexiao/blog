@@ -42,7 +42,7 @@ aliases:
     - [github-publish](https://obsidian-github-publish.vercel.app)
 
 ### 1 优点
-- 比 [[#obsidian-github-publisher]] 多了很多可选项和配置主题
+- 比 obsidian-github-publisher 多了很多可选项和配置主题
 - 支持非常多[特性](https://dg-docs.ole.dev/features/)
 - 基本支持obsidian全部语法，甚至 `%% %%` 注释的内容也会删除
 
@@ -89,7 +89,7 @@ https://github.com/ObsidianPublisher/obsidian-github-publisher
 ### 3 具体教程
 
 最简单的方法还是通过 netlify 部署
-1. 点击[官方文档](https://obsidian-publisher.netlify.app/)中的 netlify deploy <a href="https://app.netlify.com/start/deploy?repository=https://github.com/ObsidianPublisher/publisher-template-netlify"><img src="https://www.netlify.com/img/deploy/button.svg"></a>，会得到一个网站，就是你未来的博客地址，对应生成了一个 github repo
+1. 点击[官方文档](https://obsidian-publisher.netlify.app/)中的 netlify deploy ，会得到一个网站，就是你未来的博客地址，对应生成了一个 github repo
 2. 在obsidian中安装 github publisher 插件
 3. 在插件 options 中设置一下内容
     1. github configuration > 填写所有信息，包括[token](https://github.com/settings/tokens) 仓库名等，仓库名就是前面 netlify deploy生成的
@@ -104,7 +104,7 @@ share: true
 6. 回到第一步生成的 github repo，修改里头的 `mkdocs.yaml` 以便添加你的网站名
 
 比如我修改后是这个样子（extra social 可以添加你的社交招呼，你可以根据自己的需要修改）
-```
+```yaml
 site_name: jackiexiao's blog
 site_description: jackiexiao's blog
 site_url: https://blog.jackiexiao.com
