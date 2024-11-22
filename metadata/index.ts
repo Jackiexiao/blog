@@ -1,7 +1,7 @@
 /** 文本 */
-export const siteName = 'jackiexiao的博客'
+export const siteName = 'jackiexiao的个人站'
 export const siteShortName = 'jackiexiao'
-export const siteDescription = 'jackie的博客'
+export const siteDescription = 'jackie的个人站'
 
 /** 文档所在目录 */
 export const include = ['笔记', 'build_in_public']

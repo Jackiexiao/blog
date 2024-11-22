@@ -23,7 +23,7 @@ export const creators: Creator[] = [
     name: 'jackiexiao',
     avatar: '',
     username: 'jackiexiao',
-    title: '博客作者',
+    title: '作者',
     desc: '全栈开发者，渴望理解世界的运作模式',
     links: [
       { type: 'github', icon: 'github', link: 'https://github.com/jackiexiao' },

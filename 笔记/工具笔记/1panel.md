@@ -1,21 +1,113 @@
+---
+excalidraw-plugin: parsed
+aliases:
+  - 内网穿透
+---
 # 1panel
 [[halo博客浅尝]]
 
 ## tldr
-感觉很有用! 管理linux 服务器太方便了, 还有很多 docker image 的应用市场, 相见恨晚
+有用! 管理linux 服务器方便了, 还有很多 docker image 的应用市场, 相见恨晚
+
 ### tutorial
 非常建议把它的官方视频教程完整看一遍
 https://www.bilibili.com/video/BV1AP411Z7oK/
 
+
+### 有用的工具
+### **[Uptime Kuma](https://zhida.zhihu.com/search?content_id=693592726&content_type=Answer&match_order=1&q=Uptime+Kuma&zhida_source=entity)**
+
+定期发送请求来检查服务器的可用性，并记录响应时间和状态，平时用来检测接口或者站点。
+
+### [Jellyfin](https://zhida.zhihu.com/search?content_id=649456865&content_type=Answer&match_order=1&q=Jellyfin&zhida_source=entity)
+
+[Docker Hub](https://link.zhihu.com/?target=https%3A//registry.hub.docker.com/r/jellyfin/jellyfin)
+
+Pulls **100M+**
+
+一款强大且 **免费** 的多媒体影音管理系统，用于管理与播放各种媒体和流媒体，并提供多平台多用户的访问播放服务。
+
+
+### Glitchtip
+
+Glitchtip 是 Sentry 的替代品，用于跟踪代码中的
+
+
+### alist
+alist是一款轻量级的文件列表和分享服务，它可以帮助用户快速搭建一个文件分享[服务器](https://www.smzdm.com/fenlei/fuwuqi/)。alist支持多种存储方式，如阿里云盘、夸克网盘、本地[硬盘](https://www.smzdm.com/fenlei/yingpan/)等，方便用户在不同场景下使用。通过alist，用户可以方便地管理和分享自己的文件，同时支持在线预览、下载等功能。
+
+* 一个网页管理多个云网盘或者 NAS （不用每个网盘都安装一个客户端...）
+* 可以在线播放视频 （或者是用本地视频播放软件 通过 webdav 协议播放 alist 视频）
+* 可以分享文件给别人下载（对方不需要安装网盘就能下载）
+* 可以白嫖别人存好的资源[Doge] ，在这里： https://www.bilibili.com/video/BV1JG4y1U72W
+
+### ChatGPT-Next-Web
+GitHub Docker Hub Pulls 500k+ 私人 ChatGPT 网页应用，支持 GPT3, GPT4 & Gemini Pro 模型。
+
+## 记录
+
+### jhome-4060ti
+记得这个始终需要 sudo 命令运行，否则会报错
+
+http://127.0.0.1:31236/1panel
+
+常见问题
+- 找不到docker
+	- 需要启动 window 的 docker，而且 `sudo 1pctl restart` 来确保 1panel 正确找到 window 的 docker
+
+```
+[1Panel Log]: 外网地址: http://223.73.3.179:31236/1panel
+[1Panel Log]: 内网地址: http://192.168.3.55:31236/1panel
+> 实际上需要通过这个访问 http://127.0.0.1:31236/1panel
+
+[1Panel Log]: 面板用户: jackie
+[1Panel Log]: 面板密码: Jackie01,
+[1Panel Log]:
+[1Panel Log]: 项目官网: https://1panel.cn
+[1Panel Log]: 项目文档: https://1panel.cn/docs
+[1Panel Log]: 代码仓库: https://github.com/1Panel-dev/1Panel
+[1Panel Log]:
+[1Panel Log]: 如果使用的是云服务器，请至安全组开放 31236 端口
+```
+
 ## faq
 
+### wsl2 设置 network = host 无法通过 127.0.0.1 来访问
+参考[[wsl#通过 --network=host 无法在 127.0.0.1 访问 docker port]]
+
+### wls2 装 1panel 的一些坑...
+博客Halo 需要通过 localhost:8090 来访问, 用户名 jackie 密码 Jackie01,
+
+### docker 镜像访问超时
+参考这个设置一个 docker 镜像代理
+https://1panel.cn/docs/user_manual/containers/setting/
+
 ### frp 内网穿透
+
+> 这破玩意.........  直接用 https://gofrp.org/zh-cn/docs/setup/ 安装就好了！！！！！！ 用 1panel 多此一举，还无法看到原来的文档，导致出错...
+
+1panel 官方教程（但不适合 wsl2 系统，有很多坑）
 https://www.bilibili.com/video/BV1bA4m1N7Zq/
+
+https://www.bilibili.com/video/BV1dr4y147aq
+
+frp 官方中文文档： https://github.com/fatedier/frp/blob/dev/README_zh.md
 
 - 使用远程桌面连接window电脑
 - ssh 内网主机
 - 家里电脑当做游戏服务器
 - 图形工作站放在实验室，处于教育网内，无公网ip；在寝室的mac想要SSH链接到工作站跑深度学习
+- 为什么使用 frp 而不是 autossh ？ 后者也可以，但是不太稳定，[参考](https://wujingchao.github.io/2020/02/22/penetrate/)
+
+
+#### 2024-08-10
+配置记录
+jblog 安装 frtp 服务端, 需要安全组放通
+jhome 安装 frtp 客户端，然后填入上面的ip和端口
+两个的密码都是： 用户 admin / 密码 Jackie01 /  密钥token123456
+
+不知道为什么无法通过 127.0.0.1:7400 来访问 frp 客户端的服务...
+
 
 
 ### 数据地址

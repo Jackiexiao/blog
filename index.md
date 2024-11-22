@@ -7,8 +7,9 @@ titleTemplate: 宇宙为何存在,而非一片虚无
 
 hero:
   name: jackiexiao
-  text: jackie的博客
-  tagline: 宇宙为何存在,而非一片虚无
+  text: jackie的个人站
+  # tagline: 宇宙为何存在,而非一片虚无
+  tagline: 爱与自由 毕生所求 学与创造 至死方休
   image:
     src: /logo.svg
     alt: Vitest
@@ -33,6 +34,9 @@ features:
   - title: 谈谈人生
     details: 关于我对这个世界的看法
     icon: 🗃
+  - title: 微信公众号
+    details: 搜索 jackiexiao
+    icon: 🚀
 ---
 
 <HomePage />

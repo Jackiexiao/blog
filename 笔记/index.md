@@ -6,19 +6,18 @@ aliases:
   - about-me
   - 博客自我介绍
 ---
-# index
+# jackiexiao的个人站
 
-## jackiexiao的博客
-
-欢迎来到 jackiexiao 的博客
+欢迎来到 jackiexiao 个人站
 
 ## 关于我
 
-我是一名 base 在深圳的码农，一个小小的[开源](https://github.com/jackiexiao)爱好者，正努力学习成为一名全栈工程师。
+Hi，我是 jackiexiao，一名热衷创造有趣小产品的开发者。
 
 标签：积极的虚无主义，怀疑主义，INTJ，间歇性颓废，铲屎官
 
 我喜欢的一些话
+- 人生苦短，按自己的节奏专注做点热爱、同时也对他人有价值的事情
 - 放下执念，允许一切发生。没有期望就不会有失望。
 - 宇宙为何存在，而非一片虚无
 - 真相是什么? 一切都不重要，如果一切都不重要，那么一事无成的人生，带来的痛苦和罪恶感，都会消散
@@ -26,9 +25,9 @@ aliases:
 
 ## 我的项目
 ### 进行中的项目
-- [gennia.cn](https://gennia.cn): 一个开源的多人联机的即时战略小游戏
 - [hackathonweekly周周黑客马拉松](https://hackathonweekly.com): 线上线下的独立开发者聚会~ 欢迎一起搞事
-- [独立开发者手册](https://www.hackathonweekly.com/indie-handbook/getting-started.html)
+- 我还做了非常多有意思的小项目，见我的 [github](https://github.com/jackiexiao)
+- 01MVP.com: 打算做一个品牌，帮助更多人从 0 到 1 做出自己的最小可行作品（筹备中）。
 
 ### 未来希望能做的项目
 - lesswrong.ai : 基于 AI 从头构建一整套关于世界的理论体系，从基本公理或者各类假设出发，通过严谨地逻辑推理，一步步得到它们所能支持的结论。
@@ -43,4 +42,4 @@ aliases:
 
 ### 如何搭建此博客？
 
-详情请见 [[工具笔记/个人博客的建站纠结史]]
+详情请见 [个人博客的建站纠结史](工具笔记/个人博客的建站纠结史.md)

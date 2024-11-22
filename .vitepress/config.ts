@@ -220,7 +220,7 @@ export default defineConfig({
     nav: [
       { text: '主页', link: '/' },
       { text: '笔记', link: '/笔记/' },
-      { text: 'Build In Public', link: '/build_in_public/WeeklyRecord' },
+      // { text: 'Build In Public', link: '/build_in_public/WeeklyRecord' },
       { text: '最近更新', link: '/toc' },
     ],
     // sidebar,
