@@ -219,16 +219,16 @@ export default defineConfig({
     },
     nav: [
       { text: '主页', link: '/' },
-      { text: '笔记', link: '/笔记/' },
+      { text: '笔记', link: '/note/' },
       // { text: 'Build In Public', link: '/build_in_public/WeeklyRecord' },
       { text: '最近更新', link: '/toc' },
     ],
     // sidebar,
     sidebar: generateSidebar([
       {
-        documentRootPath: '笔记',
+        documentRootPath: 'note',
         // scanStartPath: null,
-        resolvePath: '/笔记/',
+        resolvePath: '/note/',
         // useTitleFromFileHeading: true,
         collapsed: true,
         collapseDepth: 2,

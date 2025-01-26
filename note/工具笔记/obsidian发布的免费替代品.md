@@ -4,6 +4,12 @@ aliases:
 ---
 # obsidian发布的免费替代品
 
+## todo
+考虑使用这个！
+https://github.com/datopian/flowershow
+
+基于 Nextjs ，可以自定义！可以通过命令行  flowershow：publish note 来发布内容！牛逼
+
 ## 前言
 现在很多笔记软件都能很轻松地分享自己的笔记给别人/或者搭建自己的博客，例如 notion/飞书，而且是免费的，但很可惜这在obsidian上是付费的（4美刀）
 
